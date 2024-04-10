@@ -1,0 +1,59 @@
+{
+    "location": "Bilbao",
+    "age": 30,
+    "email": "La_Yaizasss@hotmail.com",
+    "occupation": {
+        "id": "UNEMPLOYED",
+        "name": "Unemployed"
+    },
+    "personalityTraits": {},
+    "budget": {
+        "minimum": 0,
+        "maximum": 149.6571729957806
+    },
+    "maritalStatus": "SINGLE",
+    "children": {
+        "ageRange": null,
+        "number": 0
+    },
+    "id": "ffebe32b-75ce-4d89-a01d-b3bee0c4b46d",
+    "photoUrl": "https://firebasestorage.googleapis.com/v0/b/tribbum-ffe98.appspot.com/o/assets%2Fimg%2Fprofile%2F1631492995564..jpg?alt=media&token=8b4679e2-6bc7-48fb-af41-4b0203a8e386",
+    "surname": "López",
+    "description": "",
+    "hasUploadedATenement": false,
+    "childrenSituation": "DOESNT_HAVE_KIDS",
+    "gender": "FEMALE",
+    "province": "vizcaya",
+    "hobbies": {
+        "SLEEPING": {
+            "id": "SLEEPING",
+            "name": "Sleeping"
+        },
+        "CINEPHILE": {
+            "name": "Cinephile",
+            "id": "CINEPHILE"
+        },
+        "COOKING": {
+            "id": "COOKING",
+            "name": "Cooking"
+        },
+        "GAMER": {
+            "name": "Gamer",
+            "id": "GAMER"
+        },
+        "BOOK_LOVER": {
+            "id": "BOOK_LOVER",
+            "name": "Book Lover"
+        },
+        "HOME_LOVING": {
+            "name": "Home-loving",
+            "id": "HOME_LOVING"
+        }
+    },
+    "name": "Yaiza",
+    "traits": {
+        "SMOKES": false,
+        "HAS_PETS": false,
+        "EMPLOYED": false
+    }
+}
