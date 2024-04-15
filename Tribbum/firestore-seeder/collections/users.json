@@ -1,0 +1,120 @@
+[
+    {
+        "description": "",
+        "children": {
+            "number": 1,
+            "ageRange": {
+                "max": 6,
+                "min": 0
+            }
+        },
+        "province": "alicante",
+        "surname": "scavazza",
+        "traits": {
+            "EMPLOYED": false,
+            "HAS_PETS": true,
+            "SMOKES": false
+        },
+        "childrenSituation": "HAS_KIDS",
+        "gender": "MALE",
+        "photoUrl": "https://firebasestorage.googleapis.com/v0/b/tribbum-ffe98.appspot.com/o/assets%2Fimg%2Fprofile%2F1631341178936..jpg?alt=media&token=51de88c2-13de-4531-a6a8-e41973fa5718",
+        "hasUploadedATenement": false,
+        "personalityTraits": {
+            "ALEGRE": {
+                "id": "ALEGRE",
+                "name": "Alegre"
+            },
+            "OBSERVADOR": {
+                "name": "Observador",
+                "id": "OBSERVADOR"
+            },
+            "FLEXIBLE": {
+                "id": "FLEXIBLE",
+                "name": "Flexible"
+            }
+        },
+        "maritalStatus": "SINGLE",
+        "occupation": {
+            "id": "SALES",
+            "name": "Sales"
+        },
+        "email": "bountysabaudia@gmail.com",
+        "name": "niko",
+        "location": "el Campello",
+        "hobbies": {
+            "BOOK_LOVER": {
+                "id": "BOOK_LOVER",
+                "name": "Book Lover"
+            },
+            "MORNING_PERSON": {
+                "id": "MORNING_PERSON",
+                "name": "Morning person"
+            }
+        },
+        "age": 38,
+        "id": "000b4075-8d0f-4c6a-9857-b6472b1e0483",
+        "budget": {
+            "maximum": 1000,
+            "minimum": 0
+        }
+    },
+    {
+        "description": "",
+        "children": {
+            "number": 1,
+            "ageRange": {
+                "max": 6,
+                "min": 0
+            }
+        },
+        "province": "alicante",
+        "surname": "scavazza",
+        "traits": {
+            "EMPLOYED": false,
+            "HAS_PETS": true,
+            "SMOKES": false
+        },
+        "childrenSituation": "HAS_KIDS",
+        "gender": "MALE",
+        "photoUrl": "https://firebasestorage.googleapis.com/v0/b/tribbum-ffe98.appspot.com/o/assets%2Fimg%2Fprofile%2F1631341178936..jpg?alt=media&token=51de88c2-13de-4531-a6a8-e41973fa5718",
+        "hasUploadedATenement": false,
+        "personalityTraits": {
+            "ALEGRE": {
+                "id": "ALEGRE",
+                "name": "Alegre"
+            },
+            "OBSERVADOR": {
+                "name": "Observador",
+                "id": "OBSERVADOR"
+            },
+            "FLEXIBLE": {
+                "id": "FLEXIBLE",
+                "name": "Flexible"
+            }
+        },
+        "maritalStatus": "SINGLE",
+        "occupation": {
+            "id": "SALES",
+            "name": "Sales"
+        },
+        "email": "bountysabaudia@gmail.com",
+        "name": "niko",
+        "location": "el Campello",
+        "hobbies": {
+            "BOOK_LOVER": {
+                "id": "BOOK_LOVER",
+                "name": "Book Lover"
+            },
+            "MORNING_PERSON": {
+                "id": "MORNING_PERSON",
+                "name": "Morning person"
+            }
+        },
+        "age": 38,
+        "id": "000b4075-8d0f-4c6a-9857-b6472b1e0483",
+        "budget": {
+            "maximum": 1000,
+            "minimum": 0
+        }
+    }
+]

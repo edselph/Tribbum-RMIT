@@ -1,0 +1,54 @@
+[
+    {
+        "name": "Administration",
+        "id": "ADMINISTRATION"
+    },
+    {
+        "name": "Business management",
+        "id": "BUSINESS_MANAGEMENT"
+    },
+    {
+        "id": "ENGINEERING",
+        "name": "Engineering"
+    },
+    {
+        "name": "Healthcare",
+        "id": "HEALTHCARE"
+    },
+    {
+        "id": "HOTEL_INDUSTRY",
+        "name": "Tourism and hotel industry"
+    },
+    {
+        "name": "Information technology",
+        "id": "INFORMATION_TECHNOLOGY"
+    },
+    {
+        "name": "Law",
+        "id": "LAW"
+    },
+    {
+        "name": "Marketing and advertisement",
+        "id": "MARKETING"
+    },
+    {
+        "id": "OTHERS",
+        "name": "Others"
+    },
+    {
+        "name": "Sales",
+        "id": "SALES"
+    },
+    {
+        "name": "Student",
+        "id": "STUDENT"
+    },
+    {
+        "id": "TEACHING_INVESTIGATION",
+        "name": "Teaching and investigation"
+    },
+    {
+        "name": "Unemployed",
+        "id": "UNEMPLOYED"
+    }
+]

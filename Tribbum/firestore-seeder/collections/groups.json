@@ -1,0 +1,78 @@
+[
+    {
+        "bannerUrl": "https://firebasestorage.googleapis.com/v0/b/tribbum-ffe98.appspot.com/o/forums%2FConsejos%20para%20mejorar%20la%20conciliaci%C3%B3n%20familiar.png?alt=media&token=8aadac7a-5f29-4eca-8da1-16140a6baad9",
+        "userIds": [
+            "8bb60f71-d598-44d2-bf42-908111ca4172",
+            "62e24dd9-5999-445d-b598-604b97e515e5"
+        ],
+        "postIds": [
+            "3622de06-f5b7-4f96-bdbd-2d971ca8603a"
+        ],
+        "name": "Consejos para mejorar la conciliación familiar",
+        "id": "1e9404c5-ee0b-4a5e-8908-2fcc3ff78e95"
+    },
+    {
+        "userIds": [
+            "8bb60f71-d598-44d2-bf42-908111ca4172",
+            "62e24dd9-5999-445d-b598-604b97e515e5"
+        ],
+        "bannerUrl": "https://firebasestorage.googleapis.com/v0/b/tribbum-ffe98.appspot.com/o/forums%2FCuidemos%20nuestro%20planeta.png?alt=media&token=7e584761-a0ce-465a-a275-937801048dd5",
+        "postIds": [],
+        "id": "2167856e-7c9b-46e2-b1cb-ec4b24f3dac0",
+        "name": "¡Cuidemos nuestro planeta!"
+    },
+    {
+        "postIds": [],
+        "id": "243465bf-d46b-4c0f-bc0f-a81b417cf6a2",
+        "bannerUrl": "https://firebasestorage.googleapis.com/v0/b/tribbum-ffe98.appspot.com/o/forums%2FAhorro%2C%20finanzas%20y%20ayudas%20sociales.png?alt=media&token=2267a816-86a9-4ebd-ae81-323046cf2ce6",
+        "userIds": [
+            "62e24dd9-5999-445d-b598-604b97e515e5"
+        ],
+        "name": "Ahorro, finanzas y ayudas sociales"
+    },
+    {
+        "userIds": [
+            "62e24dd9-5999-445d-b598-604b97e515e5"
+        ],
+        "name": "New group!",
+        "postIds": [],
+        "bannerUrl": "https://firebasestorage.googleapis.com/v0/b/tribbum-ffe98.appspot.com/o/forums%2F1686794450174.jpg?alt=media&token=3d7b9591-5c57-4c7b-80bc-2d74070b8234",
+        "id": "51e128e7-9d18-44e0-9b62-43874a1609c9"
+    },
+    {
+        "bannerUrl": "https://firebasestorage.googleapis.com/v0/b/tribbum-ffe98.appspot.com/o/forums%2FConsejos%20sobre%20el%20proceso%20de%20mudanza.png?alt=media&token=b4cbee94-f05d-4a82-8421-98e595e6ecb8",
+        "name": "Consejos sobre el proceso de mudanza",
+        "id": "6988040b-da71-4317-93bb-d983b303387b",
+        "userIds": [
+            "62e24dd9-5999-445d-b598-604b97e515e5"
+        ],
+        "postIds": []
+    },
+    {
+        "bannerUrl": "https://firebasestorage.googleapis.com/v0/b/tribbum-ffe98.appspot.com/o/forums%2FActividades%20familiares.png?alt=media&token=cbcc637f-baa4-423b-a007-d84899cb1312",
+        "id": "69dd0f7f-c178-4d9f-a2bb-52e9a75d3678",
+        "userIds": [
+            "62e24dd9-5999-445d-b598-604b97e515e5"
+        ],
+        "name": "Actividades familiares",
+        "postIds": []
+    },
+    {
+        "name": "Consejos de vida saludable",
+        "userIds": [
+            "62e24dd9-5999-445d-b598-604b97e515e5"
+        ],
+        "bannerUrl": "https://firebasestorage.googleapis.com/v0/b/tribbum-ffe98.appspot.com/o/forums%2FConsejos%20de%20vida%20saludable.png?alt=media&token=506fbad1-688e-42ee-b353-965ef2b4d6f9",
+        "id": "6b07f398-b471-4767-91eb-b3d20d53cb65",
+        "postIds": []
+    },
+    {
+        "name": "Ayudémonos en comunidad",
+        "bannerUrl": "https://firebasestorage.googleapis.com/v0/b/tribbum-ffe98.appspot.com/o/forums%2FAyud%C3%A9monos%20en%20comunidad.png?alt=media&token=beed46cc-f379-4a74-85c1-883b177ecacc",
+        "id": "b093b6e6-5f55-41fa-a641-6ac16c247b88",
+        "userIds": [
+            "62e24dd9-5999-445d-b598-604b97e515e5"
+        ],
+        "postIds": []
+    }
+]

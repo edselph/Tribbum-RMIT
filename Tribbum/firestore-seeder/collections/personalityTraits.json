@@ -1,0 +1,150 @@
+[
+    {
+        "id": "ALEGRE",
+        "name": "Alegre"
+    },
+    {
+        "name": "Amable",
+        "id": "AMABLE"
+    },
+    {
+        "name": "Ambicioso",
+        "id": "AMBICIOSO"
+    },
+    {
+        "name": "Analítico",
+        "id": "ANALITICO"
+    },
+    {
+        "id": "ATENTO",
+        "name": "Atento"
+    },
+    {
+        "name": "Cariñoso",
+        "id": "CARINOSO"
+    },
+    {
+        "name": "Comprensivo",
+        "id": "COMPRENSIVO"
+    },
+    {
+        "id": "CONFORMISTA",
+        "name": "Conformista"
+    },
+    {
+        "id": "CREATIVO",
+        "name": "Creativo"
+    },
+    {
+        "id": "CURIOSO",
+        "name": "Curioso"
+    },
+    {
+        "name": "Enérgico",
+        "id": "ENERGICO"
+    },
+    {
+        "name": "Espontáneo",
+        "id": "ESPONTANEO"
+    },
+    {
+        "id": "EXTROVERTIDO",
+        "name": "Extrovertido"
+    },
+    {
+        "id": "FLEXIBLE",
+        "name": "Flexible"
+    },
+    {
+        "name": "Generoso",
+        "id": "GENEROSO"
+    },
+    {
+        "id": "HONESTO",
+        "name": "Honesto"
+    },
+    {
+        "id": "HUMILDE",
+        "name": "Humilde"
+    },
+    {
+        "id": "IDEALISTA",
+        "name": "Idealista"
+    },
+    {
+        "name": "Independiente",
+        "id": "INDEPENDIENTE"
+    },
+    {
+        "name": "Inquieto",
+        "id": "INQUIETO"
+    },
+    {
+        "name": "Introvertido",
+        "id": "INTROVERTIDO"
+    },
+    {
+        "id": "NERVIOSO",
+        "name": "Nervioso"
+    },
+    {
+        "id": "OBSERVADOR",
+        "name": "Observador"
+    },
+    {
+        "id": "OPTIMISTA",
+        "name": "Optimista"
+    },
+    {
+        "name": "Organizado",
+        "id": "ORGANIZADO"
+    },
+    {
+        "id": "ORGULLOSO",
+        "name": "Orgulloso"
+    },
+    {
+        "name": "Paciente",
+        "id": "PACIENTE"
+    },
+    {
+        "name": "Perezoso",
+        "id": "PEREZOSO"
+    },
+    {
+        "name": "Pesimista",
+        "id": "PESIMISTA"
+    },
+    {
+        "id": "PROTECTOR",
+        "name": "Protector"
+    },
+    {
+        "id": "REFLEXIVO",
+        "name": "Reflexivo"
+    },
+    {
+        "name": "Seguro",
+        "id": "SEGURO"
+    },
+    {
+        "id": "SENSATO",
+        "name": "Sensato"
+    },
+    {
+        "name": "Sentimental",
+        "id": "SENTIMENTAL"
+    },
+    {
+        "name": "Tolerante",
+        "id": "TOLERANTE"
+    },
+    {
+        "id": "TRANQUILO",
+        "name": "Tranquilo"
+    },
+    {
+        "id": "VALIENTE",
+        "name": "Valiente"
+    }
+]

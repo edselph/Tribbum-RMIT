@@ -14,11 +14,12 @@ function SignUpPage() {
   const [confirmPassword, setConfirmPassword] = useState("");
 
   const handleForm = async () => {
-    /*  if (password !== confirmPassword) {
+
+    if (password !== confirmPassword) {   // was previously commented
     } else {
       await signUpUserWithEmailAndPassword(email, password);
       router.push("/");
-    } */
+    }
     // remove comments on input prop required
     router.push("/tribu/on-boarding"); // remove when uncommented above
   };

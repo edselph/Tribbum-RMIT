@@ -11,10 +11,14 @@ import {
   updateDoc,
   deleteDoc
 } from "firebase/firestore";
-//addDoc creates an auto ID
-//setDoc requires an ID
+
+/*
+  - addDoc creates an auto ID
+  - setDoc requires an ID
+ */
 
 const db = getFirestore(app);
+
 //CREATE
 export async function addData(entityName, data) {
   const dataToAdd = await addDoc(collection(db, entityName), { data });
@@ -28,11 +32,11 @@ export async function setData(entityName, id, data) {
 //READ
 export async function getAllData(entityName) {
   const dataToGet = await getDocs(collection(db, entityName));
-  return dataToGet.docs.map((doc) => doc.data());
+  return dataToGet.docs.map((doc) => doc.data());   // docs converts querySnapshot (data format) to array
 };
 
 export async function getDataById(entityName, id) {
-  const dataToGet = doc(db, entityName, id);
+  const dataToGet = doc(db, entityName, id);    // doc() function acts as reference to a doc in a col
   const dataSnap = await getDoc(dataToGet);
   if (dataSnap.exists()) {
     console.log("Document data:", dataSnap.data());
@@ -41,12 +45,14 @@ export async function getDataById(entityName, id) {
     console.log("No such document!");
   }
 };
+
 //UPDATE
 export async function updateData(entityName, id, data) {
   //data is an object with the structure identical to the collection
   const dataToUpdate = doc(db, entityName, id);
   await updateDoc(dataToUpdate, { data });
 };
+
 //DELETE
 export async function deleteData(entityName, id) {
   //delete a document based on its collection and its id

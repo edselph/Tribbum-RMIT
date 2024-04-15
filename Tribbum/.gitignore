@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+firestore-seeder/node_modules
 /.pnp
 .pnp.js
 
@@ -33,3 +34,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Firebase emulator files
+firestore-debug.log
+firestore.rules
+firebase-debug.log
+ui-debug.log

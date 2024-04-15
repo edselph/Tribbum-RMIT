@@ -1,0 +1,74 @@
+[
+    {
+        "name": "Adventurer",
+        "id": "ADVENTURER"
+    },
+    {
+        "name": "Book Lover",
+        "id": "BOOK_LOVER"
+    },
+    {
+        "name": "Cinephile",
+        "id": "CINEPHILE"
+    },
+    {
+        "id": "COOKING",
+        "name": "Cooking"
+    },
+    {
+        "name": "Dancing",
+        "id": "DANCING"
+    },
+    {
+        "name": "Fashion",
+        "id": "FASHION"
+    },
+    {
+        "name": "Gamer",
+        "id": "GAMER"
+    },
+    {
+        "id": "GARDENING",
+        "name": "Gardening"
+    },
+    {
+        "id": "HEALTHY_LIFESTYLE",
+        "name": "Healthy Lifestyle"
+    },
+    {
+        "name": "Hiking",
+        "id": "HIKING"
+    },
+    {
+        "id": "HOME_LOVING",
+        "name": "Home-loving"
+    },
+    {
+        "id": "MORNING_PERSON",
+        "name": "Morning person"
+    },
+    {
+        "id": "PAINTING",
+        "name": "Painting"
+    },
+    {
+        "name": "Play an instrument",
+        "id": "PLAY_INSTRUMENT"
+    },
+    {
+        "id": "SLEEPING",
+        "name": "Sleeping"
+    },
+    {
+        "id": "SPORTY",
+        "name": "Sporty"
+    },
+    {
+        "name": "Writing",
+        "id": "WRITING"
+    },
+    {
+        "id": "YOGA_MEDITATION",
+        "name": "Yoga and Meditation"
+    }
+]

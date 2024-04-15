@@ -9,6 +9,8 @@ import {
   updateTenement
 } from "@/firebase/entities/tenements";
 
+// *houseData represents each tenmenets and their individual house/s
+
 const HouseWrapper = ({ toggleHouseSlideOver }) => {
   const [houseDatas, setHouseDatas] = useState([]);
   const handleGetTenements = async () => {

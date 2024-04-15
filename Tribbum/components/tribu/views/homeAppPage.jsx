@@ -143,6 +143,24 @@ const HomeAppPage = () => {
           </Suspense>
         </div>
 
+        <div>
+          {/* New component to be introduced here 
+            
+            * Based on how it's been done, "group" data must be mapped 
+              ( such as in houseWrapper.jsx ) in a new component "groupWrapper.jsx"
+              in the root directory of "molocules"
+            
+            * This component will take in the function "toggleHouseSlideOver" which
+              will enable the sliding over of groups (presumably?)
+            
+            * Furthermore, "groupCard.jsx" component will need to be created within
+              the "elements" directory as done with "homehouseCard.jsx"
+          
+          */}
+          <h1>Groups to be displayed here</h1>
+        </div>
+
+
         <div
           className={`
             flex flex-col 

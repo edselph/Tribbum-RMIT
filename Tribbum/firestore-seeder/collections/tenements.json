@@ -1,0 +1,2704 @@
+[
+    {
+        "images": [],
+        "preferredAgeGroup": "NONE",
+        "province": "pontevedra",
+        "vacancy": {
+            "doubleRooms": 0,
+            "individualRooms": 1,
+            "adults": 1,
+            "children": 0,
+            "bedsAvailable": 0
+        },
+        "traits": {
+            "HAS_DISHWASHER": false,
+            "NEAR_GREEN_ZONES": false,
+            "HAS_AIR_CONDITIONED": false,
+            "ALLOWS_SHORT_STAYS": false,
+            "HAS_INTERNET": false,
+            "HAS_HEATING": false,
+            "HAS_OWN_BATH": false,
+            "HAS_BALCONY": false,
+            "EXPENSES_INCLUDED": false,
+            "TAKES_PETS": false,
+            "HAS_LIFT": false,
+            "SMOKING_ALLOWED": false
+        },
+        "createdAt": 1709422602915,
+        "id": "04cbaa89-3b15-42a8-94ab-628d9752a33b",
+        "shareWithGender": "OTHER",
+        "location": "Vigo ",
+        "cost": 600,
+        "description": "Soy madre soltera, con bebe. Estoy buscando alguien con quien puedo alquilar y compartir piso. De momento estoy en Vigo. Estoy dispuesta a cambiar la ciudad si encuentro persona seria. \nTengo 42 años, soy búlgara.",
+        "areRoomsFurnished": true,
+        "taken": false,
+        "title": "Busco persona para alquilar un piso",
+        "owner": {
+            "children": {
+                "number": 1,
+                "ageRange": {
+                    "max": 1,
+                    "min": 0
+                }
+            },
+            "gender": "FEMALE",
+            "occupation": {
+                "name": "Others",
+                "id": "OTHERS"
+            },
+            "hobbies": {
+                "HOME_LOVING": {
+                    "name": "Home-loving",
+                    "id": "HOME_LOVING"
+                },
+                "HEALTHY_LIFESTYLE": {
+                    "name": "Healthy Lifestyle",
+                    "id": "HEALTHY_LIFESTYLE"
+                }
+            },
+            "childrenSituation": "HAS_KIDS",
+            "budget": {
+                "minimum": 0,
+                "maximum": 1000
+            },
+            "surname": "Mincheva Tatarova",
+            "maritalStatus": "SINGLE",
+            "id": "91bf5600-6d16-4475-a2ab-e660896192ce",
+            "traits": {
+                "HAS_PETS": false,
+                "SMOKES": false,
+                "EMPLOYED": false
+            },
+            "photoUrl": "",
+            "name": "Cristina",
+            "age": 42,
+            "personalityTraits": {
+                "ATENTO": {
+                    "id": "ATENTO",
+                    "name": "Atento"
+                },
+                "SENSATO": {
+                    "id": "SENSATO",
+                    "name": "Sensato"
+                },
+                "TRANQUILO": {
+                    "name": "Tranquilo",
+                    "id": "TRANQUILO"
+                },
+                "HUMILDE": {
+                    "name": "Humilde",
+                    "id": "HUMILDE"
+                },
+                "AMABLE": {
+                    "name": "Amable",
+                    "id": "AMABLE"
+                },
+                "HONESTO": {
+                    "name": "Honesto",
+                    "id": "HONESTO"
+                }
+            },
+            "province": "pontevedra",
+            "description": "Hola a todos! Me llamo Cristina. Soy una madre soltera, búlgara de 42 años. Estoy buscando estudio o habitación en un piso compartido.  Si alguien está buscando persona para alquilar y compartir un piso, yo estoy dispuesta hacerlo. \nSoy sería, limpia, responsable. \nEstoy dispuesta a cambiar la ciudad si nos encontramos con gente seria.",
+            "location": "Vigo"
+        },
+        "childrenSituation": {
+            "HAS_KIDS": true,
+            "DOESNT_HAVE_KIDS": true,
+            "PERIODICALLY_HAS_KIDS": true,
+            "ELDER_PEOPLE": true
+        },
+        "negotiable": false
+    },
+    {
+        "areRoomsFurnished": true,
+        "location": "Reus ",
+        "owner": {
+            "province": "tarragona",
+            "personalityTraits": {
+                "VALIENTE": {
+                    "id": "VALIENTE",
+                    "name": "Valiente"
+                },
+                "HONESTO": {
+                    "id": "HONESTO",
+                    "name": "Honesto"
+                },
+                "OPTIMISTA": {
+                    "name": "Optimista",
+                    "id": "OPTIMISTA"
+                },
+                "INDEPENDIENTE": {
+                    "name": "Independiente",
+                    "id": "INDEPENDIENTE"
+                },
+                "EXTROVERTIDO": {
+                    "name": "Extrovertido",
+                    "id": "EXTROVERTIDO"
+                }
+            },
+            "childrenSituation": "HAS_KIDS",
+            "location": "Reus ",
+            "name": "Noelia",
+            "id": "a251a769-0ee8-44d2-9cd5-5e2258b2b8e3",
+            "budget": {
+                "minimum": 0,
+                "maximum": 329.85233355172073
+            },
+            "hobbies": {
+                "ADVENTURER": {
+                    "name": "Adventurer",
+                    "id": "ADVENTURER"
+                },
+                "HEALTHY_LIFESTYLE": {
+                    "name": "Healthy Lifestyle",
+                    "id": "HEALTHY_LIFESTYLE"
+                }
+            },
+            "children": {
+                "number": 1,
+                "ageRange": {
+                    "min": 0,
+                    "max": 9
+                }
+            },
+            "description": "",
+            "surname": "Gómez del Olmo",
+            "maritalStatus": "SINGLE",
+            "photoUrl": "",
+            "age": 45,
+            "traits": {
+                "HAS_PETS": false,
+                "EMPLOYED": false,
+                "SMOKES": false
+            },
+            "occupation": {
+                "id": "HOTEL_INDUSTRY",
+                "name": "Tourism and hotel industry"
+            },
+            "gender": "FEMALE"
+        },
+        "childrenSituation": {
+            "PERIODICALLY_HAS_KIDS": true,
+            "HAS_KIDS": true,
+            "DOESNT_HAVE_KIDS": true,
+            "ELDER_PEOPLE": true
+        },
+        "vacancy": {
+            "doubleRooms": 1,
+            "children": 0,
+            "individualRooms": 0,
+            "bedsAvailable": 0,
+            "adults": 1
+        },
+        "title": "Bonita habitación doble",
+        "images": [],
+        "traits": {
+            "HAS_OWN_BATH": true,
+            "SMOKING_ALLOWED": false,
+            "ALLOWS_SHORT_STAYS": false,
+            "TAKES_PETS": false,
+            "HAS_AIR_CONDITIONED": false,
+            "HAS_BALCONY": true,
+            "HAS_LIFT": true,
+            "HAS_INTERNET": true,
+            "HAS_DISHWASHER": true,
+            "EXPENSES_INCLUDED": true,
+            "NEAR_GREEN_ZONES": false,
+            "HAS_HEATING": true
+        },
+        "createdAt": 1698611298527,
+        "negotiable": false,
+        "preferredAgeGroup": "NONE",
+        "shareWithGender": "FEMALE",
+        "id": "1d6d2da5-6488-45fd-a6ca-1ac66a4a8099",
+        "province": "tarragona",
+        "cost": 350,
+        "description": "Habitación luminosa, con cama de matrimonio, escritorio, TV, galería, aseo privado.\n",
+        "taken": false
+    },
+    {
+        "province": "alicante",
+        "createdAt": 1706900063977,
+        "taken": false,
+        "traits": {
+            "SMOKING_ALLOWED": true,
+            "TAKES_PETS": false,
+            "HAS_OWN_BATH": true,
+            "ALLOWS_SHORT_STAYS": true,
+            "HAS_HEATING": false,
+            "HAS_BALCONY": true,
+            "HAS_INTERNET": true,
+            "EXPENSES_INCLUDED": true,
+            "NEAR_GREEN_ZONES": false,
+            "HAS_DISHWASHER": false,
+            "HAS_AIR_CONDITIONED": false,
+            "HAS_LIFT": false
+        },
+        "cost": 350,
+        "id": "1f89a892-3240-4fd9-b46e-738b097ffb91",
+        "childrenSituation": {
+            "PERIODICALLY_HAS_KIDS": false,
+            "ELDER_PEOPLE": false,
+            "HAS_KIDS": false,
+            "DOESNT_HAVE_KIDS": true
+        },
+        "description": "Hola se comparte habitación de matrimonio ",
+        "location": "calpe",
+        "owner": {
+            "location": "calpe",
+            "traits": {
+                "HAS_PETS": true,
+                "EMPLOYED": false,
+                "SMOKES": true
+            },
+            "photoUrl": "https://firebasestorage.googleapis.com/v0/b/tribbum-ffe98.appspot.com/o/assets%2Fimg%2Fprofile%2F1689424558226..jpg?alt=media&token=8e7d7e11-242f-4423-8814-d44d92a6159a",
+            "hobbies": {
+                "SLEEPING": {
+                    "id": "SLEEPING",
+                    "name": "Sleeping"
+                },
+                "HIKING": {
+                    "id": "HIKING",
+                    "name": "Hiking"
+                },
+                "GAMER": {
+                    "id": "GAMER",
+                    "name": "Gamer"
+                },
+                "GARDENING": {
+                    "id": "GARDENING",
+                    "name": "Gardening"
+                },
+                "HOME_LOVING": {
+                    "name": "Home-loving",
+                    "id": "HOME_LOVING"
+                },
+                "ADVENTURER": {
+                    "id": "ADVENTURER",
+                    "name": "Adventurer"
+                },
+                "COOKING": {
+                    "name": "Cooking",
+                    "id": "COOKING"
+                }
+            },
+            "children": {
+                "number": 0,
+                "ageRange": null
+            },
+            "surname": "Carlos",
+            "personalityTraits": {
+                "CURIOSO": {
+                    "name": "Curioso",
+                    "id": "CURIOSO"
+                },
+                "CARINOSO": {
+                    "id": "CARINOSO",
+                    "name": "Cariñoso"
+                },
+                "PROTECTOR": {
+                    "name": "Protector",
+                    "id": "PROTECTOR"
+                },
+                "GENEROSO": {
+                    "id": "GENEROSO",
+                    "name": "Generoso"
+                },
+                "OBSERVADOR": {
+                    "name": "Observador",
+                    "id": "OBSERVADOR"
+                },
+                "ALEGRE": {
+                    "name": "Alegre",
+                    "id": "ALEGRE"
+                },
+                "CREATIVO": {
+                    "id": "CREATIVO",
+                    "name": "Creativo"
+                }
+            },
+            "province": "alicante",
+            "gender": "MALE",
+            "budget": {
+                "maximum": 97.88359788359787,
+                "minimum": 0
+            },
+            "occupation": {
+                "id": "STUDENT",
+                "name": "Student"
+            },
+            "id": "a5e2d194-3ca2-465a-9879-d8390bd14701",
+            "childrenSituation": "DOESNT_HAVE_KIDS",
+            "name": "Juan",
+            "maritalStatus": "SINGLE",
+            "age": 44,
+            "description": "Caballero de 44 años disponible para trabajar en la gestión de empresas y asesoramiento a particulares busca vivienda para compartir "
+        },
+        "vacancy": {
+            "individualRooms": 0,
+            "doubleRooms": 1,
+            "adults": 1,
+            "children": 0,
+            "bedsAvailable": 0
+        },
+        "title": "Se comparte habitación ",
+        "negotiable": false,
+        "preferredAgeGroup": "BETWEEN_35_AND_49",
+        "areRoomsFurnished": true,
+        "images": [
+            "https://firebasestorage.googleapis.com/v0/b/tribbum-ffe98.appspot.com/o/tenements%2F61b85a10-230e-11ee-8575-bb5f1090819e..jpg?alt=media&token=186cf7db-57aa-439d-9166-07fa1721fd82"
+        ],
+        "shareWithGender": "FEMALE"
+    },
+    {
+        "traits": {
+            "HAS_INTERNET": true,
+            "HAS_BALCONY": false,
+            "SMOKING_ALLOWED": true,
+            "HAS_OWN_BATH": true,
+            "HAS_AIR_CONDITIONED": true,
+            "HAS_DISHWASHER": true,
+            "HAS_LIFT": false,
+            "EXPENSES_INCLUDED": false,
+            "NEAR_GREEN_ZONES": false,
+            "ALLOWS_SHORT_STAYS": false,
+            "TAKES_PETS": true,
+            "HAS_HEATING": true
+        },
+        "areRoomsFurnished": true,
+        "province": "barcelona",
+        "owner": {
+            "maritalStatus": "SINGLE",
+            "age": 39,
+            "name": "Alaska",
+            "id": "08e19ba9-b4bf-4971-b3e5-0f897516eaaf",
+            "location": "Badalona",
+            "photoUrl": "",
+            "children": {
+                "ageRange": null,
+                "number": 0
+            },
+            "personalityTraits": {
+                "TOLERANTE": {
+                    "name": "Tolerante",
+                    "id": "TOLERANTE"
+                },
+                "OBSERVADOR": {
+                    "id": "OBSERVADOR",
+                    "name": "Observador"
+                },
+                "HUMILDE": {
+                    "name": "Humilde",
+                    "id": "HUMILDE"
+                },
+                "ALEGRE": {
+                    "id": "ALEGRE",
+                    "name": "Alegre"
+                },
+                "FLEXIBLE": {
+                    "name": "Flexible",
+                    "id": "FLEXIBLE"
+                },
+                "EXTROVERTIDO": {
+                    "id": "EXTROVERTIDO",
+                    "name": "Extrovertido"
+                },
+                "ORGANIZADO": {
+                    "id": "ORGANIZADO",
+                    "name": "Organizado"
+                },
+                "ATENTO": {
+                    "name": "Atento",
+                    "id": "ATENTO"
+                },
+                "SENTIMENTAL": {
+                    "id": "SENTIMENTAL",
+                    "name": "Sentimental"
+                },
+                "TRANQUILO": {
+                    "id": "TRANQUILO",
+                    "name": "Tranquilo"
+                },
+                "CARINOSO": {
+                    "id": "CARINOSO",
+                    "name": "Cariñoso"
+                },
+                "CREATIVO": {
+                    "name": "Creativo",
+                    "id": "CREATIVO"
+                },
+                "AMABLE": {
+                    "name": "Amable",
+                    "id": "AMABLE"
+                },
+                "HONESTO": {
+                    "id": "HONESTO",
+                    "name": "Honesto"
+                }
+            },
+            "surname": "Canseco",
+            "province": "barcelona",
+            "description": "Chica soltera de 39 años con mascota, busco compañera de piso para compartir gastos.  Soy limpia, ordenada, me gusta la tranquilidad, me gusta mantener la casa limpia y ordenada. Tendrías habitación grandecita, casi amueblada y baño grande para ti.",
+            "traits": {
+                "EMPLOYED": true,
+                "HAS_PETS": true,
+                "SMOKES": true
+            },
+            "gender": "FEMALE",
+            "hobbies": {
+                "CINEPHILE": {
+                    "id": "CINEPHILE",
+                    "name": "Cinephile"
+                },
+                "HIKING": {
+                    "name": "Hiking",
+                    "id": "HIKING"
+                },
+                "YOGA_MEDITATION": {
+                    "name": "Yoga and Meditation",
+                    "id": "YOGA_MEDITATION"
+                },
+                "HOME_LOVING": {
+                    "name": "Home-loving",
+                    "id": "HOME_LOVING"
+                },
+                "SLEEPING": {
+                    "name": "Sleeping",
+                    "id": "SLEEPING"
+                },
+                "FASHION": {
+                    "id": "FASHION",
+                    "name": "Fashion"
+                },
+                "ADVENTURER": {
+                    "name": "Adventurer",
+                    "id": "ADVENTURER"
+                }
+            },
+            "childrenSituation": "DOESNT_HAVE_KIDS",
+            "occupation": {
+                "id": "SALES",
+                "name": "Sales"
+            },
+            "budget": {
+                "minimum": 0,
+                "maximum": 449.7863247863248
+            }
+        },
+        "title": "Busco Compañera de Piso en Badalona",
+        "images": [],
+        "id": "2253e08d-1747-43f3-829a-7372e15dc183",
+        "negotiable": false,
+        "taken": false,
+        "location": "Badalona",
+        "createdAt": 1708519696267,
+        "childrenSituation": {
+            "HAS_KIDS": false,
+            "PERIODICALLY_HAS_KIDS": false,
+            "DOESNT_HAVE_KIDS": true,
+            "ELDER_PEOPLE": false
+        },
+        "cost": 450,
+        "description": "El piso es medianamente grande. Comer cocina abierta. Consta de 3 habitaciones 2 dobles una pequeña y dos baños y un patio.\nBusco compañera de piso a poder ser sin hijos, para compartir los gastos del piso. Preferiblemente estancias largas.No importa si es fumadora, y que no le importen vivir con animales, ya que yo tengo una perrita. No cuelgo fotos, para preservar mi intimidad. Contactar para más información. Gracias",
+        "shareWithGender": "FEMALE",
+        "vacancy": {
+            "bedsAvailable": 0,
+            "individualRooms": 0,
+            "children": 0,
+            "doubleRooms": 1,
+            "adults": 1
+        },
+        "preferredAgeGroup": "NONE"
+    },
+    {
+        "description": "Es una casa de pueblo grande con un bajo y primer piso. Yo vivo abajo y arriba hay tres habitaciones que están preparadas para mamás con su hij@.\n\nCocina completamente equipada, un comedor grande con una tele de 55 pulgadas y un ordenador para uso común, un baño con ducha grande y un aseo aparte. Una terraza de 100m2 con rincón para hacer barbacoa, chillout, huerto, etc.\n\nLa Zona:\nLa zona es muy tranquila, tipo pueblo, la casa se encuentra junto al polideportivo con un parque grande para jugar, piscina, etc...\n\nAccesso:\nA 10 min en coche de Valencia \nen autobus amarillo (unos 40 min a angel guimera)\n15 en bici al metro Quart de Poblet\n\nLa idea es crear un ambiente familiar y compartir momentos puntuales (cocinar juntas, hacer actividades con los peques, crear un huerto, hacer bricolaje, jugar, en fin, crear un ambiente amigable, familiar y divertido).\n\n",
+        "childrenSituation": {
+            "ELDER_PEOPLE": false,
+            "PERIODICALLY_HAS_KIDS": true,
+            "DOESNT_HAVE_KIDS": false,
+            "HAS_KIDS": true
+        },
+        "cost": 300,
+        "location": "Barrio del Cristo (Quart de Poblet)",
+        "province": "valencia",
+        "title": "Busco mamás para compartir casa de pueblo con terraza grande",
+        "taken": false,
+        "preferredAgeGroup": "BETWEEN_35_AND_49",
+        "createdAt": 1704996968180,
+        "shareWithGender": "FEMALE",
+        "images": [
+            "https://firebasestorage.googleapis.com/v0/b/tribbum-ffe98.appspot.com/o/tenements%2Fe1464160-b0ae-11ee-b95a-0d36fdfc4246..jpg?alt=media&token=ad4be41a-254c-4483-8fd6-8c3ac4bc3ed7",
+            "https://firebasestorage.googleapis.com/v0/b/tribbum-ffe98.appspot.com/o/tenements%2Fe2721730-b0ae-11ee-87c4-dd9650ec8c3c..jpg?alt=media&token=7f496047-f58c-4305-b976-5bdacf7e00b4",
+            "https://firebasestorage.googleapis.com/v0/b/tribbum-ffe98.appspot.com/o/tenements%2Fe36529c0-b0ae-11ee-84f1-316b1dd4de22..jpg?alt=media&token=66c76f7f-7176-479d-b69c-228c57042c79",
+            "https://firebasestorage.googleapis.com/v0/b/tribbum-ffe98.appspot.com/o/tenements%2Fe43dfd90-b0ae-11ee-ace8-79fa58212569..jpg?alt=media&token=c4e38db9-6b3e-4a7b-a20d-acbf29dff5ac",
+            "https://firebasestorage.googleapis.com/v0/b/tribbum-ffe98.appspot.com/o/tenements%2Fe540c790-b0ae-11ee-b83e-abf2fdd3d8d5..jpg?alt=media&token=6c29795c-7fe6-4ff1-afb8-f0b9b4a23183",
+            "https://firebasestorage.googleapis.com/v0/b/tribbum-ffe98.appspot.com/o/tenements%2Fe642f550-b0ae-11ee-bc01-bb24b31114a3..jpg?alt=media&token=ca566561-4c47-44e7-945a-76493130d930",
+            "https://firebasestorage.googleapis.com/v0/b/tribbum-ffe98.appspot.com/o/tenements%2Fe71d01a0-b0ae-11ee-a36d-cbdc4c5f77cc..jpg?alt=media&token=c1cc7fce-2f17-4332-a246-b084774447d3",
+            "https://firebasestorage.googleapis.com/v0/b/tribbum-ffe98.appspot.com/o/tenements%2Fe8283010-b0ae-11ee-b5ff-9fc83eef801c..jpg?alt=media&token=f224bf52-73e0-462e-86e9-c4f0c35a8eb3",
+            "https://firebasestorage.googleapis.com/v0/b/tribbum-ffe98.appspot.com/o/tenements%2Fe967dc00-b0ae-11ee-8cc5-f9a58f9561c4..jpg?alt=media&token=91311530-0255-404e-bc1f-5d6e8f634ba1",
+            "https://firebasestorage.googleapis.com/v0/b/tribbum-ffe98.appspot.com/o/tenements%2Fea8002c0-b0ae-11ee-bcff-c92f062d72f7..jpg?alt=media&token=f926cc3c-3a9a-4d9b-a0fe-8a0e21807279"
+        ],
+        "traits": {
+            "HAS_DISHWASHER": false,
+            "NEAR_GREEN_ZONES": true,
+            "TAKES_PETS": false,
+            "HAS_BALCONY": true,
+            "HAS_HEATING": false,
+            "HAS_INTERNET": true,
+            "ALLOWS_SHORT_STAYS": true,
+            "EXPENSES_INCLUDED": false,
+            "SMOKING_ALLOWED": false,
+            "HAS_AIR_CONDITIONED": true,
+            "HAS_LIFT": false,
+            "HAS_OWN_BATH": false
+        },
+        "owner": {
+            "occupation": {
+                "id": "MARKETING",
+                "name": "Marketing and advertisement"
+            },
+            "traits": {
+                "EMPLOYED": true,
+                "SMOKES": false,
+                "HAS_PETS": false
+            },
+            "id": "0213f97a-af27-4d76-8dcb-33a947565647",
+            "age": 45,
+            "personalityTraits": {
+                "AMBICIOSO": {
+                    "name": "Ambicioso",
+                    "id": "AMBICIOSO"
+                },
+                "ALEGRE": {
+                    "name": "Alegre",
+                    "id": "ALEGRE"
+                },
+                "ENERGICO": {
+                    "id": "ENERGICO",
+                    "name": "Enérgico"
+                },
+                "INDEPENDIENTE": {
+                    "name": "Independiente",
+                    "id": "INDEPENDIENTE"
+                },
+                "VALIENTE": {
+                    "id": "VALIENTE",
+                    "name": "Valiente"
+                },
+                "HONESTO": {
+                    "id": "HONESTO",
+                    "name": "Honesto"
+                },
+                "ATENTO": {
+                    "name": "Atento",
+                    "id": "ATENTO"
+                },
+                "INQUIETO": {
+                    "id": "INQUIETO",
+                    "name": "Inquieto"
+                },
+                "CREATIVO": {
+                    "id": "CREATIVO",
+                    "name": "Creativo"
+                }
+            },
+            "children": {
+                "number": 1,
+                "ageRange": {
+                    "max": 9,
+                    "min": 8
+                }
+            },
+            "surname": "Vanicka",
+            "location": "Quart de Poblet",
+            "description": "Soy nacida en la rep. checa, llevo 16 años en Valencia, soy fotógrafa autónoma y tengo un niño de 9 años. Me encanta el bricolaje y las plantas.\n\nBusco mamás solteras o separadas para compartir una casa grande con terraza, para cocinar juntas, hacer actividades con los peques, crear un huerto, hacer bricolaje, jugar, en fin, crear un ambiente amigable, familiar y divertido.\nLa edad ideal de los peques sería entre 7 y 12 años ",
+            "province": "valencia",
+            "photoUrl": "https://firebasestorage.googleapis.com/v0/b/tribbum-ffe98.appspot.com/o/assets%2Fimg%2Fprofile%2F1704996641240..jpg?alt=media&token=0df1a04e-dd74-4c51-9d0e-7b1717b29e58",
+            "budget": {
+                "maximum": 379.20489296636083,
+                "minimum": 301.73289447749426
+            },
+            "hobbies": {
+                "COOKING": {
+                    "id": "COOKING",
+                    "name": "Cooking"
+                },
+                "HIKING": {
+                    "name": "Hiking",
+                    "id": "HIKING"
+                },
+                "BOOK_LOVER": {
+                    "name": "Book Lover",
+                    "id": "BOOK_LOVER"
+                },
+                "GARDENING": {
+                    "name": "Gardening",
+                    "id": "GARDENING"
+                },
+                "ADVENTURER": {
+                    "id": "ADVENTURER",
+                    "name": "Adventurer"
+                }
+            },
+            "childrenSituation": "PERIODICALLY_HAS_KIDS",
+            "name": "Pavla",
+            "maritalStatus": "SINGLE",
+            "gender": "FEMALE"
+        },
+        "negotiable": false,
+        "areRoomsFurnished": true,
+        "vacancy": {
+            "doubleRooms": 3,
+            "children": 0,
+            "individualRooms": 0,
+            "adults": 1,
+            "bedsAvailable": 0
+        },
+        "id": "2d9eedb9-c4e1-4b80-93b6-92a40ab6b16a"
+    },
+    {
+        "createdAt": 1711507019359,
+        "description": "Piso de tres habitaciones y dos baños. Salón y cocina amplios. Habitación amplia y luminosa con dos armarios.\nCalefacción central y bomba de frío y calor.\nBaño privado.",
+        "areRoomsFurnished": true,
+        "taken": false,
+        "title": "Habitación en piso compartido ",
+        "images": [],
+        "vacancy": {
+            "doubleRooms": 1,
+            "bedsAvailable": 0,
+            "individualRooms": 0,
+            "children": 0,
+            "adults": 1
+        },
+        "shareWithGender": "FEMALE",
+        "preferredAgeGroup": "BETWEEN_35_AND_49",
+        "cost": 400,
+        "childrenSituation": {
+            "ELDER_PEOPLE": false,
+            "HAS_KIDS": false,
+            "PERIODICALLY_HAS_KIDS": true,
+            "DOESNT_HAVE_KIDS": false
+        },
+        "traits": {
+            "HAS_HEATING": true,
+            "HAS_INTERNET": true,
+            "EXPENSES_INCLUDED": false,
+            "HAS_OWN_BATH": true,
+            "HAS_LIFT": true,
+            "HAS_BALCONY": false,
+            "NEAR_GREEN_ZONES": true,
+            "HAS_AIR_CONDITIONED": true,
+            "TAKES_PETS": true,
+            "ALLOWS_SHORT_STAYS": false,
+            "HAS_DISHWASHER": true,
+            "SMOKING_ALLOWED": false
+        },
+        "location": "Leganés ",
+        "province": "madrid",
+        "negotiable": true,
+        "id": "30df67e4-5af2-4f1e-8962-ac390a492417",
+        "owner": {
+            "photoUrl": "",
+            "hobbies": {
+                "HIKING": {
+                    "name": "Hiking",
+                    "id": "HIKING"
+                },
+                "DANCING": {
+                    "name": "Dancing",
+                    "id": "DANCING"
+                },
+                "SPORTY": {
+                    "name": "Sporty",
+                    "id": "SPORTY"
+                },
+                "HEALTHY_LIFESTYLE": {
+                    "name": "Healthy Lifestyle",
+                    "id": "HEALTHY_LIFESTYLE"
+                },
+                "YOGA_MEDITATION": {
+                    "name": "Yoga and Meditation",
+                    "id": "YOGA_MEDITATION"
+                },
+                "FASHION": {
+                    "id": "FASHION",
+                    "name": "Fashion"
+                },
+                "SLEEPING": {
+                    "name": "Sleeping",
+                    "id": "SLEEPING"
+                },
+                "BOOK_LOVER": {
+                    "id": "BOOK_LOVER",
+                    "name": "Book Lover"
+                }
+            },
+            "location": "Leganés ",
+            "occupation": {
+                "id": "TEACHING_INVESTIGATION",
+                "name": "Teaching and investigation"
+            },
+            "personalityTraits": {
+                "NERVIOSO": {
+                    "id": "NERVIOSO",
+                    "name": "Nervioso"
+                },
+                "SENSATO": {
+                    "name": "Sensato",
+                    "id": "SENSATO"
+                },
+                "AMABLE": {
+                    "id": "AMABLE",
+                    "name": "Amable"
+                },
+                "COMPRENSIVO": {
+                    "name": "Comprensivo",
+                    "id": "COMPRENSIVO"
+                },
+                "ALEGRE": {
+                    "name": "Alegre",
+                    "id": "ALEGRE"
+                },
+                "ESPONTANEO": {
+                    "id": "ESPONTANEO",
+                    "name": "Espontáneo"
+                },
+                "FLEXIBLE": {
+                    "name": "Flexible",
+                    "id": "FLEXIBLE"
+                },
+                "EXTROVERTIDO": {
+                    "id": "EXTROVERTIDO",
+                    "name": "Extrovertido"
+                }
+            },
+            "name": "Rosana",
+            "children": {
+                "number": 1,
+                "ageRange": {
+                    "min": 0,
+                    "max": 8
+                }
+            },
+            "gender": "FEMALE",
+            "province": "madrid",
+            "id": "3ee48b29-cac3-41b6-9d74-e6a6f9fd75f3",
+            "age": 40,
+            "childrenSituation": "PERIODICALLY_HAS_KIDS",
+            "description": "Madre de un niño de 8 años y un perro.\nCustodia compartida.\nProfesora de secundaria. ",
+            "budget": {
+                "minimum": 0,
+                "maximum": 1000
+            },
+            "maritalStatus": "SINGLE",
+            "traits": {
+                "HAS_PETS": true,
+                "EMPLOYED": true,
+                "SMOKES": false
+            },
+            "surname": "Conde"
+        }
+    },
+    {
+        "images": [],
+        "vacancy": {
+            "children": 0,
+            "individualRooms": 0,
+            "doubleRooms": 1,
+            "bedsAvailable": 0,
+            "adults": 1
+        },
+        "cost": 430,
+        "childrenSituation": {
+            "DOESNT_HAVE_KIDS": true,
+            "PERIODICALLY_HAS_KIDS": false,
+            "HAS_KIDS": false,
+            "ELDER_PEOPLE": false
+        },
+        "location": "Barcelona",
+        "negotiable": false,
+        "owner": {
+            "name": "Anna",
+            "occupation": {
+                "name": "Others",
+                "id": "OTHERS"
+            },
+            "age": 56,
+            "photoUrl": "",
+            "children": {
+                "number": 0,
+                "ageRange": null
+            },
+            "traits": {
+                "SMOKES": false,
+                "EMPLOYED": false,
+                "HAS_PETS": false
+            },
+            "maritalStatus": "SINGLE",
+            "description": "",
+            "childrenSituation": "DOESNT_HAVE_KIDS",
+            "id": "9c981983-0627-41b6-9529-1a2fb0b31b72",
+            "location": "Barcelona",
+            "personalityTraits": {
+                "PACIENTE": {
+                    "id": "PACIENTE",
+                    "name": "Paciente"
+                },
+                "IDEALISTA": {
+                    "id": "IDEALISTA",
+                    "name": "Idealista"
+                },
+                "AMABLE": {
+                    "name": "Amable",
+                    "id": "AMABLE"
+                },
+                "COMPRENSIVO": {
+                    "name": "Comprensivo",
+                    "id": "COMPRENSIVO"
+                }
+            },
+            "province": "barcelona",
+            "hobbies": {
+                "BOOK_LOVER": {
+                    "name": "Book Lover",
+                    "id": "BOOK_LOVER"
+                },
+                "MORNING_PERSON": {
+                    "id": "MORNING_PERSON",
+                    "name": "Morning person"
+                },
+                "HOME_LOVING": {
+                    "name": "Home-loving",
+                    "id": "HOME_LOVING"
+                }
+            },
+            "budget": {
+                "minimum": 0,
+                "maximum": 1000
+            },
+            "gender": "FEMALE",
+            "surname": "Garrigay"
+        },
+        "id": "396803f0-53c0-43a7-99d5-3c8eaf15ea3c",
+        "taken": false,
+        "description": "Habitación grande y tranquila en barrio bien comunicado y rodeado de parques.",
+        "province": "barcelona",
+        "preferredAgeGroup": "NONE",
+        "areRoomsFurnished": true,
+        "shareWithGender": "OTHER",
+        "title": "Vivienda con vistas",
+        "traits": {
+            "ALLOWS_SHORT_STAYS": false,
+            "HAS_LIFT": true,
+            "TAKES_PETS": false,
+            "SMOKING_ALLOWED": false,
+            "HAS_DISHWASHER": true,
+            "HAS_HEATING": true,
+            "HAS_AIR_CONDITIONED": false,
+            "HAS_OWN_BATH": false,
+            "HAS_BALCONY": true,
+            "EXPENSES_INCLUDED": false,
+            "NEAR_GREEN_ZONES": true,
+            "HAS_INTERNET": true
+        },
+        "createdAt": 1711636506406
+    },
+    {
+        "location": "Alcalá de Henares, barrio del Chorrillo; al lado de la Renfe",
+        "province": "madrid",
+        "owner": {
+            "budget": {
+                "minimum": 0,
+                "maximum": 1000
+            },
+            "traits": {
+                "HAS_PETS": true,
+                "EMPLOYED": true,
+                "SMOKES": true
+            },
+            "description": "Soy un chico sociable, trabajador y amante de los animales.\nEn casa hay dos perritos (no son pequeños)\nAdmito más mascotas. Fumador.\nMuy ordenado y limpio en la convivencia.",
+            "childrenSituation": "DOESNT_HAVE_KIDS",
+            "id": "10f18039-d761-41ad-a409-30d834c2364f",
+            "name": "Alejandro",
+            "age": 22,
+            "maritalStatus": "SINGLE",
+            "province": "madrid",
+            "children": {
+                "ageRange": null,
+                "number": 0
+            },
+            "surname": "Hernando López",
+            "hobbies": {
+                "CINEPHILE": {
+                    "id": "CINEPHILE",
+                    "name": "Cinephile"
+                },
+                "HOME_LOVING": {
+                    "name": "Home-loving",
+                    "id": "HOME_LOVING"
+                },
+                "MORNING_PERSON": {
+                    "name": "Morning person",
+                    "id": "MORNING_PERSON"
+                },
+                "PAINTING": {
+                    "id": "PAINTING",
+                    "name": "Painting"
+                },
+                "GAMER": {
+                    "name": "Gamer",
+                    "id": "GAMER"
+                }
+            },
+            "photoUrl": "https://firebasestorage.googleapis.com/v0/b/tribbum-ffe98.appspot.com/o/assets%2Fimg%2Fprofile%2FValue(Right(0a92c120-cfee-11ee-a91c-1b3c37f9b14f))..jpg?alt=media&token=138bb785-d4b0-4d13-a522-d7bb709d0f78",
+            "gender": "MALE",
+            "location": "Alcalá de Henares ",
+            "occupation": {
+                "name": "Others",
+                "id": "OTHERS"
+            },
+            "personalityTraits": {
+                "ORGANIZADO": {
+                    "id": "ORGANIZADO",
+                    "name": "Organizado"
+                },
+                "TRANQUILO": {
+                    "id": "TRANQUILO",
+                    "name": "Tranquilo"
+                },
+                "INDEPENDIENTE": {
+                    "name": "Independiente",
+                    "id": "INDEPENDIENTE"
+                },
+                "TOLERANTE": {
+                    "id": "TOLERANTE",
+                    "name": "Tolerante"
+                },
+                "HUMILDE": {
+                    "id": "HUMILDE",
+                    "name": "Humilde"
+                },
+                "GENEROSO": {
+                    "name": "Generoso",
+                    "id": "GENEROSO"
+                },
+                "ALEGRE": {
+                    "name": "Alegre",
+                    "id": "ALEGRE"
+                },
+                "COMPRENSIVO": {
+                    "id": "COMPRENSIVO",
+                    "name": "Comprensivo"
+                },
+                "AMABLE": {
+                    "id": "AMABLE",
+                    "name": "Amable"
+                },
+                "SENSATO": {
+                    "id": "SENSATO",
+                    "name": "Sensato"
+                },
+                "HONESTO": {
+                    "id": "HONESTO",
+                    "name": "Honesto"
+                },
+                "CREATIVO": {
+                    "name": "Creativo",
+                    "id": "CREATIVO"
+                }
+            }
+        },
+        "vacancy": {
+            "doubleRooms": 0,
+            "adults": 1,
+            "bedsAvailable": 0,
+            "children": 0,
+            "individualRooms": 2
+        },
+        "preferredAgeGroup": "NONE",
+        "shareWithGender": "OTHER",
+        "createdAt": 1708433698264,
+        "description": "3er piso exterior sin ascensor.\nDispone de una superficie de 71 m² distribuidos en 3 habitaciones, un luminoso salón-comedor (sin amueblar);  cocina amueblada y 1 baño con ducha y mampara. También tiene una terraza. \nSituado cerca de comercios, restaurantes, supermercados, centros educativos, centros sanitarios, zonas verdes; Renfe cercanías y paradas de autobús. Con acceso a la A-2 y la M-119.\nEn la casa hay 2 perretes; te puedes traer al tuyo también!\nTODOS LOS GASTOS INCLUIDOS MENOS WIFI\nSIN FIANZA\nNecesarias 3 últimas nóminas y contrato laboral.",
+        "childrenSituation": {
+            "PERIODICALLY_HAS_KIDS": false,
+            "DOESNT_HAVE_KIDS": true,
+            "HAS_KIDS": false,
+            "ELDER_PEOPLE": false
+        },
+        "taken": false,
+        "negotiable": true,
+        "id": "6026d8dc-053f-455f-b9e1-cd14bdd50898",
+        "title": "Busco compañero/a/s de piso. 2 HABITACIONES DISPONIBLES",
+        "areRoomsFurnished": false,
+        "images": [
+            "https://firebasestorage.googleapis.com/v0/b/tribbum-ffe98.appspot.com/o/tenements%2F3dbf3aa0-cfef-11ee-bd30-f1a990a6c266..jpg?alt=media&token=3fe15cfa-f8c5-4a10-93be-4c95f3869e5d"
+        ],
+        "traits": {
+            "HAS_LIFT": false,
+            "HAS_HEATING": true,
+            "SMOKING_ALLOWED": true,
+            "HAS_INTERNET": true,
+            "EXPENSES_INCLUDED": true,
+            "HAS_BALCONY": true,
+            "HAS_AIR_CONDITIONED": false,
+            "TAKES_PETS": true,
+            "HAS_OWN_BATH": true,
+            "HAS_DISHWASHER": false,
+            "NEAR_GREEN_ZONES": false,
+            "ALLOWS_SHORT_STAYS": false
+        },
+        "cost": 480
+    },
+    {
+        "areRoomsFurnished": false,
+        "owner": {
+            "traits": {
+                "HAS_PETS": false,
+                "EMPLOYED": false,
+                "SMOKES": false
+            },
+            "location": "barcelona",
+            "children": {
+                "ageRange": {
+                    "min": 0,
+                    "max": 3
+                },
+                "number": 1
+            },
+            "photoUrl": "https://firebasestorage.googleapis.com/v0/b/tribbum-ffe98.appspot.com/o/assets%2Fimg%2Fprofile%2F1691166506459..jpg?alt=media&token=bbf6d171-77eb-4cc3-a751-9e354bb4e4cc",
+            "province": "barcelona",
+            "gender": "FEMALE",
+            "hobbies": {},
+            "budget": {
+                "maximum": 409.8057543110644,
+                "minimum": 0
+            },
+            "occupation": {
+                "name": "Sales",
+                "id": "SALES"
+            },
+            "maritalStatus": "SINGLE",
+            "age": 28,
+            "personalityTraits": {
+                "OBSERVADOR": {
+                    "name": "Observador",
+                    "id": "OBSERVADOR"
+                },
+                "ALEGRE": {
+                    "name": "Alegre",
+                    "id": "ALEGRE"
+                },
+                "COMPRENSIVO": {
+                    "id": "COMPRENSIVO",
+                    "name": "Comprensivo"
+                },
+                "ATENTO": {
+                    "name": "Atento",
+                    "id": "ATENTO"
+                },
+                "CARINOSO": {
+                    "id": "CARINOSO",
+                    "name": "Cariñoso"
+                },
+                "AMABLE": {
+                    "id": "AMABLE",
+                    "name": "Amable"
+                },
+                "OPTIMISTA": {
+                    "id": "OPTIMISTA",
+                    "name": "Optimista"
+                }
+            },
+            "surname": "arnal",
+            "description": "soy Laia madre soltera de una niña de 3 años. solo la tengo dos semanas al mes",
+            "name": "laia",
+            "childrenSituation": "PERIODICALLY_HAS_KIDS",
+            "id": "8b733481-c860-41c9-99e7-4568984eb583"
+        },
+        "location": "",
+        "cost": 400,
+        "vacancy": {
+            "adults": 1,
+            "children": 0,
+            "doubleRooms": 1,
+            "bedsAvailable": 0,
+            "individualRooms": 0
+        },
+        "province": "barcelona",
+        "description": "Estpy buscando una perspna que quiera encontrar piso para alquilarlo juntas.",
+        "id": "65abd1b1-eb6b-425a-824d-ec750b581ec7",
+        "traits": {
+            "HAS_INTERNET": false,
+            "ALLOWS_SHORT_STAYS": false,
+            "HAS_AIR_CONDITIONED": false,
+            "HAS_HEATING": false,
+            "SMOKING_ALLOWED": false,
+            "HAS_OWN_BATH": false,
+            "HAS_DISHWASHER": false,
+            "TAKES_PETS": false,
+            "NEAR_GREEN_ZONES": false,
+            "HAS_BALCONY": false,
+            "EXPENSES_INCLUDED": false,
+            "HAS_LIFT": false
+        },
+        "childrenSituation": {
+            "HAS_KIDS": false,
+            "PERIODICALLY_HAS_KIDS": true,
+            "DOESNT_HAVE_KIDS": false,
+            "ELDER_PEOPLE": false
+        },
+        "preferredAgeGroup": "NONE",
+        "negotiable": true,
+        "createdAt": 1706900063980,
+        "images": [
+            "https://firebasestorage.googleapis.com/v0/b/tribbum-ffe98.appspot.com/o/tenements%2F8a6a2d10-353f-11ee-8533-35691262aa59..jpg?alt=media&token=2a5487c4-d3da-4a94-af1e-2d818c672343"
+        ],
+        "taken": false,
+        "title": "alquilar piso compartido",
+        "shareWithGender": "FEMALE"
+    },
+    {
+        "images": [],
+        "taken": false,
+        "location": "Bollullos de la Mitación ",
+        "province": "sevilla",
+        "cost": 300,
+        "owner": {
+            "id": "e1c4981b-5afc-4cd4-a171-ce1bb2a3836e",
+            "childrenSituation": "DOESNT_HAVE_KIDS",
+            "name": "Jesús Lucas",
+            "photoUrl": "",
+            "children": {
+                "number": 0,
+                "ageRange": null
+            },
+            "hobbies": {
+                "BOOK_LOVER": {
+                    "name": "Book Lover",
+                    "id": "BOOK_LOVER"
+                },
+                "PAINTING": {
+                    "name": "Painting",
+                    "id": "PAINTING"
+                }
+            },
+            "description": "",
+            "maritalStatus": "SINGLE",
+            "traits": {
+                "EMPLOYED": false,
+                "HAS_PETS": false,
+                "SMOKES": true
+            },
+            "age": 55,
+            "location": "Bollullos de la Mitación ",
+            "gender": "MALE",
+            "surname": "Suárez Sánchez",
+            "occupation": {
+                "id": "OTHERS",
+                "name": "Others"
+            },
+            "province": "sevilla",
+            "personalityTraits": {
+                "ATENTO": {
+                    "id": "ATENTO",
+                    "name": "Atento"
+                }
+            },
+            "budget": {
+                "minimum": 0,
+                "maximum": 1000
+            }
+        },
+        "id": "6a408836-389e-49d0-8ca4-e5abff251441",
+        "createdAt": 1706900063981,
+        "description": "Casa unifamiliar ",
+        "areRoomsFurnished": false,
+        "shareWithGender": "FEMALE",
+        "preferredAgeGroup": "NONE",
+        "negotiable": false,
+        "childrenSituation": {
+            "PERIODICALLY_HAS_KIDS": false,
+            "HAS_KIDS": false,
+            "DOESNT_HAVE_KIDS": true,
+            "ELDER_PEOPLE": false
+        },
+        "traits": {
+            "TAKES_PETS": false,
+            "HAS_BALCONY": true,
+            "SMOKING_ALLOWED": true,
+            "ALLOWS_SHORT_STAYS": false,
+            "HAS_OWN_BATH": false,
+            "HAS_INTERNET": true,
+            "EXPENSES_INCLUDED": false,
+            "HAS_DISHWASHER": false,
+            "HAS_LIFT": false,
+            "NEAR_GREEN_ZONES": false,
+            "HAS_HEATING": false,
+            "HAS_AIR_CONDITIONED": false
+        },
+        "title": "Comparto mi casa",
+        "vacancy": {
+            "children": 0,
+            "bedsAvailable": 0,
+            "individualRooms": 2,
+            "adults": 1,
+            "doubleRooms": 0
+        }
+    },
+    {
+        "negotiable": false,
+        "childrenSituation": {
+            "ELDER_PEOPLE": false,
+            "HAS_KIDS": false,
+            "PERIODICALLY_HAS_KIDS": false,
+            "DOESNT_HAVE_KIDS": true
+        },
+        "preferredAgeGroup": "BETWEEN_35_AND_49",
+        "images": [
+            "https://firebasestorage.googleapis.com/v0/b/tribbum-ffe98.appspot.com/o/tenements%2F8e16d180-6059-11ee-a5eb-ff58bb61b1a8..jpg?alt=media&token=c2ddf030-840b-4653-904a-d9d74240e6cf"
+        ],
+        "owner": {
+            "age": 43,
+            "childrenSituation": "PERIODICALLY_HAS_KIDS",
+            "name": "Noelia",
+            "traits": {
+                "HAS_PETS": false,
+                "SMOKES": false,
+                "EMPLOYED": true
+            },
+            "budget": {
+                "maximum": 1000,
+                "minimum": 0
+            },
+            "personalityTraits": {
+                "CREATIVO": {
+                    "id": "CREATIVO",
+                    "name": "Creativo"
+                },
+                "VALIENTE": {
+                    "id": "VALIENTE",
+                    "name": "Valiente"
+                },
+                "INDEPENDIENTE": {
+                    "name": "Independiente",
+                    "id": "INDEPENDIENTE"
+                },
+                "SEGURO": {
+                    "id": "SEGURO",
+                    "name": "Seguro"
+                },
+                "SENTIMENTAL": {
+                    "name": "Sentimental",
+                    "id": "SENTIMENTAL"
+                },
+                "EXTROVERTIDO": {
+                    "id": "EXTROVERTIDO",
+                    "name": "Extrovertido"
+                },
+                "REFLEXIVO": {
+                    "name": "Reflexivo",
+                    "id": "REFLEXIVO"
+                },
+                "AMABLE": {
+                    "id": "AMABLE",
+                    "name": "Amable"
+                },
+                "CURIOSO": {
+                    "id": "CURIOSO",
+                    "name": "Curioso"
+                },
+                "OPTIMISTA": {
+                    "id": "OPTIMISTA",
+                    "name": "Optimista"
+                },
+                "PROTECTOR": {
+                    "id": "PROTECTOR",
+                    "name": "Protector"
+                },
+                "ORGANIZADO": {
+                    "id": "ORGANIZADO",
+                    "name": "Organizado"
+                },
+                "OBSERVADOR": {
+                    "name": "Observador",
+                    "id": "OBSERVADOR"
+                },
+                "HONESTO": {
+                    "id": "HONESTO",
+                    "name": "Honesto"
+                }
+            },
+            "surname": "Pedretti",
+            "location": "Barcelona ",
+            "hobbies": {
+                "GARDENING": {
+                    "name": "Gardening",
+                    "id": "GARDENING"
+                },
+                "SPORTY": {
+                    "name": "Sporty",
+                    "id": "SPORTY"
+                },
+                "BOOK_LOVER": {
+                    "id": "BOOK_LOVER",
+                    "name": "Book Lover"
+                },
+                "MORNING_PERSON": {
+                    "name": "Morning person",
+                    "id": "MORNING_PERSON"
+                },
+                "DANCING": {
+                    "id": "DANCING",
+                    "name": "Dancing"
+                },
+                "COOKING": {
+                    "name": "Cooking",
+                    "id": "COOKING"
+                },
+                "HEALTHY_LIFESTYLE": {
+                    "name": "Healthy Lifestyle",
+                    "id": "HEALTHY_LIFESTYLE"
+                },
+                "PLAY_INSTRUMENT": {
+                    "id": "PLAY_INSTRUMENT",
+                    "name": "Play an instrument"
+                },
+                "PAINTING": {
+                    "name": "Painting",
+                    "id": "PAINTING"
+                },
+                "HOME_LOVING": {
+                    "id": "HOME_LOVING",
+                    "name": "Home-loving"
+                },
+                "YOGA_MEDITATION": {
+                    "name": "Yoga and Meditation",
+                    "id": "YOGA_MEDITATION"
+                }
+            },
+            "children": {
+                "number": 1,
+                "ageRange": {
+                    "min": 0,
+                    "max": 8
+                }
+            },
+            "maritalStatus": "SINGLE",
+            "description": "Argentina e italiana, viviendo en Barcelona desde el 2015.\nseparada, mi hija esta una semana con cada uno.\nejerzo como terapeuta emocional \namo el mar, la musica, la bici, patinar y cocinar.",
+            "photoUrl": "https://firebasestorage.googleapis.com/v0/b/tribbum-ffe98.appspot.com/o/assets%2Fimg%2Fprofile%2FValue(Right(06bd7720-6059-11ee-af36-5b3cf03cffb1))..jpg?alt=media&token=fe74da74-c605-4be9-8ac0-d62a44068797",
+            "province": "barcelona",
+            "id": "6eca1341-b3f7-439a-95ce-e017ce51e933",
+            "occupation": {
+                "id": "SALES",
+                "name": "Sales"
+            },
+            "gender": "FEMALE"
+        },
+        "taken": false,
+        "cost": 500,
+        "province": "barcelona",
+        "createdAt": 1706900063983,
+        "vacancy": {
+            "individualRooms": 0,
+            "children": 0,
+            "adults": 1,
+            "bedsAvailable": 0,
+            "doubleRooms": 1
+        },
+        "traits": {
+            "TAKES_PETS": false,
+            "HAS_AIR_CONDITIONED": false,
+            "SMOKING_ALLOWED": false,
+            "HAS_DISHWASHER": false,
+            "HAS_BALCONY": false,
+            "EXPENSES_INCLUDED": false,
+            "ALLOWS_SHORT_STAYS": true,
+            "NEAR_GREEN_ZONES": true,
+            "HAS_LIFT": true,
+            "HAS_HEATING": false,
+            "HAS_INTERNET": true,
+            "HAS_OWN_BATH": false
+        },
+        "location": "clot",
+        "title": "Sólo se alquila por día ",
+        "areRoomsFurnished": true,
+        "shareWithGender": "FEMALE",
+        "id": "9a13eb74-740c-402a-bf04-0aa1753e5de0",
+        "description": "Máximo una semana. \nlas semanas que mi hija está con su papá "
+    },
+    {
+        "childrenSituation": {
+            "ELDER_PEOPLE": false,
+            "DOESNT_HAVE_KIDS": true,
+            "PERIODICALLY_HAS_KIDS": false,
+            "HAS_KIDS": false
+        },
+        "createdAt": 1706900063985,
+        "id": "9c156e4d-33f4-4bcc-8f6b-0902998b42dc",
+        "location": "Cornella de Llobregat",
+        "cost": 500,
+        "shareWithGender": "OTHER",
+        "description": "",
+        "owner": {
+            "maritalStatus": "SINGLE",
+            "location": "Cornella de Llobregat ",
+            "personalityTraits": {
+                "TRANQUILO": {
+                    "id": "TRANQUILO",
+                    "name": "Tranquilo"
+                },
+                "SEGURO": {
+                    "id": "SEGURO",
+                    "name": "Seguro"
+                },
+                "ORGANIZADO": {
+                    "id": "ORGANIZADO",
+                    "name": "Organizado"
+                }
+            },
+            "surname": "Gomez",
+            "childrenSituation": "PERIODICALLY_HAS_KIDS",
+            "children": {
+                "ageRange": {
+                    "max": 8,
+                    "min": 0
+                },
+                "number": 1
+            },
+            "photoUrl": "https://firebasestorage.googleapis.com/v0/b/tribbum-ffe98.appspot.com/o/assets%2Fimg%2Fprofile%2F1684330453776..jpg?alt=media&token=02912cda-7494-47e5-9dbe-a0d147f9f29d",
+            "gender": "MALE",
+            "budget": {
+                "minimum": 0,
+                "maximum": 1000
+            },
+            "province": "barcelona",
+            "age": 37,
+            "hobbies": {
+                "SPORTY": {
+                    "id": "SPORTY",
+                    "name": "Sporty"
+                },
+                "HEALTHY_LIFESTYLE": {
+                    "name": "Healthy Lifestyle",
+                    "id": "HEALTHY_LIFESTYLE"
+                }
+            },
+            "traits": {
+                "EMPLOYED": true,
+                "HAS_PETS": false,
+                "SMOKES": false
+            },
+            "description": "Tengo una niña de 8 años que vive en el domicilio por semanas alternas. por mi situación laboral apenas estoy en casa por lo que la mayoría del tiempo está vacía. Mi premisa en el domicilio es el orden, la limpieza, el buen ambiente y la tranquilidad",
+            "name": "EDU",
+            "id": "042334cd-5895-4448-ae4f-5a332ba3fb34",
+            "occupation": {
+                "name": "Others",
+                "id": "OTHERS"
+            }
+        },
+        "images": [
+            "https://firebasestorage.googleapis.com/v0/b/tribbum-ffe98.appspot.com/o/tenements%2F7d84fae0-f54c-11ed-ad09-33e2d0d29edd..jpg?alt=media&token=a912c0e0-b7c5-4f66-87d6-256c2e666f25",
+            "https://firebasestorage.googleapis.com/v0/b/tribbum-ffe98.appspot.com/o/tenements%2F7f7bc1d0-f54c-11ed-bea6-197c1f0b44e7..jpg?alt=media&token=f160fa7e-7a2a-4fb2-9bab-1db523a338ed"
+        ],
+        "areRoomsFurnished": true,
+        "negotiable": false,
+        "traits": {
+            "HAS_BALCONY": true,
+            "TAKES_PETS": false,
+            "NEAR_GREEN_ZONES": true,
+            "SMOKING_ALLOWED": false,
+            "HAS_OWN_BATH": true,
+            "HAS_AIR_CONDITIONED": true,
+            "HAS_LIFT": false,
+            "ALLOWS_SHORT_STAYS": false,
+            "HAS_INTERNET": true,
+            "EXPENSES_INCLUDED": false,
+            "HAS_HEATING": true,
+            "HAS_DISHWASHER": true
+        },
+        "province": "barcelona",
+        "preferredAgeGroup": "NONE",
+        "title": "CASA BAJA TOTALMENTE REFORMADA A ESTRENAR",
+        "vacancy": {
+            "individualRooms": 0,
+            "adults": 1,
+            "children": 0,
+            "doubleRooms": 1,
+            "bedsAvailable": 0
+        },
+        "taken": false
+    },
+    {
+        "location": "betanzos ",
+        "description": "buena habitación de 30 m2\n",
+        "vacancy": {
+            "bedsAvailable": 0,
+            "doubleRooms": 1,
+            "individualRooms": 0,
+            "children": 0,
+            "adults": 1
+        },
+        "id": "a14da205-3dda-4024-a81d-31395b3ec5c7",
+        "createdAt": 1706900063987,
+        "negotiable": false,
+        "owner": {
+            "name": "Pedro",
+            "description": "Hola a todos, soy Padre soltero recién separado, me gustaría compartir casa con otros padres con niños que tengan turnos de visita. gracias",
+            "children": {
+                "ageRange": {
+                    "max": 6,
+                    "min": 0
+                },
+                "number": 2
+            },
+            "gender": "MALE",
+            "province": "cadiz",
+            "occupation": {
+                "id": "ENGINEERING",
+                "name": "Engineering"
+            },
+            "photoUrl": "https://firebasestorage.googleapis.com/v0/b/tribbum-ffe98.appspot.com/o/assets%2Fimg%2Fprofile%2F1622057572814..jpg?alt=media&token=ea3402b7-ec7c-44ca-b896-d1425e25f949",
+            "surname": "Lopez",
+            "hobbies": {
+                "PAINTING": {
+                    "id": "PAINTING",
+                    "name": "Painting"
+                },
+                "PLAY_INSTRUMENT": {
+                    "name": "Play an instrument",
+                    "id": "PLAY_INSTRUMENT"
+                },
+                "MORNING_PERSON": {
+                    "id": "MORNING_PERSON",
+                    "name": "Morning person"
+                },
+                "SPORTY": {
+                    "name": "Sporty",
+                    "id": "SPORTY"
+                }
+            },
+            "childrenSituation": "HAS_KIDS",
+            "traits": {
+                "SMOKES": false,
+                "HAS_PETS": false,
+                "EMPLOYED": true
+            },
+            "id": "ed2d3a6f-c460-4535-a60c-52215fef79ef",
+            "maritalStatus": "SINGLE",
+            "budget": {
+                "minimum": 471.3114754098361,
+                "maximum": 729.5081967213115
+            },
+            "age": 36,
+            "location": "Coin",
+            "personalityTraits": {
+                "NERVIOSO": {
+                    "name": "Nervioso",
+                    "id": "NERVIOSO"
+                },
+                "ALEGRE": {
+                    "name": "Alegre",
+                    "id": "ALEGRE"
+                },
+                "COMPRENSIVO": {
+                    "name": "Comprensivo",
+                    "id": "COMPRENSIVO"
+                },
+                "ENERGICO": {
+                    "id": "ENERGICO",
+                    "name": "Enérgico"
+                },
+                "FLEXIBLE": {
+                    "id": "FLEXIBLE",
+                    "name": "Flexible"
+                },
+                "SENTIMENTAL": {
+                    "id": "SENTIMENTAL",
+                    "name": "Sentimental"
+                },
+                "AMABLE": {
+                    "id": "AMABLE",
+                    "name": "Amable"
+                },
+                "OBSERVADOR": {
+                    "id": "OBSERVADOR",
+                    "name": "Observador"
+                },
+                "PACIENTE": {
+                    "id": "PACIENTE",
+                    "name": "Paciente"
+                },
+                "AMBICIOSO": {
+                    "name": "Ambicioso",
+                    "id": "AMBICIOSO"
+                }
+            }
+        },
+        "preferredAgeGroup": "NONE",
+        "cost": 250,
+        "areRoomsFurnished": false,
+        "traits": {
+            "HAS_OWN_BATH": true,
+            "HAS_LIFT": false,
+            "HAS_INTERNET": false,
+            "NEAR_GREEN_ZONES": false,
+            "HAS_HEATING": false,
+            "SMOKING_ALLOWED": false,
+            "TAKES_PETS": false,
+            "ALLOWS_SHORT_STAYS": true,
+            "HAS_AIR_CONDITIONED": false,
+            "HAS_DISHWASHER": true,
+            "HAS_BALCONY": true,
+            "EXPENSES_INCLUDED": false
+        },
+        "shareWithGender": "OTHER",
+        "childrenSituation": {
+            "DOESNT_HAVE_KIDS": true,
+            "ELDER_PEOPLE": false,
+            "PERIODICALLY_HAS_KIDS": false,
+            "HAS_KIDS": false
+        },
+        "images": [],
+        "taken": false,
+        "title": "habitación doble ",
+        "province": "a_coruna"
+    },
+    {
+        "id": "a3384b97-b471-445c-8036-7ee1c445a86a",
+        "description": "bonito dulplex para compartir con otra madre separada con hij@ como yo.",
+        "owner": {
+            "personalityTraits": {
+                "VALIENTE": {
+                    "id": "VALIENTE",
+                    "name": "Valiente"
+                }
+            },
+            "location": "la roca del valles",
+            "budget": {
+                "minimum": 499.71829927884613,
+                "maximum": 1000
+            },
+            "occupation": {
+                "id": "OTHERS",
+                "name": "Others"
+            },
+            "name": "vanessa",
+            "description": "hola tengo un bonito duplex y me interesaria\n comparto con madre separa en misma situación",
+            "gender": "FEMALE",
+            "photoUrl": "",
+            "surname": "Santos diez",
+            "id": "3b7ce85d-c47e-4e81-9a98-cd616df98a80",
+            "childrenSituation": "HAS_KIDS",
+            "traits": {
+                "HAS_PETS": false,
+                "EMPLOYED": true,
+                "SMOKES": false
+            },
+            "province": "barcelona",
+            "maritalStatus": "SINGLE",
+            "hobbies": {
+                "GARDENING": {
+                    "name": "Gardening",
+                    "id": "GARDENING"
+                }
+            },
+            "children": {
+                "ageRange": {
+                    "max": 18,
+                    "min": 8
+                },
+                "number": 1
+            },
+            "age": 41
+        },
+        "taken": false,
+        "vacancy": {
+            "children": 0,
+            "doubleRooms": 2,
+            "adults": 1,
+            "individualRooms": 1,
+            "bedsAvailable": 0
+        },
+        "preferredAgeGroup": "NONE",
+        "traits": {
+            "SMOKING_ALLOWED": false,
+            "HAS_HEATING": true,
+            "NEAR_GREEN_ZONES": false,
+            "HAS_DISHWASHER": false,
+            "HAS_AIR_CONDITIONED": true,
+            "ALLOWS_SHORT_STAYS": false,
+            "HAS_OWN_BATH": false,
+            "TAKES_PETS": false,
+            "HAS_BALCONY": true,
+            "EXPENSES_INCLUDED": false,
+            "HAS_LIFT": false,
+            "HAS_INTERNET": false
+        },
+        "province": "barcelona",
+        "createdAt": 1700837947203,
+        "location": "la roca del valles",
+        "shareWithGender": "OTHER",
+        "areRoomsFurnished": true,
+        "images": [],
+        "cost": 400,
+        "childrenSituation": {
+            "ELDER_PEOPLE": false,
+            "DOESNT_HAVE_KIDS": false,
+            "PERIODICALLY_HAS_KIDS": false,
+            "HAS_KIDS": true
+        },
+        "title": "piso para compartir",
+        "negotiable": true
+    },
+    {
+        "location": "Barcelona ",
+        "owner": {
+            "occupation": {
+                "name": "Sales",
+                "id": "SALES"
+            },
+            "maritalStatus": "SINGLE",
+            "traits": {
+                "SMOKES": true,
+                "HAS_PETS": true,
+                "EMPLOYED": true
+            },
+            "surname": "Paradell",
+            "location": "Barcelona",
+            "province": "barcelona",
+            "gender": "FEMALE",
+            "description": "Mamá de 2 niños a tiempo parcial, trabajadora, honesta y limpia. Soy vegetariana y también tengo 2 gatitos. Busco piso para ir a vivir con alguien.",
+            "childrenSituation": "PERIODICALLY_HAS_KIDS",
+            "id": "dcb8e728-83ad-4a12-a589-59d1d68740cc",
+            "budget": {
+                "maximum": 530.2144100791529,
+                "minimum": 406.4327485380117
+            },
+            "hobbies": {
+                "DANCING": {
+                    "id": "DANCING",
+                    "name": "Dancing"
+                },
+                "YOGA_MEDITATION": {
+                    "name": "Yoga and Meditation",
+                    "id": "YOGA_MEDITATION"
+                },
+                "HEALTHY_LIFESTYLE": {
+                    "name": "Healthy Lifestyle",
+                    "id": "HEALTHY_LIFESTYLE"
+                },
+                "SLEEPING": {
+                    "name": "Sleeping",
+                    "id": "SLEEPING"
+                }
+            },
+            "photoUrl": "https://firebasestorage.googleapis.com/v0/b/tribbum-ffe98.appspot.com/o/assets%2Fimg%2Fprofile%2F1697045846034..jpg?alt=media&token=38c42064-8604-4779-a85f-1b383f570938",
+            "children": {
+                "number": 2,
+                "ageRange": {
+                    "min": 7,
+                    "max": 10
+                }
+            },
+            "personalityTraits": {
+                "INDEPENDIENTE": {
+                    "id": "INDEPENDIENTE",
+                    "name": "Independiente"
+                },
+                "ALEGRE": {
+                    "id": "ALEGRE",
+                    "name": "Alegre"
+                },
+                "SEGURO": {
+                    "id": "SEGURO",
+                    "name": "Seguro"
+                },
+                "SENTIMENTAL": {
+                    "name": "Sentimental",
+                    "id": "SENTIMENTAL"
+                },
+                "HONESTO": {
+                    "name": "Honesto",
+                    "id": "HONESTO"
+                },
+                "AMABLE": {
+                    "name": "Amable",
+                    "id": "AMABLE"
+                },
+                "OBSERVADOR": {
+                    "name": "Observador",
+                    "id": "OBSERVADOR"
+                },
+                "ENERGICO": {
+                    "id": "ENERGICO",
+                    "name": "Enérgico"
+                },
+                "VALIENTE": {
+                    "id": "VALIENTE",
+                    "name": "Valiente"
+                },
+                "AMBICIOSO": {
+                    "name": "Ambicioso",
+                    "id": "AMBICIOSO"
+                },
+                "ESPONTANEO": {
+                    "name": "Espontáneo",
+                    "id": "ESPONTANEO"
+                },
+                "FLEXIBLE": {
+                    "name": "Flexible",
+                    "id": "FLEXIBLE"
+                }
+            },
+            "name": "Aitana",
+            "age": 35
+        },
+        "cost": 500,
+        "childrenSituation": {
+            "PERIODICALLY_HAS_KIDS": false,
+            "ELDER_PEOPLE": false,
+            "HAS_KIDS": false,
+            "DOESNT_HAVE_KIDS": true
+        },
+        "shareWithGender": "FEMALE",
+        "images": [
+            "https://firebasestorage.googleapis.com/v0/b/tribbum-ffe98.appspot.com/o/tenements%2F1023c620-7436-11ee-b8a3-e1d630042458..jpg?alt=media&token=5dbea6c7-6a18-4da9-9d49-821aabba23c4"
+        ],
+        "areRoomsFurnished": true,
+        "taken": false,
+        "traits": {
+            "HAS_HEATING": true,
+            "ALLOWS_SHORT_STAYS": false,
+            "TAKES_PETS": false,
+            "HAS_OWN_BATH": true,
+            "HAS_AIR_CONDITIONED": false,
+            "HAS_LIFT": true,
+            "HAS_DISHWASHER": false,
+            "NEAR_GREEN_ZONES": false,
+            "SMOKING_ALLOWED": false,
+            "HAS_INTERNET": true,
+            "HAS_BALCONY": true,
+            "EXPENSES_INCLUDED": true
+        },
+        "negotiable": false,
+        "title": "Habitación individual con baño privado",
+        "preferredAgeGroup": "NONE",
+        "description": "Buenas! Busco compañera de piso, es una habitación preciosa y soleada con baño privado. Contáctame si no te importa convivir con 2 gatos y 2 niños (custodia compartida, así que solo están 15 días por mes). \nYo soy persona tranquila y limpia. Si tu también lo eres, hablemos!\n1 mes de fianza por adelantado \n",
+        "province": "barcelona",
+        "vacancy": {
+            "individualRooms": 1,
+            "bedsAvailable": 0,
+            "children": 0,
+            "adults": 1,
+            "doubleRooms": 0
+        },
+        "id": "c91c2d46-9982-449d-8a81-239350ae7329",
+        "createdAt": 1698348615481
+    },
+    {
+        "location": "Clot",
+        "id": "c91f23c1-aa98-42e9-abe0-28180cd86c01",
+        "taken": false,
+        "createdAt": 1702239837968,
+        "province": "barcelona",
+        "preferredAgeGroup": "UP_TO_35",
+        "owner": {
+            "maritalStatus": "SINGLE",
+            "name": "Noelia",
+            "surname": "pedretti",
+            "hobbies": {
+                "HEALTHY_LIFESTYLE": {
+                    "name": "Healthy Lifestyle",
+                    "id": "HEALTHY_LIFESTYLE"
+                },
+                "WRITING": {
+                    "id": "WRITING",
+                    "name": "Writing"
+                },
+                "PAINTING": {
+                    "id": "PAINTING",
+                    "name": "Painting"
+                },
+                "DANCING": {
+                    "name": "Dancing",
+                    "id": "DANCING"
+                },
+                "BOOK_LOVER": {
+                    "name": "Book Lover",
+                    "id": "BOOK_LOVER"
+                },
+                "COOKING": {
+                    "id": "COOKING",
+                    "name": "Cooking"
+                },
+                "YOGA_MEDITATION": {
+                    "name": "Yoga and Meditation",
+                    "id": "YOGA_MEDITATION"
+                },
+                "PLAY_INSTRUMENT": {
+                    "id": "PLAY_INSTRUMENT",
+                    "name": "Play an instrument"
+                },
+                "GARDENING": {
+                    "id": "GARDENING",
+                    "name": "Gardening"
+                },
+                "HOME_LOVING": {
+                    "id": "HOME_LOVING",
+                    "name": "Home-loving"
+                }
+            },
+            "description": "Argentina viviendo en Barcelona desde el 2015.\nSeparada con una hija de 9 años .\nAmante de la música, la bici, el mar, los libros y la cocina.\nTranquila, apasionada, hogareña y emprendedora.\nEl bienestar emocional y la Salud holística son mis cotidianos.",
+            "gender": "FEMALE",
+            "photoUrl": "https://firebasestorage.googleapis.com/v0/b/tribbum-ffe98.appspot.com/o/assets%2Fimg%2Fprofile%2F1702239669980..jpg?alt=media&token=ef45d162-747f-46a2-923c-d7f8af75dc69",
+            "traits": {
+                "HAS_PETS": false,
+                "SMOKES": false,
+                "EMPLOYED": true
+            },
+            "personalityTraits": {
+                "VALIENTE": {
+                    "name": "Valiente",
+                    "id": "VALIENTE"
+                },
+                "HONESTO": {
+                    "name": "Honesto",
+                    "id": "HONESTO"
+                },
+                "TRANQUILO": {
+                    "id": "TRANQUILO",
+                    "name": "Tranquilo"
+                },
+                "OPTIMISTA": {
+                    "id": "OPTIMISTA",
+                    "name": "Optimista"
+                },
+                "CURIOSO": {
+                    "name": "Curioso",
+                    "id": "CURIOSO"
+                },
+                "CREATIVO": {
+                    "id": "CREATIVO",
+                    "name": "Creativo"
+                },
+                "AMABLE": {
+                    "id": "AMABLE",
+                    "name": "Amable"
+                },
+                "OBSERVADOR": {
+                    "id": "OBSERVADOR",
+                    "name": "Observador"
+                },
+                "REFLEXIVO": {
+                    "id": "REFLEXIVO",
+                    "name": "Reflexivo"
+                },
+                "INDEPENDIENTE": {
+                    "name": "Independiente",
+                    "id": "INDEPENDIENTE"
+                },
+                "PROTECTOR": {
+                    "name": "Protector",
+                    "id": "PROTECTOR"
+                }
+            },
+            "id": "c26ecb21-12f3-46aa-9e70-cbca49a304af",
+            "province": "barcelona",
+            "location": "Barcelona ",
+            "children": {
+                "number": 1,
+                "ageRange": {
+                    "min": 8,
+                    "max": 10
+                }
+            },
+            "budget": {
+                "maximum": 1000,
+                "minimum": 449.54128440366975
+            },
+            "occupation": {
+                "name": "Sales",
+                "id": "SALES"
+            },
+            "age": 44,
+            "childrenSituation": "PERIODICALLY_HAS_KIDS"
+        },
+        "negotiable": false,
+        "images": [
+            "https://firebasestorage.googleapis.com/v0/b/tribbum-ffe98.appspot.com/o/tenements%2F0549bb60-979a-11ee-ad9e-a7c8b9068e0e..jpg?alt=media&token=89850a68-ec30-414f-b15a-323593a106c3",
+            "https://firebasestorage.googleapis.com/v0/b/tribbum-ffe98.appspot.com/o/tenements%2F063f6600-979a-11ee-a73a-d3481bfef30c..jpg?alt=media&token=4493e1d6-ad23-48ec-8d92-0721de2ec443",
+            "https://firebasestorage.googleapis.com/v0/b/tribbum-ffe98.appspot.com/o/tenements%2F07523590-979a-11ee-b58c-1fe04d76b596..jpg?alt=media&token=4ae3ea3c-b700-4f7a-9626-617f2373f9ea",
+            "https://firebasestorage.googleapis.com/v0/b/tribbum-ffe98.appspot.com/o/tenements%2F087c5db0-979a-11ee-abce-910adf4049f3..jpg?alt=media&token=92ca6ec5-7fac-4cf8-9b43-c65a5747daea",
+            "https://firebasestorage.googleapis.com/v0/b/tribbum-ffe98.appspot.com/o/tenements%2F0915de90-979a-11ee-8c23-513b5d90d0bb..jpg?alt=media&token=adf9a870-d939-4523-b981-df887b342179"
+        ],
+        "shareWithGender": "FEMALE",
+        "title": "Habitación interior a 6 calles de Sagrada Familia ",
+        "vacancy": {
+            "adults": 1,
+            "children": 0,
+            "bedsAvailable": 0,
+            "doubleRooms": 2,
+            "individualRooms": 0
+        },
+        "description": "",
+        "cost": 400,
+        "areRoomsFurnished": true,
+        "traits": {
+            "HAS_LIFT": true,
+            "HAS_OWN_BATH": false,
+            "EXPENSES_INCLUDED": false,
+            "HAS_AIR_CONDITIONED": false,
+            "HAS_BALCONY": false,
+            "NEAR_GREEN_ZONES": true,
+            "ALLOWS_SHORT_STAYS": true,
+            "TAKES_PETS": false,
+            "HAS_INTERNET": true,
+            "HAS_DISHWASHER": false,
+            "SMOKING_ALLOWED": false,
+            "HAS_HEATING": true
+        },
+        "childrenSituation": {
+            "ELDER_PEOPLE": false,
+            "PERIODICALLY_HAS_KIDS": false,
+            "DOESNT_HAVE_KIDS": true,
+            "HAS_KIDS": false
+        }
+    },
+    {
+        "title": "habitacion en alquiler en Valldoreix \"gastos incluidos\"",
+        "createdAt": 1709491080763,
+        "childrenSituation": {
+            "ELDER_PEOPLE": false,
+            "HAS_KIDS": false,
+            "DOESNT_HAVE_KIDS": true,
+            "PERIODICALLY_HAS_KIDS": true
+        },
+        "cost": 400,
+        "preferredAgeGroup": "UP_TO_35",
+        "images": [],
+        "description": "Habitacion individual en alquiler en valldoreix (Sant Cugat del Vallès), casa con ambiente tranquilo y familiar con vistas a la montaña. Gastos pagados \nen la casa solo vivo yo y mis dos hijos (un peque de 6 y una mayor de 15 años. Tenemos una gatita.",
+        "taken": false,
+        "shareWithGender": "FEMALE",
+        "traits": {
+            "NEAR_GREEN_ZONES": false,
+            "HAS_BALCONY": false,
+            "ALLOWS_SHORT_STAYS": false,
+            "SMOKING_ALLOWED": false,
+            "HAS_INTERNET": false,
+            "EXPENSES_INCLUDED": true,
+            "HAS_OWN_BATH": false,
+            "HAS_AIR_CONDITIONED": false,
+            "HAS_HEATING": true,
+            "HAS_DISHWASHER": false,
+            "HAS_LIFT": false,
+            "TAKES_PETS": false
+        },
+        "owner": {
+            "province": "barcelona",
+            "location": "valldoreix",
+            "id": "34e9b1d9-4f19-4309-bca1-5f6c9a266e7d",
+            "surname": "Gómez",
+            "description": "",
+            "hobbies": {
+                "HEALTHY_LIFESTYLE": {
+                    "id": "HEALTHY_LIFESTYLE",
+                    "name": "Healthy Lifestyle"
+                },
+                "COOKING": {
+                    "id": "COOKING",
+                    "name": "Cooking"
+                },
+                "GARDENING": {
+                    "name": "Gardening",
+                    "id": "GARDENING"
+                },
+                "FASHION": {
+                    "name": "Fashion",
+                    "id": "FASHION"
+                },
+                "PAINTING": {
+                    "name": "Painting",
+                    "id": "PAINTING"
+                },
+                "WRITING": {
+                    "name": "Writing",
+                    "id": "WRITING"
+                }
+            },
+            "occupation": {
+                "id": "ADMINISTRATION",
+                "name": "Administration"
+            },
+            "children": {
+                "ageRange": {
+                    "max": 15,
+                    "min": 6
+                },
+                "number": 2
+            },
+            "gender": "FEMALE",
+            "traits": {
+                "EMPLOYED": false,
+                "HAS_PETS": true,
+                "SMOKES": false
+            },
+            "maritalStatus": "SINGLE",
+            "budget": {
+                "minimum": 392.4123612661211,
+                "maximum": 482.27803871114423
+            },
+            "childrenSituation": "HAS_KIDS",
+            "photoUrl": "",
+            "age": 33,
+            "name": "Pahola",
+            "personalityTraits": {
+                "CREATIVO": {
+                    "name": "Creativo",
+                    "id": "CREATIVO"
+                },
+                "GENEROSO": {
+                    "name": "Generoso",
+                    "id": "GENEROSO"
+                },
+                "CURIOSO": {
+                    "id": "CURIOSO",
+                    "name": "Curioso"
+                },
+                "AMABLE": {
+                    "name": "Amable",
+                    "id": "AMABLE"
+                },
+                "ORGANIZADO": {
+                    "id": "ORGANIZADO",
+                    "name": "Organizado"
+                },
+                "ALEGRE": {
+                    "name": "Alegre",
+                    "id": "ALEGRE"
+                },
+                "HONESTO": {
+                    "id": "HONESTO",
+                    "name": "Honesto"
+                },
+                "ATENTO": {
+                    "name": "Atento",
+                    "id": "ATENTO"
+                },
+                "INDEPENDIENTE": {
+                    "name": "Independiente",
+                    "id": "INDEPENDIENTE"
+                },
+                "COMPRENSIVO": {
+                    "id": "COMPRENSIVO",
+                    "name": "Comprensivo"
+                },
+                "OBSERVADOR": {
+                    "name": "Observador",
+                    "id": "OBSERVADOR"
+                },
+                "INQUIETO": {
+                    "id": "INQUIETO",
+                    "name": "Inquieto"
+                },
+                "PACIENTE": {
+                    "id": "PACIENTE",
+                    "name": "Paciente"
+                },
+                "HUMILDE": {
+                    "id": "HUMILDE",
+                    "name": "Humilde"
+                },
+                "ESPONTANEO": {
+                    "id": "ESPONTANEO",
+                    "name": "Espontáneo"
+                },
+                "ANALITICO": {
+                    "id": "ANALITICO",
+                    "name": "Analítico"
+                },
+                "VALIENTE": {
+                    "name": "Valiente",
+                    "id": "VALIENTE"
+                }
+            }
+        },
+        "areRoomsFurnished": true,
+        "province": "barcelona",
+        "id": "dd6ab349-46c2-4f15-a797-bb7e51cfac94",
+        "location": "sant cugat del valles ",
+        "negotiable": false,
+        "vacancy": {
+            "individualRooms": 1,
+            "adults": 1,
+            "bedsAvailable": 0,
+            "children": 0,
+            "doubleRooms": 0
+        }
+    },
+    {
+        "province": "girona",
+        "title": "alquilo habitacion ",
+        "createdAt": 1706900063998,
+        "description": "piso de 80m2, 3 habitaciones, zona muy tranquila y con todos los servicios disponibles, a 5 min. andando, supermercado, farmacia, bus, etc...",
+        "negotiable": true,
+        "childrenSituation": {
+            "ELDER_PEOPLE": false,
+            "HAS_KIDS": true,
+            "DOESNT_HAVE_KIDS": true,
+            "PERIODICALLY_HAS_KIDS": true
+        },
+        "areRoomsFurnished": true,
+        "location": "Cornellà del Terri centro ",
+        "preferredAgeGroup": "NONE",
+        "taken": false,
+        "traits": {
+            "HAS_AIR_CONDITIONED": false,
+            "EXPENSES_INCLUDED": true,
+            "HAS_LIFT": false,
+            "ALLOWS_SHORT_STAYS": false,
+            "HAS_BALCONY": true,
+            "TAKES_PETS": false,
+            "NEAR_GREEN_ZONES": true,
+            "HAS_HEATING": true,
+            "HAS_DISHWASHER": true,
+            "HAS_INTERNET": true,
+            "HAS_OWN_BATH": false,
+            "SMOKING_ALLOWED": false
+        },
+        "cost": 250,
+        "vacancy": {
+            "children": 0,
+            "bedsAvailable": 0,
+            "adults": 1,
+            "individualRooms": 1,
+            "doubleRooms": 1
+        },
+        "id": "e615c55d-3080-4568-8653-1d3cb9b661cd",
+        "images": [],
+        "shareWithGender": "FEMALE",
+        "owner": {
+            "personalityTraits": {
+                "AMABLE": {
+                    "name": "Amable",
+                    "id": "AMABLE"
+                },
+                "COMPRENSIVO": {
+                    "name": "Comprensivo",
+                    "id": "COMPRENSIVO"
+                },
+                "HONESTO": {
+                    "id": "HONESTO",
+                    "name": "Honesto"
+                }
+            },
+            "age": 44,
+            "childrenSituation": "HAS_KIDS",
+            "surname": "Espinar",
+            "children": {
+                "ageRange": {
+                    "min": 0,
+                    "max": 4
+                },
+                "number": 1
+            },
+            "occupation": {
+                "id": "OTHERS",
+                "name": "Others"
+            },
+            "gender": "FEMALE",
+            "id": "61ac3745-bfe2-47ae-8151-2ac312238ef7",
+            "name": "Carmen",
+            "maritalStatus": "SINGLE",
+            "province": "girona",
+            "location": "Cornellà del Terri ",
+            "traits": {
+                "HAS_PETS": false,
+                "EMPLOYED": true,
+                "SMOKES": false
+            },
+            "description": "",
+            "budget": {
+                "minimum": 0,
+                "maximum": 503.04024174528297
+            },
+            "hobbies": {
+                "HIKING": {
+                    "id": "HIKING",
+                    "name": "Hiking"
+                }
+            },
+            "photoUrl": ""
+        }
+    },
+    {
+        "traits": {
+            "HAS_HEATING": false,
+            "HAS_LIFT": true,
+            "HAS_OWN_BATH": false,
+            "ALLOWS_SHORT_STAYS": false,
+            "HAS_AIR_CONDITIONED": false,
+            "HAS_INTERNET": true,
+            "HAS_DISHWASHER": false,
+            "EXPENSES_INCLUDED": false,
+            "TAKES_PETS": true,
+            "HAS_BALCONY": true,
+            "SMOKING_ALLOWED": true,
+            "NEAR_GREEN_ZONES": false
+        },
+        "negotiable": false,
+        "location": "Plaza Universitat",
+        "title": "alquiler larga istancia - plaza universitar",
+        "createdAt": 1709470777558,
+        "shareWithGender": "OTHER",
+        "id": "e7c54a76-dde4-48e0-b826-8a5aa4d86300",
+        "taken": false,
+        "owner": {
+            "budget": {
+                "minimum": 0,
+                "maximum": 500
+            },
+            "id": "f520482e-ca72-49b4-8b6e-169f4f319add",
+            "surname": "Caccin",
+            "personalityTraits": {
+                "CURIOSO": {
+                    "name": "Curioso",
+                    "id": "CURIOSO"
+                },
+                "ALEGRE": {
+                    "name": "Alegre",
+                    "id": "ALEGRE"
+                },
+                "GENEROSO": {
+                    "name": "Generoso",
+                    "id": "GENEROSO"
+                },
+                "OPTIMISTA": {
+                    "id": "OPTIMISTA",
+                    "name": "Optimista"
+                },
+                "CREATIVO": {
+                    "name": "Creativo",
+                    "id": "CREATIVO"
+                },
+                "SEGURO": {
+                    "id": "SEGURO",
+                    "name": "Seguro"
+                },
+                "INDEPENDIENTE": {
+                    "id": "INDEPENDIENTE",
+                    "name": "Independiente"
+                },
+                "ENERGICO": {
+                    "id": "ENERGICO",
+                    "name": "Enérgico"
+                }
+            },
+            "hobbies": {
+                "YOGA_MEDITATION": {
+                    "id": "YOGA_MEDITATION",
+                    "name": "Yoga and Meditation"
+                },
+                "HEALTHY_LIFESTYLE": {
+                    "id": "HEALTHY_LIFESTYLE",
+                    "name": "Healthy Lifestyle"
+                },
+                "SPORTY": {
+                    "id": "SPORTY",
+                    "name": "Sporty"
+                },
+                "ADVENTURER": {
+                    "name": "Adventurer",
+                    "id": "ADVENTURER"
+                }
+            },
+            "occupation": {
+                "name": "Sales",
+                "id": "SALES"
+            },
+            "age": 37,
+            "traits": {
+                "EMPLOYED": false,
+                "HAS_PETS": false,
+                "SMOKES": false
+            },
+            "children": {
+                "ageRange": {
+                    "min": 0,
+                    "max": 6
+                },
+                "number": 1
+            },
+            "gender": "FEMALE",
+            "location": "Barcelona ",
+            "childrenSituation": "HAS_KIDS",
+            "name": "Giulia",
+            "province": "barcelona",
+            "description": "",
+            "photoUrl": "",
+            "maritalStatus": "IN_A_RELATIONSHIP"
+        },
+        "childrenSituation": {
+            "ELDER_PEOPLE": false,
+            "PERIODICALLY_HAS_KIDS": false,
+            "DOESNT_HAVE_KIDS": true,
+            "HAS_KIDS": false
+        },
+        "cost": 450,
+        "preferredAgeGroup": "BETWEEN_35_AND_49",
+        "vacancy": {
+            "children": 0,
+            "doubleRooms": 0,
+            "bedsAvailable": 0,
+            "individualRooms": 1,
+            "adults": 1
+        },
+        "images": [],
+        "areRoomsFurnished": false,
+        "province": "barcelona",
+        "description": "Hola!\nSomos Giulia, Piuquen y Gabriele.\n\nVivimos al lado de de Plaza Universidad, en una calle servida por los mayores supermercados y servido por paradas de metro/bus/tren con bares, restaurantes y tiendas locales. \n\nEl piso es de 170m2 y se encuentra en un entresuelo con ascensor, amplio y luminoso. \nCuenta con tres habitaciones dobles, una habitación singola, una sala de yoga de uso propio, una cocina amplia, dos baños, un comedor y un balcón alrededor de todo el piso. \n\nLa habitación que alquilamos es de 25m2 con balconcito. La alquilamos amueblada. \n\nNos sentimos una comunidad y nos gustaría compartir con un adulto funcional por el cual sea importante este punto. \n\nEstamos abiertos a acoger a personas de todos los géneros y nacionalidades."
+    },
+    {
+        "taken": false,
+        "createdAt": 1706900064002,
+        "description": "Buenos días busco habitación en Les corts soy familia monoparental o compartir un piso.",
+        "location": "Busco habitación en Les corts",
+        "areRoomsFurnished": true,
+        "negotiable": false,
+        "title": "Busco habitación en Les corts",
+        "childrenSituation": {
+            "DOESNT_HAVE_KIDS": false,
+            "HAS_KIDS": true,
+            "ELDER_PEOPLE": false,
+            "PERIODICALLY_HAS_KIDS": false
+        },
+        "preferredAgeGroup": "UP_TO_35",
+        "id": "ef31b5fe-3481-449d-aa05-7ffe0499f889",
+        "owner": {
+            "hobbies": {
+                "SPORTY": {
+                    "id": "SPORTY",
+                    "name": "Sporty"
+                },
+                "COOKING": {
+                    "name": "Cooking",
+                    "id": "COOKING"
+                },
+                "HOME_LOVING": {
+                    "name": "Home-loving",
+                    "id": "HOME_LOVING"
+                }
+            },
+            "surname": "Vega",
+            "personalityTraits": {
+                "INDEPENDIENTE": {
+                    "id": "INDEPENDIENTE",
+                    "name": "Independiente"
+                },
+                "TOLERANTE": {
+                    "name": "Tolerante",
+                    "id": "TOLERANTE"
+                },
+                "ALEGRE": {
+                    "name": "Alegre",
+                    "id": "ALEGRE"
+                },
+                "AMABLE": {
+                    "id": "AMABLE",
+                    "name": "Amable"
+                },
+                "COMPRENSIVO": {
+                    "id": "COMPRENSIVO",
+                    "name": "Comprensivo"
+                },
+                "HUMILDE": {
+                    "name": "Humilde",
+                    "id": "HUMILDE"
+                }
+            },
+            "budget": {
+                "minimum": 0,
+                "maximum": 399.74937307416127
+            },
+            "province": "barcelona",
+            "occupation": {
+                "name": "Unemployed",
+                "id": "UNEMPLOYED"
+            },
+            "children": {
+                "number": 1,
+                "ageRange": {
+                    "max": 18,
+                    "min": 0
+                }
+            },
+            "age": 26,
+            "id": "64279729-5709-480d-8e95-a031eacd44fb",
+            "gender": "FEMALE",
+            "name": "Adriana",
+            "photoUrl": "",
+            "location": "Barcelona Les corts",
+            "description": "Paraguaya con una preciosa hija catalana..",
+            "childrenSituation": "HAS_KIDS",
+            "traits": {
+                "EMPLOYED": false,
+                "SMOKES": false,
+                "HAS_PETS": false
+            },
+            "maritalStatus": "SINGLE"
+        },
+        "images": [],
+        "vacancy": {
+            "bedsAvailable": 0,
+            "doubleRooms": 1,
+            "individualRooms": 0,
+            "adults": 1,
+            "children": 0
+        },
+        "shareWithGender": "FEMALE",
+        "traits": {
+            "HAS_BALCONY": false,
+            "HAS_AIR_CONDITIONED": false,
+            "HAS_INTERNET": true,
+            "HAS_LIFT": true,
+            "HAS_HEATING": false,
+            "ALLOWS_SHORT_STAYS": false,
+            "EXPENSES_INCLUDED": true,
+            "NEAR_GREEN_ZONES": false,
+            "TAKES_PETS": false,
+            "SMOKING_ALLOWED": false,
+            "HAS_OWN_BATH": false,
+            "HAS_DISHWASHER": false
+        },
+        "cost": 400,
+        "province": "barcelona"
+    },
+    {
+        "createdAt": 1706900064006,
+        "areRoomsFurnished": false,
+        "vacancy": {
+            "individualRooms": 0,
+            "adults": 1,
+            "children": 0,
+            "bedsAvailable": 0,
+            "doubleRooms": 2
+        },
+        "cost": 550,
+        "id": "f8e0f619-d025-4108-b10c-aa292d04e0ae",
+        "childrenSituation": {
+            "HAS_KIDS": true,
+            "PERIODICALLY_HAS_KIDS": true,
+            "DOESNT_HAVE_KIDS": false,
+            "ELDER_PEOPLE": false
+        },
+        "taken": false,
+        "negotiable": false,
+        "location": "Olivella ",
+        "images": [
+            "https://firebasestorage.googleapis.com/v0/b/tribbum-ffe98.appspot.com/o/tenements%2Fa1a7a550-1511-11ee-9ce1-a5b5affb17e5..jpg?alt=media&token=acd89e75-18e5-42c5-b68f-95e47925000d",
+            "https://firebasestorage.googleapis.com/v0/b/tribbum-ffe98.appspot.com/o/tenements%2Fa3f6ec80-1511-11ee-b761-033a5ab097cb..jpg?alt=media&token=b9938244-65e4-4b6d-9111-f74ec4764b1f",
+            "https://firebasestorage.googleapis.com/v0/b/tribbum-ffe98.appspot.com/o/tenements%2Fa5473a40-1511-11ee-aa88-479b4b3e9760..jpg?alt=media&token=c1973c68-e07f-4cc0-956a-43dd091c476b",
+            "https://firebasestorage.googleapis.com/v0/b/tribbum-ffe98.appspot.com/o/tenements%2Fa673fa70-1511-11ee-ae20-0be58910f966..jpg?alt=media&token=6425d8c4-6b15-4e5d-93c2-b8931d69ad8c"
+        ],
+        "shareWithGender": "OTHER",
+        "traits": {
+            "HAS_BALCONY": true,
+            "HAS_LIFT": false,
+            "HAS_AIR_CONDITIONED": false,
+            "HAS_DISHWASHER": true,
+            "EXPENSES_INCLUDED": false,
+            "NEAR_GREEN_ZONES": true,
+            "SMOKING_ALLOWED": false,
+            "HAS_OWN_BATH": false,
+            "TAKES_PETS": true,
+            "HAS_HEATING": false,
+            "ALLOWS_SHORT_STAYS": false,
+            "HAS_INTERNET": true
+        },
+        "owner": {
+            "occupation": {
+                "id": "OTHERS",
+                "name": "Others"
+            },
+            "description": "catalana recién separada buscando opciones para poder pagar el\nhogar en el que estamos actualmente ",
+            "budget": {
+                "minimum": 0,
+                "maximum": 607.9234972677596
+            },
+            "province": "barcelona",
+            "age": 36,
+            "gender": "FEMALE",
+            "surname": "Martínez",
+            "name": "Laura",
+            "children": {
+                "number": 3,
+                "ageRange": {
+                    "min": 0,
+                    "max": 11
+                }
+            },
+            "photoUrl": "",
+            "traits": {
+                "HAS_PETS": true,
+                "SMOKES": false,
+                "EMPLOYED": true
+            },
+            "hobbies": {
+                "DANCING": {
+                    "id": "DANCING",
+                    "name": "Dancing"
+                },
+                "COOKING": {
+                    "name": "Cooking",
+                    "id": "COOKING"
+                },
+                "CINEPHILE": {
+                    "name": "Cinephile",
+                    "id": "CINEPHILE"
+                },
+                "BOOK_LOVER": {
+                    "id": "BOOK_LOVER",
+                    "name": "Book Lover"
+                }
+            },
+            "location": "Olivella ",
+            "id": "f4aac3fc-a6ae-4fa4-a5cf-eeefbf8033f3",
+            "personalityTraits": {
+                "HUMILDE": {
+                    "id": "HUMILDE",
+                    "name": "Humilde"
+                },
+                "TOLERANTE": {
+                    "name": "Tolerante",
+                    "id": "TOLERANTE"
+                },
+                "ESPONTANEO": {
+                    "id": "ESPONTANEO",
+                    "name": "Espontáneo"
+                },
+                "TRANQUILO": {
+                    "name": "Tranquilo",
+                    "id": "TRANQUILO"
+                },
+                "ALEGRE": {
+                    "id": "ALEGRE",
+                    "name": "Alegre"
+                },
+                "CURIOSO": {
+                    "id": "CURIOSO",
+                    "name": "Curioso"
+                },
+                "FLEXIBLE": {
+                    "name": "Flexible",
+                    "id": "FLEXIBLE"
+                }
+            },
+            "childrenSituation": "HAS_KIDS",
+            "maritalStatus": "SINGLE"
+        },
+        "description": "Casa de dos plantas, cocina amplia, mucho espacio exterior, huerto, piscina grande, barbacoa etc. Soy mamá separada con 3 peques ",
+        "province": "barcelona",
+        "title": "casa para compartir ",
+        "preferredAgeGroup": "NONE"
+    }
+]
