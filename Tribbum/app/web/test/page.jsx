@@ -28,7 +28,7 @@ const Test = () => {
     // getUserById
     // const data = await getUserById("000b4075-8d0f-4c6a-9857-b6472b1e0483");
 
-    const data = await getAllData("personalityTraits");
+    const data = await getAllData("groups");
     console.log(data)
   }
 

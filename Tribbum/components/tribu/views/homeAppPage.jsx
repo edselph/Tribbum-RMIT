@@ -17,6 +17,8 @@ import {
 } from "@/firebase/entities/tenements";
 import { set } from "date-fns";
 import HouseWrapper from "../molecules/houseWrapper";
+import GroupWrapper from "../molecules/groupWrapper";
+
 const HomeAppPage = () => {
   const [user, setUser] = useState(true); // to null
   const [userData, setUserData] = useState();
@@ -143,7 +145,10 @@ const HomeAppPage = () => {
           </Suspense>
         </div>
 
-        <div>
+        <h1 style={{ fontSize: '50px' }}>Groups</h1>
+
+        <div className="flex flex-col w-full h-[348px] items-center justify-center">
+
           {/* New component to be introduced here 
             
             * Based on how it's been done, "group" data must be mapped 
@@ -157,7 +162,11 @@ const HomeAppPage = () => {
               the "elements" directory as done with "homehouseCard.jsx"
           
           */}
-          <h1>Groups to be displayed here</h1>
+
+          <Suspense fallback={<div>Loading...</div>}>
+            <GroupWrapper toggleHouseSlideOver={toggleHouseSlideOver} />
+          </Suspense>
+
         </div>
 
 
