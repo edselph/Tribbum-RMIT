@@ -158,6 +158,14 @@ const HomeAppPage = () => {
           
           */}
           <h1>Groups to be displayed here</h1>
+          <div className="flex h-auto px-4 py-2 justify-end">
+            <Link href="tribu/create-new-group">
+              <button className="py-2 px-4 text-gray-50 font-medium
+               bg-tertiary-500 hover:bg-secondary-500 rounded-full cursor-pointer active:scale-95">
+                +
+              </button>
+            </Link>
+          </div>
         </div>
 
 
