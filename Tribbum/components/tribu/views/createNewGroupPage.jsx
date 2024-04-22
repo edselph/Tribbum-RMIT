@@ -4,7 +4,7 @@
 "use client"
 import React, { useState } from "react";
 
-const CreateNewGroupPage = () => {
+const createNewGroupPage = () => {
   const[group , setGroup] = useState("");
 
   const handleSubmit = (e) => {
@@ -31,7 +31,7 @@ const CreateNewGroupPage = () => {
             border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary-500/50"
             type="text"
           />
-          <button 
+          <button
             type="button"
             onClick={handleSubmit}
             className="flex w-auto h-auto py-2 px-4 text-gray-50 right-1
@@ -44,4 +44,4 @@ const CreateNewGroupPage = () => {
   );
 }
 
-export default CreateNewGroupPage;
+export default createNewGroupPage;
