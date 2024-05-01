@@ -1,0 +1,32 @@
+[
+    {
+        "id": "cmt001",
+        "userId": "user101",
+        "parentPostId": "3622de06-f5b7-4f96-bdbd-2d971ca8603a",
+        "body": "Interesting post!",
+        "timeOfSubmission": {
+            "seconds": 1686794428,
+            "nanoseconds": 468999000
+        }
+    },
+    {
+        "id": "cmt002",
+        "userId": "user102",
+        "parentPostId": "3622de06-f5b7-4f96-bdbd-2d971ca8603a",
+        "body": "Thanks for sharing this!",
+        "timeOfSubmission": {
+            "seconds": 1686794430,
+            "nanoseconds": 568999000
+        }
+    },
+    {
+        "id": "cmt003",
+        "userId": "user103",
+        "parentPostId": "3622de06-f5b7-4f96-bdbd-2d971ca8603b",
+        "body": "Can you provide more details?",
+        "timeOfSubmission": {
+            "seconds": 1686794435,
+            "nanoseconds": 668999000
+        }
+    }
+]

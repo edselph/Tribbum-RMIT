@@ -1,7 +1,10 @@
 [
     {
         "userId": "62e24dd9-5999-445d-b598-604b97e515e5",
-        "commentIds": [],
+        "commentIds": [
+            "cmt001",
+            "cmt002"
+        ],
         "body": "Test!",
         "id": "3622de06-f5b7-4f96-bdbd-2d971ca8603a",
         "timeOfSubmission": {
@@ -13,9 +16,11 @@
     },
     {
         "userId": "62e24dd9-5999-445d-b598-604b97e515e5",
-        "commentIds": [],
-        "body": "Test!",
-        "id": "3622de06-f5b7-4f96-bdbd-2d971ca8603a",
+        "commentIds": [
+            "cmt003"
+        ],
+        "body": "Another Test!",
+        "id": "3622de06-f5b7-4f96-bdbd-2d971ca8603b",
         "timeOfSubmission": {
             "seconds": 1686794427,
             "nanoseconds": 368999000

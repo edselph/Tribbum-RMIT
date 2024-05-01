@@ -22,7 +22,9 @@ const collections = {
     groups: './collections/groups.json',
     personalityTraits: './collections/personalityTraits.json',
     occupations: './collections/occupations.json',
-    hobbies: './collections/hobbies.json'
+    hobbies: './collections/hobbies.json',
+    comments: './collections/comments.json'
+
     // aggregated: './collections/aggregated.json'
 };
 

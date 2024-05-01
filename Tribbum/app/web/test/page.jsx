@@ -3,7 +3,10 @@
 
 import React, { useEffect, useState } from "react";
 import { getAllData, getDataById } from "@/firebase/entities/database";
-import { createPost } from "@/firebase/entities/post";
+import {
+  createPostOrComment,
+  getAllPostsOrComments
+} from "@/firebase/entities/post";
 import {
   addUser,
   setUser,
@@ -19,19 +22,12 @@ const Test = () => {
 
   useEffect(() => {
 
+    // postCommentData()
     getData()
 
   }, [])
 
-  async function getData() {
-    console.log("hello")
-
-    // getUserById
-    // const data = await getUserById("000b4075-8d0f-4c6a-9857-b6472b1e0483");
-
-    // const data = await getAllData("groups");
-    // console.log(data)
-
+  async function postCommentData() {
 
     const samplePost = {
       body: "Test!",                                // Main content of the post
@@ -42,12 +38,34 @@ const Test = () => {
       commentIds: []     // Array to store the IDs of comments made on the post
     };
 
-    const data = await createPost(samplePost);
+    const data = await createPostOrComment(samplePost);
     console.log(data)
+
+    const sampleComment = {
+      body: "Really insightful post, thanks for sharing!",  // Main content of the comment
+      userId: "a1b2c3d4e5f6",  // ID of the user who created the comment
+      parentPostId: data,
+      timeOfSubmission: new Date("2023-06-16T10:30:00+10:00"),  // Timestamp when the comment was submitted
+      likedUserIds: []  // Array to store the IDs of users who liked the comment  
+    };
+
+
+    const data1 = await createPostOrComment(sampleComment, "comments");
+    console.log(data1)
 
 
   }
 
+  async function getData() {
+
+    const data = await getAllPostsOrComments();
+    console.log(data)
+
+    const data1 = await getAllPostsOrComments("comments");
+    console.log(data1)
+
+
+  }
 
   return (
     <div>
