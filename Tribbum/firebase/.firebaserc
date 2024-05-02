@@ -1,5 +1,6 @@
 {
-    "projects": {
-        "default": "development"
-    }
+  "name": "Tribbum-RMIT",
+  "lockfileVersion": 3,
+  "requires": true,
+  "packages": {}
 }
