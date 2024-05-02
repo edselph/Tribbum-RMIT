@@ -1,0 +1,107 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() {
+      return request.auth.uid != null;
+    }
+
+    function participatesInChat() {
+      return request.auth.uid == request.resource.data.participants[request.auth.uid].id;
+    }
+    
+    function documentExists(collectionName, documentId) {
+        return exists(/databases/$(database)/documents/$(collectionName)/$(documentId));
+    }
+
+    function isUnmodified(resource, key) {
+        return request.resource.data[key] == resource.data[key];
+    }
+
+    // function hasMemberInGroup(resource, groupId, memberId) {
+    //     return memberId in resource.data.userIds
+    // }
+    
+    match /personalityTraits/{document=**} {
+      allow read: if true;
+    }
+
+    match /occupations/{document=**} {
+      allow read: if true;
+    }
+
+    match /hobbies/{document=**} {
+      allow read: if true;
+    }
+    
+    match /aggregated/{document=**} {
+      allow read: if true;
+    }
+
+
+    match /chats/{chatId} {
+      allow get: if participatesInChat();
+      allow list: if signedIn();
+    }
+
+    match /users/{userId} {
+      allow get: if signedIn();
+      allow list: if signedIn();
+    }
+
+    match /tenements/{tenementId} {
+      allow read: if true;
+    }
+    // Redesign schema needed if requires public/private fields
+    // https://firebase.google.com/docs/firestore/security/rules-fields
+    match /groups/{groupId} {
+      allow read: if true;
+        // User is authenticated (add || true in condition to allow signin)
+      allow update: if (signedIn()) && 
+        // Group needs to exist
+        documentExists('groups', groupId) && 
+        (isUnmodified(resource, 'userIds') || 
+            // if modify userId, check if the userId exists
+            (!isUnmodified(resource, 'userIds') && 
+                // if add user id
+                (request.resource.data.userIds.size() == resource.data.userIds.size() + 1 && 
+                documentExists('users', request.resource.data.userIds.removeAll(resource.data.userIds)[0])
+                ) || 
+                // if remove user id
+                (request.resource.data.userIds.size() == resource.data.userIds.size() - 1 && 
+                documentExists('users', resource.data.userIds.removeAll(request.resource.data.userIds)[0])
+                )
+            )
+        ) && 
+        (isUnmodified(resource, 'postIds') || 
+            // if modify postId, check if the postId exists
+            (!isUnmodified(resource, 'postIds') && 
+                // if add post id
+                (request.resource.data.postIds.size() == resource.data.postIds.size() + 1 && 
+                documentExists('posts', request.resource.data.postIds.removeAll(resource.data.postIds)[0])
+                ) || 
+                // if remove post id
+                (request.resource.data.postIds.size() == resource.data.postIds.size() - 1 && 
+                documentExists('posts', resource.data.postIds.removeAll(request.resource.data.postIds)[0])
+                )
+            )
+        );
+    }
+
+    match /posts/{postId} {
+      allow read: if signedIn();
+    }
+
+    match /comments/{commentId} {
+      allow read: if signedIn();
+    }
+
+    match /aggregated/data {
+      allow read: if true;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
