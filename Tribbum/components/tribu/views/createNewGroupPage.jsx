@@ -3,15 +3,35 @@
 // use client
 "use client"
 import React, { useState } from "react";
+import { render } from "@react-email/render";
 
 const createNewGroupPage = () => {
   const[group , setGroup] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.dir(group)
-  };
+    console.log(group);
+    //create request object with data, fit the request to the route.js
+    const requestData ={
+      method: "POST",
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({group}),
+    };
 
+    try{
+      const response = await fetch("api/route.js", requestData);
+      const data = await response.json();
+
+      if(response.ok) {
+        setEmailSent(true);
+        console.log("sent successfully");
+      } else {
+        console.error("error sent", data.error);
+      }
+    } catch (error) {
+      console.error("error sent in start", error);
+    }
+  };
 
   return (
     <div className='flex flex-col w-full h-auto pt-12 md:pt-20 px-4 items-center relative z-10'>
@@ -32,7 +52,7 @@ const createNewGroupPage = () => {
             type="text"
           />
           <button
-            type="button"
+            type="submit"
             onClick={handleSubmit}
             className="flex w-auto h-auto py-2 px-4 text-gray-50 right-1
             bg-tertiary-500 hover:bg-secondary-500 rounded-full cursor-pointer active:scale-95">
@@ -42,6 +62,7 @@ const createNewGroupPage = () => {
       </div>
     </div>
   );
-}
+
+};
 
 export default createNewGroupPage;
