@@ -8,66 +8,79 @@ import {
     deleteDoc,
     getDoc,
     getDocs,
+    arrayUnion,
+    arrayRemove
 } from "firebase/firestore";
 
 const db = getFirestore(app);
 
-// Function to create a new post
-export async function createPost(data) {
+// Function to create a new post or comment
+export async function createPostOrComment(data, collectionName = "posts") {
     try {
-        const postRef = await addDoc(collection(db, "posts"), data);
-        console.log("Post created with ID:", postRef.id);
-        return postRef.id;
+        const ref = await addDoc(collection(db, collectionName), data);
+        console.log(collectionName.slice(0, -1) + " created with ID:", ref.id);
+        return ref.id;
     } catch (error) {
-        console.error("Error creating post:", error);
+        console.error("Error creating " + collectionName.slice(0, -1) + ":", error);
     }
 }
 
-// Function to update an existing post
-export async function updatePost(postId, data) {
+// Function to update an existing post or comment
+export async function updatePostOrComment(id, data, collectionName = "posts") {
     try {
-        const postRef = doc(db, "posts", postId);
-        await updateDoc(postRef, data);
-        console.log("Post updated with ID:", postId);
+        const ref = doc(db, collectionName, id);
+        await updateDoc(ref, data);
+        console.log(collectionName.slice(0, -1) + " updated with ID:", id);
     } catch (error) {
-        console.error("Error updating post:", error);
+        console.error("Error updating " + collectionName.slice(0, -1) + ":", error);
     }
 }
 
-// Function to delete a post
-export async function deletePost(postId) {
+// Function to delete a post or comment
+export async function deletePostOrComment(id, collectionName = "posts") {
     try {
-        const postRef = doc(db, "posts", postId);
-        await deleteDoc(postRef);
-        console.log("Post deleted with ID:", postId);
+        const ref = doc(db, collectionName, id);
+        await deleteDoc(ref);
+        console.log(collectionName.slice(0, -1) + " deleted with ID:", id);
     } catch (error) {
-        console.error("Error deleting post:", error);
+        console.error("Error deleting " + collectionName.slice(0, -1) + ":", error);
     }
 }
 
-// Function to fetch a single post by ID
-export async function getPostById(postId) {
+// Function to fetch a single post or comment by ID
+export async function getPostOrCommentById(id, collectionName = "posts") {
     try {
-        const postRef = doc(db, "posts", postId);
-        const docSnap = await getDoc(postRef);
+        const ref = doc(db, collectionName, id);
+        const docSnap = await getDoc(ref);
         if (docSnap.exists()) {
-            console.log("Post data:", docSnap.data());
+            console.log(collectionName.slice(0, -1) + " data:", docSnap.data());
             return docSnap.data();
         } else {
-            console.log("No such post found!");
+            console.log("No such " + collectionName.slice(0, -1) + " found!");
             return null;
         }
     } catch (error) {
-        console.error("Error fetching post:", error);
+        console.error("Error fetching " + collectionName.slice(0, -1) + ":", error);
     }
 }
 
-// Function to fetch all posts
-export async function getAllPosts() {
+// Function to fetch all posts or comments
+export async function getAllPostsOrComments(collectionName = "posts") {
     try {
-        const querySnapshot = await getDocs(collection(db, "posts"));
+        const querySnapshot = await getDocs(collection(db, collectionName));
         return querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
     } catch (error) {
-        console.error("Error fetching posts:", error);
+        console.error("Error fetching " + collectionName + "s:", error);
+    }
+}
+
+// Specific function to add a comment to a post
+export async function addCommentToPost(postId, commentData) {
+    try {
+        const commentId = await createPostOrComment(commentData, "posts"); // Assuming comments are stored in the same collection
+        await updatePostOrComment(postId, { commentIds: arrayUnion(commentId) }, "posts");
+        console.log("Comment added to post with ID:", postId);
+    } catch (error) {
+        console.error("Error adding comment to post:", error);
     }
 }
