@@ -104,6 +104,32 @@ export async function removeMember({ forumId, memberId }) {
   }
 }
 
+export async function addPost({ forumId, postId }) {
+  try {
+    await updateDoc(doc(db, "groups", forumId), {
+      postIds: arrayUnion(postId),
+    });
+    console.log("Added Post ID: ", postId);
+    return true;
+  } catch (e) {
+    console.log("Failed to add Post ID: ", postId);
+    return false;
+  }
+}
+export async function removePost({ forumId, postId }) {
+  try {
+    await updateDoc(doc(db, "groups", forumId), {
+      postIds: arrayRemove(postId),
+    });
+    console.log("Removed Post ID: ", postId);
+    return true;
+  } catch (e) {
+    console.log("Failed to remove post ID: ", postId);
+    console.log("e", e);
+    return false;
+  }
+}
+
 //Delete forum
 export async function deleteForum(id) {
   //delete a document based on its collection and its id
