@@ -7,29 +7,89 @@ import { render } from "@react-email/render";
 
 const createNewGroupPage = () => {
   const[group , setGroup] = useState("");
+  const[loading , setLoading] = useState(false);
+  const[submitted , setSubmitted] = useState(false);
+  const[submittedMessage , setSubmittedMessage] = useState("");
+  const[errorText , setErrorText] = useState("");
+
+  const resetForm = () => {
+    setGroup("");
+    setErrorText("");
+  };
+
+  const validateField = (field) => {
+    if (field === "" || field === null || field === undefined) {
+      return false;
+    } else {
+      return true;
+    }
+  };
+  const validateForm = () => {
+    if (!validateField(group)) {
+      setErrorText(`group name required`);
+      return false;
+    }
+    return true;
+  };
+
+  const sendFormData = () => {
+    const data = {
+      group: group,
+    };
+    const result = true;
+    return { data: data, valid: result };
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(group);
-    //create request object with data, fit the request to the route.js
-    const requestData ={
-      method: "POST",
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({group}),
-    };
+    const valid = validateForm();
+    if (valid) {
+      setLoading(true);
+      const result = sendFormData();
+      if (result.valid) {
+        await sendMailAdmin(result.data);
+      }
+    }
+  };
+  
+  const sendMailAdmin = async (formData) => {
+    const subject = "New group request to create";
+    const message = `A new group name: ${formData.group} want to be create.`;
+    const email = ""; //email of receipent 
+    const mailFlag = true;
+    try {
+      const response = await fetch("/api/sendEmail", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
 
-    try{
-      const response = await fetch("api/route.js", requestData);
-      const data = await response.json();
-
-      if(response.ok) {
-        setEmailSent(true);
-        console.log("sent successfully");
+        body: JSON.stringify({
+          subject,
+          message,
+          email,
+          mailFlag,
+          formData,
+        }),
+      });
+      if (response?.ok) {
+        resetForm();
+        setLoading(false);
+        setSubmitted(true);
+        setSubmittedMessage("success");
+        setTimeout(() => {
+          setSubmitted(false);
+        }, 3000);
       } else {
-        console.error("error sent", data.error);
+        setLoading(false);
+        setSubmitted(true);
+        setSubmittedMessage("error");
+        setTimeout(() => {
+          setSubmitted(false);
+        }, 3000);
       }
     } catch (error) {
-      console.error("error sent in start", error);
+      console.log(await response.json());
     }
   };
 
@@ -48,7 +108,8 @@ const createNewGroupPage = () => {
             onChange={(e) => setGroup(e.target.value)} 
             value ={group}
             className="flex w-full h-auto p-2 mb-4 text-lg border-[1px] 
-            border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary-500/50"
+            border-gray-300 rounded-lg focus:outline-none focus:ring-2 
+            focus:ring-secondary-500/50"
             type="text"
           />
           <button
