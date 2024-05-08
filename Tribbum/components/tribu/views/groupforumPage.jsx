@@ -70,7 +70,7 @@ const GroupForumPage = () => {
           </h1>
         </div>
       </div>
-      <div className="flex flex-col w-full h-auto gp-2 mt-8 mb-12 py-8 px-4 bg-tertiary-100 shadow-xl rounded-3xl border border-gray-200">
+      <div className="flex flex-col w-full h-auto mx-auto mt-8 mb-12 py-8 px-4 bg-tertiary-100 shadow-xl rounded-3xl border border-gray-200" style={{ maxWidth: "80%" }}>
         <form onSubmit={handleSubmit} className="flex justify-between items-center">
           <label className="flex text-lg text-primary-500 font-medium">
             This is a group post test
