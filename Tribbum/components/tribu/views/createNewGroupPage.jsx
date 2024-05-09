@@ -7,111 +7,69 @@ import { render } from "@react-email/render";
 
 const createNewGroupPage = () => {
   const[group , setGroup] = useState("");
-  const[loading , setLoading] = useState(false);
-  const[submitted , setSubmitted] = useState(false);
-  const[submittedMessage , setSubmittedMessage] = useState("");
-  const[errorText , setErrorText] = useState("");
+  const[selectedImage, setSelectImage] = useState(null);
 
-  const resetForm = () => {
-    setGroup("");
-    setErrorText("");
+  const handleImageChange = (e) => {
+    const file = e.target.file[0];
+    setSelectImage(file);
   };
 
-  const validateField = (field) => {
-    if (field === "" || field === null || field === undefined) {
-      return false;
-    } else {
-      return true;
-    }
-  };
-  const validateForm = () => {
-    if (!validateField(group)) {
-      setErrorText(`group name required`);
-      return false;
-    }
-    return true;
-  };
-
-  const sendFormData = () => {
-    const data = {
-      group: group,
-    };
-    const result = true;
-    return { data: data, valid: result };
-  };
-
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    const valid = validateForm();
-    if (valid) {
-      setLoading(true);
-      const result = sendFormData();
-      if (result.valid) {
-        await sendMailAdmin(result.data);
-      }
-    }
-  };
-  
-  const sendMailAdmin = async (formData) => {
-    const subject = "New group request to create";
-    const message = `A new group name: ${formData.group} want to be create.`;
-    const email = ""; //email of receipent 
-    const mailFlag = true;
-    try {
-      const response = await fetch("/api/sendEmail", {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-
-        body: JSON.stringify({
-          subject,
-          message,
-          email,
-          mailFlag,
-          formData,
-        }),
-      });
-      if (response?.ok) {
-        resetForm();
-        setLoading(false);
-        setSubmitted(true);
-        setSubmittedMessage("success");
-        setTimeout(() => {
-          setSubmitted(false);
-        }, 3000);
-      } else {
-        setLoading(false);
-        setSubmitted(true);
-        setSubmittedMessage("error");
-        setTimeout(() => {
-          setSubmitted(false);
-        }, 3000);
-      }
-    } catch (error) {
-      console.log(await response.json());
-    }
+    console.dir(group)
   };
 
   return (
-    <div className='flex flex-col w-full h-auto pt-12 md:pt-20 px-4 items-center relative z-10'>
+  <div className='flex flex-col w-full h-full pt-12 md:pt-20 px-4 items-center relative z-10'>
       <h1 className='hidden md:flex text-2xl font-light text-primary-500 text-center'>
         Create New group
       </h1>
-      <div className="flex flex-col w-full max-w-[760px] h-auto gp-2
-        mt-8 mb-12 py-8 px-4 bg-tertiary-100 shadow-xl rounded-3xl border border-gray-200">
-        <form onSubmit={handleSubmit}>
-          <label className="flex text-lg text-primary-500 font-medium">
-            Group Topic:
+
+      <div className="flex flex-col w-full max-w-[1200px] h-auto gp-2 mt-8 mb-12 py-8 px-4 bg-tertiary-100 shadow-xl rounded-3xl border border-gray-200 " >
+        <form onSubmit={handleSubmit}> 
+          <div className="flex flex-col w-full h-[90px] p-2 mb-4 border-[1px] focus:outline-none focus:ring-2 focus:ring-secondary-500/50 relative"
+            style={{backgroundImage: `url('/assets/images/section4-forwhom.png')`, 
+            backgroundSize: 'cover', backgroundPosition: 'center',}}>
+            <label htmlFor="upload-image" className="text-lg text-primary-500 font-medium text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer">
+              {selectedImage ? "Change Image" : "Upload Group Picture"}
+            </label>
+            <input
+              id="upload-image"
+              onChange={handleImageChange}
+              className="absolute opacity-0 w-full h-full cursor-pointer"
+              type="file"
+              accept="image/*"
+            />
+            {selectedImage && (
+              <img
+                src={URL.createObjectURL(selectedImage)}
+                alt="Group Image"
+                className="w-full h-auto"
+              />
+            )}
+          </div>
+          <div className="flex items-center justify-between mb-4">
+          <label className="flex-grow text-lg text-primary-500 font-medium">
+            Group Name:
           </label>
           <input
             onChange={(e) => setGroup(e.target.value)} 
             value ={group}
-            className="flex w-full h-auto p-2 mb-4 text-lg border-[1px] 
+            className="flex w-3/4 h-auto p-2 mb-4 text-lg border-[1px] 
             border-gray-300 rounded-lg focus:outline-none focus:ring-2 
             focus:ring-secondary-500/50"
             type="text"
           />
+          <div className="flex items-center">
+            <button
+            className="w-8 h-8 flex justify-center items-center rounded-full bg-gray-800 text-white text-xl hover:bg-gray-900"
+            onClick={() => console.log("Add new member clicked")}
+            >
+            +
+            </button>
+            <lebal className = "ml-2 text-lg text-primary-500 font-medium">member</lebal>
+          </div>
+          </div>
           <button
             type="submit"
             onClick={handleSubmit}
