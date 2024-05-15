@@ -9,6 +9,7 @@ import Link from "next/link";
 import SharingSectionWebApp from "@/components/web/molecules/sharingSectionWebApp/sharingSectionWebApp";
 import HomeHouseCard from "@/components/tribu/elements/houseCard/homehouseCard";
 import HouseProfile from "../molecules/houseProfile/houseProfile";
+import GroupWrapper from "../molecules/groupWrapper/groupWrapper";
 
 import { getUserData } from "@/firebase/entities/users";
 import {
@@ -23,6 +24,7 @@ const HomeAppPage = () => {
   const [isHouseSlideOpen, setIsHouseSlideOpen] = useState(false);
   const [tenements, setTenements] = useState([]);
   const [provinces, setProvinces] = useState([]);
+  const [groups, setGroups] = useState([]);
 
   useEffect(() => {
     getUserData.then((response) => {
@@ -165,6 +167,7 @@ const HomeAppPage = () => {
                 +
               </button>
             </Link>
+            <GroupWrapper groups={groups} toggleHouseSlideOver={toggleHouseSlideOver} />
           </div>
         </div>
 
