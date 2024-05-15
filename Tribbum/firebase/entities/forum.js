@@ -9,6 +9,9 @@ import {
   getDoc,
   where,
   query,
+  orderBy,
+  startAt,
+  endAt,
   updateDoc,
   arrayUnion,
   arrayRemove,
@@ -19,9 +22,19 @@ import { uploadFileWithDownloadURL } from "../uploadFileWithDownloadURL";
 
 const db = getFirestore(app);
 
+const SORT_ORDER = {
+  DESC: "desc",
+  ASC: "asc",
+};
+
 //Get all forums by userID
-export async function getAllForums() {
-  const dataToGet = await getDocs(collection(db, "groups"));
+export async function getAllForums(
+  sortBy = "name",
+  sortOrder = SORT_ORDER.ASC
+) {
+  const dataToGet = await getDocs(
+    query(collection(db, "groups"), orderBy(sortBy, sortOrder))
+  );
   return dataToGet.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
 }
 
@@ -33,6 +46,18 @@ export async function getForumById(id) {
 export async function searchForumByName(name) {
   const dataToGet = await getDocs(
     query(collection(db, "groups"), where("name", "==", name))
+  );
+  return dataToGet.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+}
+
+export async function findForumByAlphabeticalLetter(alphabeticalBetter) {
+  const dataToGet = await getDocs(
+    query(
+      collection(db, "groups"),
+      orderBy("name"),
+      startAt(alphabeticalBetter.toUpperCase()),
+      endAt(alphabeticalBetter.toUpperCase() + "\uf8ff")
+    )
   );
   return dataToGet.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
 }
