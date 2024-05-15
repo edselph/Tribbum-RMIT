@@ -12,6 +12,7 @@ import HouseProfile from "../molecules/houseProfile/houseProfile";
 import GroupWrapper from "../molecules/groupWrapper/groupWrapper";
 
 import { getUserData } from "@/firebase/entities/users";
+import { getAllData } from "@/firebase/entities/database";
 import {
   getAllProvinces,
   getTenementsByProvince
@@ -25,6 +26,19 @@ const HomeAppPage = () => {
   const [tenements, setTenements] = useState([]);
   const [provinces, setProvinces] = useState([]);
   const [groups, setGroups] = useState([]);
+
+  const fetchGroups = async () =>{
+    try{
+      const groupsData = await getAllData("groups");
+      setGroups(groupsData);
+    } catch (error) {
+      console.error("Error fetching groups:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchGroups();
+  }, []);
 
   useEffect(() => {
     getUserData.then((response) => {

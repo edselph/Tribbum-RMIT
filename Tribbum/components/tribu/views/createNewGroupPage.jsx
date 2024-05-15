@@ -3,8 +3,8 @@
 "use client"
 import React, { useEffect, useState } from "react";
 import { getAllUsers } from "@/firebase/entities/users";
-//import { addData } from "@/firebase/data.js"
 import UserList from "../molecules/UserList/UserList.jsx";
+import { addData } from "@/firebase/entities/database.js";
 
 const createNewGroupPage = () => {
   const[group , setGroup] = useState("");
@@ -56,10 +56,21 @@ const createNewGroupPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await Promise.all(selectedUsers.map((user) => addUserToGroup(groupId, user)));
-      console.log("added group successfully!");
+      let bannerUrl = null;
+      if (selectedImage) {
+        bannerUrl = URL.createObjectURL(selectedImage);
+      } else {
+        bannerUrl = '/assets/images/section4-forwhom.png';
+      }
+      const groupData = {
+        name: group,
+        userIds: selectedUsers.map((user) => user.id),
+        bannerUrl
+      };
+      await addData('groups');
+      console.log("Group added successfully!");
     } catch (error) {
-      console.error("Error adding members to group:", error);
+      console.error("Error adding group:", error);
     }
     console.dir({ group, selectedUsers });
   };
@@ -105,12 +116,12 @@ const createNewGroupPage = () => {
             type="text"
           />
           <div className="flex items-center">
-            <button
+          <button type="button" // Change type to button
             className="w-8 h-8 flex justify-center items-center rounded-full bg-gray-800 text-white text-xl hover:bg-gray-900"
             onClick={() => setShowUsers(!showUsers)}
             >
             +
-            </button>
+          </button>
         
             <lebal className = "ml-2 text-lg text-primary-500 font-medium">member: </lebal>
           </div>

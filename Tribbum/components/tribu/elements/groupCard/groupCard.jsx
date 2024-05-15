@@ -5,8 +5,8 @@ const GroupCard = ({ group, toggleHouseSlideOver }) => {
         <div className="flex flex-row w-full h-auto items-center">
           <div className="flex w-16 h-16 bg-primary-200 rounded-full justify-center items-center text-white overflow-hidden">
             <img
-              src={group.photoUrl}
-              alt="group avatar"
+              src={group.bannerUrl}
+              alt="group image"
               className="flex w-full h-full object-cover"
             />
           </div>
