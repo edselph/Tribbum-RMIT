@@ -1,15 +1,22 @@
 {
-    "firestore": {
-        "rules": "firestore.rules",
-        "project": "development"
+  "firestore": {
+    "rules": "firebase/firestore.rules",
+    "project": "development"
+  },
+  "storage": {
+    "rules": "firebase/rules/storage.rules",
+    "project": "development"
+  },
+  "emulators": {
+    "ui": {
+      "enabled": true,
+      "port": 4000
     },
-    "emulators": {
-        "ui": {
-            "enabled": true,
-            "port": 4000
-        },
-        "firestore": {
-            "port": 8080
-        }
+    "firestore": {
+      "port": 8080
+    },
+    "storage": {
+      "port": 9199
     }
+  }
 }

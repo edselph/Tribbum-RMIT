@@ -5,6 +5,7 @@ import ChipUploadHome from "@/components/web/elements/chipUploadHome/chipUploadH
 import SearchInput from "@/components/tribu/elements/searchInput/searchInput";
 import PlusIcon from "@/public/assets/icons/plus.svg";
 import Link from "next/link";
+// import Router from "next/router";
 
 import SharingSectionWebApp from "@/components/web/molecules/sharingSectionWebApp/sharingSectionWebApp";
 import HomeHouseCard from "@/components/tribu/elements/houseCard/homehouseCard";
@@ -13,16 +14,22 @@ import HouseProfile from "../molecules/houseProfile/houseProfile";
 import { getUserData } from "@/firebase/entities/users";
 import {
   getAllProvinces,
-  getTenementsByProvince
+  getTenementsByProvince,
 } from "@/firebase/entities/tenements";
 import { set } from "date-fns";
 import HouseWrapper from "../molecules/houseWrapper";
+import GroupWrapper from "../molecules/groupWrapper";
+
 const HomeAppPage = () => {
   const [user, setUser] = useState(true); // to null
   const [userData, setUserData] = useState();
   const [isHouseSlideOpen, setIsHouseSlideOpen] = useState(false);
   const [tenements, setTenements] = useState([]);
   const [provinces, setProvinces] = useState([]);
+
+  // const goToGroupsPage = () => {
+  //   Router.push("/groups");
+  // };
 
   useEffect(() => {
     getUserData.then((response) => {
@@ -79,7 +86,8 @@ const HomeAppPage = () => {
       <div className="flex flex-col w-full h-auto min-h-screen mb-[170px] lg:mb-[40px] pt-12 md:pt-20 items-center relative z-10">
         <div
           id="house-slideover"
-          className={`flex fixed inset-0 top-0 right-0 w-full h-screen duration-300 ease-out transition-all translate-x-full z-50 bg-white/80`}>
+          className={`flex fixed inset-0 top-0 right-0 w-full h-screen duration-300 ease-out transition-all translate-x-full z-50 bg-white/80`}
+        >
           <div className="flex flex-col w-full h-auto items-center">
             <HouseProfile toggleHouseSlideOver={toggleHouseSlideOver} />
           </div>
@@ -89,7 +97,8 @@ const HomeAppPage = () => {
             flex flex-col 
             w-full max-w-[1140px] md:container md:mx-auto xl:max-w-[1140px] h-auto 
             px-4 md:px-8 lg:px-8 xl:px-0 
-            items-center justify-center`}>
+            items-center justify-center`}
+        >
           <div className="flex flex-row w-full h-auto mt-12 items-center">
             <div className="flex w-16 h-16 bg-primary-200 rounded-full justify-center items-center text-white overflow-hidden">
               <img
@@ -143,7 +152,9 @@ const HomeAppPage = () => {
           </Suspense>
         </div>
 
-        <div>
+        <h1 style={{ fontSize: "50px" }}>Groups</h1>
+
+        <div className="flex flex-col w-full h-[348px] items-center justify-center">
           {/* New component to be introduced here 
             
             * Based on how it's been done, "group" data must be mapped 
@@ -157,16 +168,19 @@ const HomeAppPage = () => {
               the "elements" directory as done with "homehouseCard.jsx"
           
           */}
-          <h1>Groups to be displayed here</h1>
-        </div>
 
+          <Suspense fallback={<div>Loading...</div>}>
+            <GroupWrapper toggleHouseSlideOver={toggleHouseSlideOver} />
+          </Suspense>
+        </div>
 
         <div
           className={`
             flex flex-col 
             w-full max-w-[1140px] md:container md:mx-auto xl:max-w-[1140px] h-auto 
             px-4 md:mb-24 md:px-8 lg:px-8 xl:px-0 
-            items-center justify-center`}>
+            items-center justify-center`}
+        >
           <div className="flex flex-col w-full h-auto mt-12">
             <div className="flex flex-row w-full h-auto justify-between items-end">
               <div className="flex w-full md:w-1/2 h-auto justify-start">
@@ -183,7 +197,8 @@ const HomeAppPage = () => {
         <div className="flex flex-row fixed bottom-12 w-full h-auto justify-end px-4 md:pr-12">
           <Link
             href="/tribu/compartir-casa"
-            className="flex w-[400px] h-auto justify-end">
+            className="flex w-[400px] h-auto justify-end"
+          >
             <ChipUploadHome />
           </Link>
         </div>

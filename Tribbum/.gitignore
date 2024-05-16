@@ -37,6 +37,6 @@ next-env.d.ts
 
 # Firebase emulator files
 firestore-debug.log
-firestore.rules
+# firestore.rules
 firebase-debug.log
 ui-debug.log

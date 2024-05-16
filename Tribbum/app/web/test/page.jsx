@@ -4,6 +4,10 @@
 import React, { useEffect, useState } from "react";
 import { getAllData, getDataById } from "@/firebase/entities/database";
 import {
+  createPostOrComment,
+  getAllPostsOrComments
+} from "@/firebase/entities/post";
+import {
   addUser,
   setUser,
   getAllUsers,
@@ -18,20 +22,50 @@ const Test = () => {
 
   useEffect(() => {
 
+    // postCommentData()
     getData()
 
   }, [])
 
-  async function getData() {
-    console.log("hello")
+  async function postCommentData() {
 
-    // getUserById
-    // const data = await getUserById("000b4075-8d0f-4c6a-9857-b6472b1e0483");
+    const samplePost = {
+      body: "Test!",                                // Main content of the post
+      userId: "62e24dd9-5999-445d-b598-604b97e515e5", // ID of the user who created the post
+      groupId: "1e9404c5-ee0b-4a5e-8908-2fcc3ff78e95", // ID of the group where the post was made, if applicable
+      timeOfSubmission: new Date("2023-06-15T12:00:27+10:00"), // Timestamp when the post was submitted
+      likedUserIds: [],  // Array to store the IDs of users who liked the post
+      commentIds: []     // Array to store the IDs of comments made on the post
+    };
 
-    const data = await getAllData("personalityTraits");
+    const data = await createPostOrComment(samplePost);
     console.log(data)
+
+    const sampleComment = {
+      body: "Really insightful post, thanks for sharing!",  // Main content of the comment
+      userId: "a1b2c3d4e5f6",  // ID of the user who created the comment
+      parentPostId: data,
+      timeOfSubmission: new Date("2023-06-16T10:30:00+10:00"),  // Timestamp when the comment was submitted
+      likedUserIds: []  // Array to store the IDs of users who liked the comment  
+    };
+
+
+    const data1 = await createPostOrComment(sampleComment, "comments");
+    console.log(data1)
+
+
   }
 
+  async function getData() {
+
+    const data = await getAllPostsOrComments();
+    console.log(data)
+
+    const data1 = await getAllPostsOrComments("comments");
+    console.log(data1)
+
+
+  }
 
   return (
     <div>
