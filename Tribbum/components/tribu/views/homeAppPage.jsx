@@ -9,7 +9,6 @@ import Link from "next/link";
 import SharingSectionWebApp from "@/components/web/molecules/sharingSectionWebApp/sharingSectionWebApp";
 import HomeHouseCard from "@/components/tribu/elements/houseCard/homehouseCard";
 import HouseProfile from "../molecules/houseProfile/houseProfile";
-import GroupWrapper from "../molecules/groupWrapper/groupWrapper";
 
 import { getUserData } from "@/firebase/entities/users";
 import { getAllData } from "@/firebase/entities/database";
@@ -27,14 +26,6 @@ const HomeAppPage = () => {
   const [provinces, setProvinces] = useState([]);
   const [groups, setGroups] = useState([]);
 
-  const fetchGroups = async () =>{
-    try{
-      const groupsData = await getAllData("groups");
-      setGroups(groupsData);
-    } catch (error) {
-      console.error("Error fetching groups:", error);
-    }
-  };
 
   useEffect(() => {
     fetchGroups();
@@ -187,9 +178,6 @@ const HomeAppPage = () => {
               </Link>
             </span>
           </div>
-          <div className="flex flex-col w-full h-[348px] items-center justify-center">
-              <GroupWrapper groups={groups} toggleHouseSlideOver={toggleHouseSlideOver} />
-            </div>
         </div>
 
 
