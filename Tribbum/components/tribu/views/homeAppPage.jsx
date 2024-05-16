@@ -159,7 +159,10 @@ const HomeAppPage = () => {
           </Suspense>
         </div>
 
-        <div>
+        <div className=" flex flex-col 
+            w-full max-w-[1140px] md:container md:mx-auto xl:max-w-[1140px] h-auto 
+            px-4 md:px-8 lg:px-8 xl:px-0 
+            items-center justify-center">
           {/* New component to be introduced here 
             
             * Based on how it's been done, "group" data must be mapped 
@@ -174,15 +177,19 @@ const HomeAppPage = () => {
           
           */}
           <h1>Groups to be displayed here</h1>
-          <div className="flex h-auto px-4 py-2 justify-end">
-            <Link href="tribu/create-new-group">
-              <button className="py-2 px-4 text-gray-50 font-medium
-               bg-tertiary-500 hover:bg-secondary-500 rounded-full cursor-pointer active:scale-95">
-                +
-              </button>
-            </Link>
+          <div className=" justify-end">
+            <span>
+              <Link href="tribu/create-new-group">
+                <button className="py-2 px-4 text-gray-50 font-medium
+                  bg-tertiary-500 hover:bg-secondary-500 rounded-full cursor-pointer active:scale-95">
+                  +
+                </button>
+              </Link>
+            </span>
           </div>
-          <GroupWrapper groups={groups} toggleHouseSlideOver={toggleHouseSlideOver} />
+          <div className="flex flex-col w-full h-[348px] items-center justify-center">
+              <GroupWrapper groups={groups} toggleHouseSlideOver={toggleHouseSlideOver} />
+            </div>
         </div>
 
 

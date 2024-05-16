@@ -29,7 +29,7 @@ const GroupCard = ({ group, toggleHouseSlideOver }) => {
               className="py-2 px-4 text-gray-50 font-medium bg-tertiary-500 hover:bg-secondary-500 rounded-full cursor-pointer active:scale-95"
               onClick={() => toggleHouseSlideOver(group)}
             >
-              Ver más
+              check more
               </button>
             </div>
       </div>
