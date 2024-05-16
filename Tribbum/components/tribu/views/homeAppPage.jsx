@@ -12,6 +12,7 @@ import HomeHouseCard from "@/components/tribu/elements/houseCard/homehouseCard";
 import HouseProfile from "../molecules/houseProfile/houseProfile";
 
 import { getUserData } from "@/firebase/entities/users";
+import { getAllData } from "@/firebase/entities/database";
 import {
   getAllProvinces,
   getTenementsByProvince,
@@ -26,6 +27,12 @@ const HomeAppPage = () => {
   const [isHouseSlideOpen, setIsHouseSlideOpen] = useState(false);
   const [tenements, setTenements] = useState([]);
   const [provinces, setProvinces] = useState([]);
+  const [groups, setGroups] = useState([]);
+
+
+  useEffect(() => {
+    fetchGroups();
+  }, []);
 
   // const goToGroupsPage = () => {
   //   Router.push("/groups");
@@ -168,6 +175,17 @@ const HomeAppPage = () => {
               the "elements" directory as done with "homehouseCard.jsx"
           
           */}
+          <h1>Groups to be displayed here</h1>
+          <div className=" justify-end">
+            <span>
+              <Link href="tribu/create-new-group">
+                <button className="py-2 px-4 text-gray-50 font-medium
+                  bg-tertiary-500 hover:bg-secondary-500 rounded-full cursor-pointer active:scale-95">
+                  +
+                </button>
+              </Link>
+            </span>
+          </div>
 
           <Suspense fallback={<div>Loading...</div>}>
             <GroupWrapper toggleHouseSlideOver={toggleHouseSlideOver} />
