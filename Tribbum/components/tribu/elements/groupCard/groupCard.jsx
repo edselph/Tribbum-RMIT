@@ -67,3 +67,4 @@ const GroupCard = ({ toggleHouseSlideOver, groupData }) => {
   );
 };
 export default GroupCard;
+
