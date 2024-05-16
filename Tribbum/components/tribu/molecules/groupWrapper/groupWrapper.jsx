@@ -3,7 +3,7 @@ import GroupCard from "@/components/tribu/elements/groupCard/groupCard";
 
 const GroupWrapper = ({ groups, toggleHouseSlideOver }) => {
   return (
-    <div className="flex flex-col w-full h-auto mt-12">
+    <div className="flex flex-row w-full h-auto overflow-scroll overflow-visible py-6">
       {groups.map((group, index) => {
         return (
           <GroupCard

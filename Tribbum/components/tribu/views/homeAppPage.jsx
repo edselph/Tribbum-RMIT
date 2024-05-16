@@ -181,8 +181,8 @@ const HomeAppPage = () => {
                 +
               </button>
             </Link>
-            <GroupWrapper groups={groups} toggleHouseSlideOver={toggleHouseSlideOver} />
           </div>
+          <GroupWrapper groups={groups} toggleHouseSlideOver={toggleHouseSlideOver} />
         </div>
 
 

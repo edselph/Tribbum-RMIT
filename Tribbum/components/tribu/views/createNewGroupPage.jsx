@@ -63,11 +63,13 @@ const createNewGroupPage = () => {
         bannerUrl = '/assets/images/section4-forwhom.png';
       }
       const groupData = {
+        id:" ",
         name: group,
+        postIds: [],
         userIds: selectedUsers.map((user) => user.id),
         bannerUrl
       };
-      await addData('groups');
+      await addData('groups', groupData);
       console.log("Group added successfully!");
     } catch (error) {
       console.error("Error adding group:", error);

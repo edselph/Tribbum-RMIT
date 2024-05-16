@@ -1,13 +1,19 @@
 // elements/groupCard/groupCard.jsx
 const GroupCard = ({ group, toggleHouseSlideOver }) => {
     return (
-      <div className="flex flex-col w-full h-auto p-4 border-[0.25px] border-tertiary-500 rounded-lg cursor-pointer active:scale-95">
-        <div className="flex flex-row w-full h-auto items-center">
-          <div className="flex w-16 h-16 bg-primary-200 rounded-full justify-center items-center text-white overflow-hidden">
+      <div className="">
+        <div className="flex flex-col 
+          w-full min-w-[250px] max-w-[340px] h-[300px] min-h[300px]
+          mx-4
+          rounded-md bg-white
+          shadow-[0px_3px_12px_0px_rgba(0,0,0,0.2)]
+          active:scale-105 cursor-pointer
+          relative">
+          <div className="flex w-full h-1/2  bg-gray-100 relative">
             <img
               src={group.bannerUrl}
               alt="group image"
-              className="flex w-full h-full object-cover"
+              className="w-full h-auto object-cover"
             />
           </div>
           <div className="flex flex-col w-auto h-auto ml-4">
@@ -18,15 +24,16 @@ const GroupCard = ({ group, toggleHouseSlideOver }) => {
               {group.description}
             </span>
           </div>
-        </div>
-        <div className="flex w-full h-auto mt-4">
-          <button
-            className="py-2 px-4 text-gray-50 font-medium bg-tertiary-500 hover:bg-secondary-500 rounded-full cursor-pointer active:scale-95"
-            onClick={() => toggleHouseSlideOver(group)}
-          >
-            Ver más
-          </button>
-        </div>
+            <div className="flex w-full h-auto mt-4">
+              <button
+              className="py-2 px-4 text-gray-50 font-medium bg-tertiary-500 hover:bg-secondary-500 rounded-full cursor-pointer active:scale-95"
+              onClick={() => toggleHouseSlideOver(group)}
+            >
+              Ver más
+              </button>
+            </div>
+      </div>
+        
       </div>
     );
   };
