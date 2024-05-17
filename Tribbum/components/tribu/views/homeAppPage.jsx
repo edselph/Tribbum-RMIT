@@ -30,9 +30,6 @@ const HomeAppPage = () => {
   const [groups, setGroups] = useState([]);
 
 
-  useEffect(() => {
-    fetchGroups();
-  }, []);
 
   // const goToGroupsPage = () => {
   //   Router.push("/groups");
