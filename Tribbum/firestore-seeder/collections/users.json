@@ -1,120 +1,592 @@
 [
-    {
-        "description": "",
-        "children": {
-            "number": 1,
-            "ageRange": {
-                "max": 6,
-                "min": 0
-            }
-        },
-        "province": "alicante",
-        "surname": "scavazza",
-        "traits": {
-            "EMPLOYED": false,
-            "HAS_PETS": true,
-            "SMOKES": false
-        },
-        "childrenSituation": "HAS_KIDS",
-        "gender": "MALE",
-        "photoUrl": "https://firebasestorage.googleapis.com/v0/b/tribbum-ffe98.appspot.com/o/assets%2Fimg%2Fprofile%2F1631341178936..jpg?alt=media&token=51de88c2-13de-4531-a6a8-e41973fa5718",
-        "hasUploadedATenement": false,
-        "personalityTraits": {
-            "ALEGRE": {
-                "id": "ALEGRE",
-                "name": "Alegre"
-            },
-            "OBSERVADOR": {
-                "name": "Observador",
-                "id": "OBSERVADOR"
-            },
-            "FLEXIBLE": {
-                "id": "FLEXIBLE",
-                "name": "Flexible"
-            }
-        },
-        "maritalStatus": "SINGLE",
-        "occupation": {
-            "id": "SALES",
-            "name": "Sales"
-        },
-        "email": "bountysabaudia@gmail.com",
-        "name": "niko",
-        "location": "el Campello",
-        "hobbies": {
-            "BOOK_LOVER": {
-                "id": "BOOK_LOVER",
-                "name": "Book Lover"
-            },
-            "MORNING_PERSON": {
-                "id": "MORNING_PERSON",
-                "name": "Morning person"
-            }
-        },
-        "age": 38,
-        "id": "000b4075-8d0f-4c6a-9857-b6472b1e0483",
-        "budget": {
-            "maximum": 1000,
-            "minimum": 0
-        }
+  {
+    "description": "Loves hiking and photography",
+    "children": {
+      "number": 2,
+      "ageRange": {
+        "min": 3,
+        "max": 8
+      }
     },
-    {
-        "description": "",
-        "children": {
-            "number": 1,
-            "ageRange": {
-                "max": 6,
-                "min": 0
-            }
-        },
-        "province": "alicante",
-        "surname": "scavazza",
-        "traits": {
-            "EMPLOYED": false,
-            "HAS_PETS": true,
-            "SMOKES": false
-        },
-        "childrenSituation": "HAS_KIDS",
-        "gender": "MALE",
-        "photoUrl": "https://firebasestorage.googleapis.com/v0/b/tribbum-ffe98.appspot.com/o/assets%2Fimg%2Fprofile%2F1631341178936..jpg?alt=media&token=51de88c2-13de-4531-a6a8-e41973fa5718",
-        "hasUploadedATenement": false,
-        "personalityTraits": {
-            "ALEGRE": {
-                "id": "ALEGRE",
-                "name": "Alegre"
-            },
-            "OBSERVADOR": {
-                "name": "Observador",
-                "id": "OBSERVADOR"
-            },
-            "FLEXIBLE": {
-                "id": "FLEXIBLE",
-                "name": "Flexible"
-            }
-        },
-        "maritalStatus": "SINGLE",
-        "occupation": {
-            "id": "SALES",
-            "name": "Sales"
-        },
-        "email": "bountysabaudia@gmail.com",
-        "name": "niko",
-        "location": "el Campello",
-        "hobbies": {
-            "BOOK_LOVER": {
-                "id": "BOOK_LOVER",
-                "name": "Book Lover"
-            },
-            "MORNING_PERSON": {
-                "id": "MORNING_PERSON",
-                "name": "Morning person"
-            }
-        },
-        "age": 38,
-        "id": "000b4075-8d0f-4c6a-9857-b6472b1e0483",
-        "budget": {
-            "maximum": 1000,
-            "minimum": 0
-        }
+    "province": "Valencia",
+    "surname": "Garcia",
+    "traits": {
+      "EMPLOYED": true,
+      "HAS_PETS": false,
+      "SMOKES": false
+    },
+    "childrenSituation": "HAS_KIDS",
+    "gender": "FEMALE",
+    "photoUrl": "https://example.com/profiles/julia_garcia.jpg",
+    "hasUploadedATenement": true,
+    "personalityTraits": {
+      "ADVENTUROUS": {
+        "id": "ADVENTUROUS",
+        "name": "Adventurous"
+      },
+      "KIND": {
+        "id": "KIND",
+        "name": "Kind"
+      },
+      "CREATIVE": {
+        "id": "CREATIVE",
+        "name": "Creative"
+      }
+    },
+    "maritalStatus": "DIVORCED",
+    "occupation": {
+      "id": "TEACHER",
+      "name": "Teacher"
+    },
+    "email": "julia.garcia@example.com",
+    "name": "Julia",
+    "location": "Valencia",
+    "hobbies": {
+      "HIKING": {
+        "id": "HIKING",
+        "name": "Hiking"
+      },
+      "PHOTOGRAPHY": {
+        "id": "PHOTOGRAPHY",
+        "name": "Photography"
+      }
+    },
+    "age": 45,
+    "id": "00123456-789a-bcde-f012-3456789abcde",
+    "budget": {
+      "minimum": 500,
+      "maximum": 2000
     }
+  },
+  {
+    "description": "Enjoys cooking and playing guitar",
+    "children": {
+      "number": 0,
+      "ageRange": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "province": "Madrid",
+    "surname": "Martinez",
+    "traits": {
+      "EMPLOYED": true,
+      "HAS_PETS": true,
+      "SMOKES": false
+    },
+    "childrenSituation": "NO_KIDS",
+    "gender": "MALE",
+    "photoUrl": "https://example.com/profiles/juan_martinez.jpg",
+    "hasUploadedATenement": true,
+    "personalityTraits": {
+      "ORGANIZED": {
+        "id": "ORGANIZED",
+        "name": "Organized"
+      },
+      "CREATIVE": {
+        "id": "CREATIVE",
+        "name": "Creative"
+      },
+      "PATIENT": {
+        "id": "PATIENT",
+        "name": "Patient"
+      }
+    },
+    "maritalStatus": "MARRIED",
+    "occupation": {
+      "id": "SOFTWARE_ENGINEER",
+      "name": "Software Engineer"
+    },
+    "email": "juan.martinez@example.com",
+    "name": "Juan",
+    "location": "Madrid",
+    "hobbies": {
+      "COOKING": {
+        "id": "COOKING",
+        "name": "Cooking"
+      },
+      "MUSIC": {
+        "id": "MUSIC",
+        "name": "Playing Guitar"
+      }
+    },
+    "age": 35,
+    "id": "12345678-9abc-def0-1234-56789abcdef0",
+    "budget": {
+      "minimum": 1000,
+      "maximum": 3000
+    }
+  },
+  {
+    "description": "Passionate about fitness and travel",
+    "children": {
+      "number": 1,
+      "ageRange": {
+        "min": 2,
+        "max": 2
+      }
+    },
+    "province": "Barcelona",
+    "surname": "Lopez",
+    "traits": {
+      "EMPLOYED": true,
+      "HAS_PETS": true,
+      "SMOKES": false
+    },
+    "childrenSituation": "HAS_KIDS",
+    "gender": "FEMALE",
+    "photoUrl": "https://example.com/profiles/maria_lopez.jpg",
+    "hasUploadedATenement": false,
+    "personalityTraits": {
+      "ADVENTUROUS": {
+        "id": "ADVENTUROUS",
+        "name": "Adventurous"
+      },
+      "KIND": {
+        "id": "KIND",
+        "name": "Kind"
+      },
+      "OPTIMISTIC": {
+        "id": "OPTIMISTIC",
+        "name": "Optimistic"
+      }
+    },
+    "maritalStatus": "MARRIED",
+    "occupation": {
+      "id": "PHYSIOTHERAPIST",
+      "name": "Physiotherapist"
+    },
+    "email": "maria.lopez@example.com",
+    "name": "Maria",
+    "location": "Barcelona",
+    "hobbies": {
+      "FITNESS": {
+        "id": "FITNESS",
+        "name": "Fitness"
+      },
+      "TRAVEL": {
+        "id": "TRAVEL",
+        "name": "Traveling"
+      }
+    },
+    "age": 32,
+    "id": "23456789-abcd-ef01-2345-6789abcdef01",
+    "budget": {
+      "minimum": 800,
+      "maximum": 2500
+    }
+  },
+  {
+    "description": "Loves painting and gardening",
+    "children": {
+      "number": 3,
+      "ageRange": {
+        "min": 6,
+        "max": 12
+      }
+    },
+    "province": "Seville",
+    "surname": "Rodriguez",
+    "traits": {
+      "EMPLOYED": true,
+      "HAS_PETS": true,
+      "SMOKES": true
+    },
+    "childrenSituation": "HAS_KIDS",
+    "gender": "MALE",
+    "photoUrl": "https://example.com/profiles/pablo_rodriguez.jpg",
+    "hasUploadedATenement": false,
+    "personalityTraits": {
+      "CREATIVE": {
+        "id": "CREATIVE",
+        "name": "Creative"
+      },
+      "PATIENT": {
+        "id": "PATIENT",
+        "name": "Patient"
+      },
+      "FRIENDLY": {
+        "id": "FRIENDLY",
+        "name": "Friendly"
+      }
+    },
+    "maritalStatus": "MARRIED",
+    "occupation": {
+      "id": "ARCHITECT",
+      "name": "Architect"
+    },
+    "email": "pablo.rodriguez@example.com",
+    "name": "Pablo",
+    "location": "Seville",
+    "hobbies": {
+      "PAINTING": {
+        "id": "PAINTING",
+        "name": "Painting"
+      },
+      "GARDENING": {
+        "id": "GARDENING",
+        "name": "Gardening"
+      }
+    },
+    "age": 40,
+    "id": "34567890-bcde-f012-3456-789abcdef012",
+    "budget": {
+      "minimum": 1000,
+      "maximum": 3000
+    }
+  },
+  {
+    "description": "Enjoys reading and cycling",
+    "children": {
+      "number": 2,
+      "ageRange": {
+        "min": 4,
+        "max": 9
+      }
+    },
+    "province": "Barcelona",
+    "surname": "Fernandez",
+    "traits": {
+      "EMPLOYED": true,
+      "HAS_PETS": true,
+      "SMOKES": false
+    },
+    "childrenSituation": "HAS_KIDS",
+    "gender": "MALE",
+    "photoUrl": "https://example.com/profiles/carlos_fernandez.jpg",
+    "hasUploadedATenement": true,
+    "personalityTraits": {
+      "INTELLIGENT": {
+        "id": "INTELLIGENT",
+        "name": "Intelligent"
+      },
+      "BOOK_LOVER": {
+        "id": "BOOK_LOVER",
+        "name": "Book Lover"
+      },
+      "ACTIVE": {
+        "id": "ACTIVE",
+        "name": "Active"
+      }
+    },
+    "maritalStatus": "MARRIED",
+    "occupation": {
+      "id": "DOCTOR",
+      "name": "Doctor"
+    },
+    "email": "carlos.fernandez@example.com",
+    "name": "Carlos",
+    "location": "Barcelona",
+    "hobbies": {
+      "READING": {
+        "id": "READING",
+        "name": "Reading"
+      },
+      "CYCLING": {
+        "id": "CYCLING",
+        "name": "Cycling"
+      }
+    },
+    "age": 37,
+    "id": "45678901-cdef-0123-4567-89abcdef0123",
+    "budget": {
+      "minimum": 800,
+      "maximum": 2500
+    }
+  },
+  {
+    "description": "Enjoys playing basketball and painting",
+    "children": {
+      "number": 1,
+      "ageRange": {
+        "min": 7,
+        "max": 7
+      }
+    },
+    "province": "Madrid",
+    "surname": "Gomez",
+    "traits": {
+      "EMPLOYED": false,
+      "HAS_PETS": false,
+      "SMOKES": false
+    },
+    "childrenSituation": "HAS_KIDS",
+    "gender": "MALE",
+    "photoUrl": "https://example.com/profiles/david_gomez.jpg",
+    "hasUploadedATenement": true,
+    "personalityTraits": {
+      "CREATIVE": {
+        "id": "CREATIVE",
+        "name": "Creative"
+      },
+      "COMPETITIVE": {
+        "id": "COMPETITIVE",
+        "name": "Competitive"
+      },
+      "FRIENDLY": {
+        "id": "FRIENDLY",
+        "name": "Friendly"
+      }
+    },
+    "maritalStatus": "MARRIED",
+    "occupation": {
+      "id": "TEACHER",
+      "name": "Teacher"
+    },
+    "email": "david.gomez@example.com",
+    "name": "David",
+    "location": "Madrid",
+    "hobbies": {
+      "BASKETBALL": {
+        "id": "BASKETBALL",
+        "name": "Basketball"
+      },
+      "PAINTING": {
+        "id": "PAINTING",
+        "name": "Painting"
+      }
+    },
+    "age": 42,
+    "id": "56789012-def0-1234-5678-9abcdef01234",
+    "budget": {
+      "minimum": 1200,
+      "maximum": 3500
+    }
+  },
+  {
+    "description": "Loves gardening and meditation",
+    "children": {
+      "number": 0,
+      "ageRange": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "province": "Barcelona",
+    "surname": "Sanchez",
+    "traits": {
+      "EMPLOYED": true,
+      "HAS_PETS": true,
+      "SMOKES": false
+    },
+    "childrenSituation": "NO_KIDS",
+    "gender": "FEMALE",
+    "photoUrl": "https://example.com/profiles/laura_sanchez.jpg",
+    "hasUploadedATenement": false,
+    "personalityTraits": {
+      "KIND": {
+        "id": "KIND",
+        "name": "Kind"
+      },
+      "CALM": {
+        "id": "CALM",
+        "name": "Calm"
+      },
+      "SPIRITUAL": {
+        "id": "SPIRITUAL",
+        "name": "Spiritual"
+      }
+    },
+    "maritalStatus": "SINGLE",
+    "occupation": {
+      "id": "PSYCHOLOGIST",
+      "name": "Psychologist"
+    },
+    "email": "laura.sanchez@example.com",
+    "name": "Laura",
+    "location": "Barcelona",
+    "hobbies": {
+      "GARDENING": {
+        "id": "GARDENING",
+        "name": "Gardening"
+      },
+      "MEDITATION": {
+        "id": "MEDITATION",
+        "name": "Meditation"
+      }
+    },
+    "age": 30,
+    "id": "67890123-ef01-2345-6789-abcdef012345",
+    "budget": {
+      "minimum": 700,
+      "maximum": 2000
+    }
+  },
+  {
+    "description": "Enjoys playing piano and hiking",
+    "children": {
+      "number": 1,
+      "ageRange": {
+        "min": 10,
+        "max": 10
+      }
+    },
+    "province": "Seville",
+    "surname": "Perez",
+    "traits": {
+      "EMPLOYED": true,
+      "HAS_PETS": false,
+      "SMOKES": false
+    },
+    "childrenSituation": "HAS_KIDS",
+    "gender": "FEMALE",
+    "photoUrl": "https://example.com/profiles/ana_perez.jpg",
+    "hasUploadedATenement": false,
+    "personalityTraits": {
+      "CREATIVE": {
+        "id": "CREATIVE",
+        "name": "Creative"
+      },
+      "MUSIC_LOVER": {
+        "id": "MUSIC_LOVER",
+        "name": "Music Lover"
+      },
+      "ADVENTUROUS": {
+        "id": "ADVENTUROUS",
+        "name": "Adventurous"
+      }
+    },
+    "maritalStatus": "MARRIED",
+    "occupation": {
+      "id": "ACCOUNTANT",
+      "name": "Accountant"
+    },
+    "email": "ana.perez@example.com",
+    "name": "Ana",
+    "location": "Seville",
+    "hobbies": {
+      "PIANO": {
+        "id": "PIANO",
+        "name": "Playing Piano"
+      },
+      "HIKING": {
+        "id": "HIKING",
+        "name": "Hiking"
+      }
+    },
+    "age": 35,
+    "id": "78901234-f012-3456-789a-bcdef0123456",
+    "budget": {
+      "minimum": 1000,
+      "maximum": 3000
+    }
+  },
+  {
+    "description": "Passionate about cooking and photography",
+    "children": {
+      "number": 2,
+      "ageRange": {
+        "min": 5,
+        "max": 12
+      }
+    },
+    "province": "Valencia",
+    "surname": "Torres",
+    "traits": {
+      "EMPLOYED": false,
+      "HAS_PETS": true,
+      "SMOKES": false
+    },
+    "childrenSituation": "HAS_KIDS",
+    "gender": "MALE",
+    "photoUrl": "https://example.com/profiles/luis_torres.jpg",
+    "hasUploadedATenement": true,
+    "personalityTraits": {
+      "CREATIVE": {
+        "id": "CREATIVE",
+        "name": "Creative"
+      },
+      "OPTIMISTIC": {
+        "id": "OPTIMISTIC",
+        "name": "Optimistic"
+      },
+      "FOODIE": {
+        "id": "FOODIE",
+        "name": "Foodie"
+      }
+    },
+    "maritalStatus": "MARRIED",
+    "occupation": {
+      "id": "CHEF",
+      "name": "Chef"
+    },
+    "email": "luis.torres@example.com",
+    "name": "Luis",
+    "location": "Valencia",
+    "hobbies": {
+      "COOKING": {
+        "id": "COOKING",
+        "name": "Cooking"
+      },
+      "PHOTOGRAPHY": {
+        "id": "PHOTOGRAPHY",
+        "name": "Photography"
+      }
+    },
+    "age": 40,
+    "id": "89012345-0123-4567-89ab-cdef01234567",
+    "budget": {
+      "minimum": 1500,
+      "maximum": 4000
+    }
+  },
+  {
+    "description": "Enjoys yoga and traveling",
+    "children": {
+      "number": 0,
+      "ageRange": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "province": "Madrid",
+    "surname": "Diaz",
+    "traits": {
+      "EMPLOYED": true,
+      "HAS_PETS": false,
+      "SMOKES": false
+    },
+    "childrenSituation": "NO_KIDS",
+    "gender": "FEMALE",
+    "photoUrl": "https://example.com/profiles/ana_diaz.jpg",
+    "hasUploadedATenement": false,
+    "personalityTraits": {
+      "CALM": {
+        "id": "CALM",
+        "name": "Calm"
+      },
+      "ADVENTUROUS": {
+        "id": "ADVENTUROUS",
+        "name": "Adventurous"
+      },
+      "SPIRITUAL": {
+        "id": "SPIRITUAL",
+        "name": "Spiritual"
+      }
+    },
+    "maritalStatus": "SINGLE",
+    "occupation": {
+      "id": "MARKETING_MANAGER",
+      "name": "Marketing Manager"
+    },
+    "email": "ana.diaz@example.com",
+    "name": "Ana",
+    "location": "Madrid",
+    "hobbies": {
+      "YOGA": {
+        "id": "YOGA",
+        "name": "Yoga"
+      },
+      "TRAVEL": {
+        "id": "TRAVEL",
+        "name": "Traveling"
+      }
+    },
+    "age": 33,
+    "id": "90123456-1234-5678-9abc-def012345678",
+    "budget": {
+      "minimum": 1200,
+      "maximum": 3000
+    }
+  }
 ]
