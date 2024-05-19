@@ -57,6 +57,11 @@ service cloud.firestore {
     match /groups/{groupId} {
       allow read: if true;
         // User is authenticated (add || true in condition to allow signin)
+      allow create: if (signedIn()) && 
+        // Group needs to exist
+        request.resource.data.name is string && request.resource.data.name.size() > 0 &&
+        request.resource.data.bannerUrl is string && request.resource.data.bannerUrl.size() > 0 && 
+        request.resource.data.postIds is list && request.resource.data.postIds.size() == 0;
       allow update: if (signedIn()) && 
         // Group needs to exist
         documentExists('groups', groupId) && 

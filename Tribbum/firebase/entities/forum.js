@@ -63,15 +63,29 @@ export async function findForumByAlphabeticalLetter(alphabeticalBetter) {
 }
 
 //Create forums
-export async function createForums({ forumImage, forumName }) {
+export async function createForums({ forumImage, forumName, forumMembers }) {
   const forumImageURL = await uploadFileWithDownloadURL(
     forumImage,
     `forums/${forumName}`
   );
-  const dataToAdd = await addDoc(collection(db, "groups"), {
+  let forumData = {
     bannerUrl: forumImageURL,
     name: forumName,
-  });
+    postIds: [],
+    userIds: [],
+  };
+  const dataToAdd = await addDoc(collection(db, "groups"), forumData);
+  if (Array.isArray(forumMembers) && forumMembers.length > 0) {
+    const statuses = await Promise.all(
+      forumMembers.map((userId) =>
+        addMember({ forumId: dataToAdd.id, memberId: userId })
+      )
+    );
+    if (statuses.some((status) => !status)) {
+      await deleteForum(dataToAdd.id);
+      throw new Error("Members do not exist");
+    }
+  }
   console.log("Document written with ID: ", dataToAdd.id);
 }
 
