@@ -49,7 +49,7 @@ const GroupCard = ({ toggleHouseSlideOver, groupData }) => {
 
       <div className="flex absolute bottom-4 left-0 w-full h-auto px-4 justify-start items-center gap-4">
         <div className="flex flex-row flex-wrap w-auto h-auto justify-start gap-2">
-          {/* {data.map((item) => {
+          {data.map((item) => {
                         return (
                             <div
                                 className="flex w-auto h-auto px-2 py-1 bg-tertiary-100 border border-tertiary-500 rounded-full"
@@ -60,7 +60,7 @@ const GroupCard = ({ toggleHouseSlideOver, groupData }) => {
                                 </span>
                             </div>
                         );
-                    })} */}
+                    })}
         </div>
       </div>
     </div>
