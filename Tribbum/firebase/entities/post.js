@@ -3,6 +3,7 @@ import {
     getFirestore,
     collection,
     addDoc,
+    setDoc,
     doc,
     updateDoc,
     deleteDoc,
@@ -21,13 +22,22 @@ import {
 const db = getFirestore(app);
 
 // Function to create a new post or comment
-export async function createPostOrComment(data, collectionName = "posts") {
+export async function createPostOrComment(data, collectionName = "posts", id = null) {
     try {
-        const ref = await addDoc(collection(db, collectionName), data);
-        console.log(collectionName.slice(0, -1) + " created with ID:", ref.id);
+        let ref;
+        if (id) {
+            // Use the provided ID to create the document
+            ref = doc(collection(db, collectionName), id);
+            await setDoc(ref, data);
+            console.log(`${collectionName.slice(0, -1)} created with provided ID:`, id);
+        } else {
+            // Let Firestore generate the ID
+            ref = await addDoc(collection(db, collectionName), data);
+            console.log(`${collectionName.slice(0, -1)} created with generated ID:`, ref.id);
+        }
         return ref.id;
     } catch (error) {
-        console.error("Error creating " + collectionName.slice(0, -1) + ":", error);
+        console.error(`Error creating ${collectionName.slice(0, -1)}:`, error);
     }
 }
 
@@ -49,6 +59,23 @@ export const addCommentToPost = async (postId, newCommentId) => {
 }
 // ------------------------------------------------------------------------
 
+//  * Adds a user to the likedUserIds array of a post.
+export async function addUserToLikedUserIds(postId, userId) {
+    const postRef = doc(db, "posts", postId); // Get a reference to the specific post document
+
+    try {
+        // Use updateDoc to add the userId to the likedUserIds array
+        await updateDoc(postRef, {
+            likedUserIds: arrayUnion(userId)
+        });
+        console.log("User added to likedUserIds successfully");
+    } catch (error) {
+        console.error("Failed to add user to likedUserIds:", error);
+        throw error;  // Rethrow to allow error handling in the calling context
+    }
+}
+
+// ------------------------------------------------------------------------
 
 // Function to update an existing post or comment
 export async function updatePostOrComment(id, data, collectionName = "posts") {
@@ -98,19 +125,6 @@ export async function getAllPostsOrComments(collectionName = "posts") {
         console.error("Error fetching " + collectionName + "s:", error);
     }
 }
-
-// // Specific function to add a comment to a post
-// export async function addCommentToPost(postId, commentData) {
-//     try {
-//         const commentId = await createPostOrComment(commentData, "posts"); // Assuming comments are stored in the same collection
-//         await updatePostOrComment(postId, { commentIds: arrayUnion(commentId) }, "posts");
-//         console.log("Comment added to post with ID:", postId);
-//     } catch (error) {
-//         console.error("Error adding comment to post:", error);
-//     }
-// }
-
-
 
 
 // Function to fetch posts by groupId without any ordering or pagination

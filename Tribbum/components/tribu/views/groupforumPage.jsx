@@ -4,39 +4,48 @@ import Heart from "react-animated-heart";
 import PostCard from "../elements/postCard/postCard";
 import { fetchPostsByGroupId, createPostOrComment } from "@/firebase/entities/post";
 import timeAgo from "@/utils/dateConversion";
+import { v4 as uuidv4 } from 'uuid';
+
 
 const GroupForumPage = () => {
+
+  // Incorporate routing params
+
   const [posts, setPosts] = useState([]);
   const [group, setGroup] = useState('1e9404c5-ee0b-4a5e-8908-2fcc3ff78e95');  // Must change to route params
+  const [newPostContent, setNewPostContent] = useState("");
 
   useEffect(() => {
 
-    // Correct handling of async function within useEffect
-    const loadData = async () => {
-      const fetchedPosts = await fetchPostsByGroupId(group);
-      setPosts(fetchedPosts); // Setting the state with the resolved data
-    };
     loadData();
 
   }, []);
 
+
+  // Correct handling of async function within useEffect
+  const loadData = async () => {
+    const fetchedPosts = await fetchPostsByGroupId(group);
+    const sortedPosts = fetchedPosts.sort((a, b) => b.timeOfSubmission.seconds - a.timeOfSubmission.seconds);
+    setPosts(sortedPosts); // Setting the state with the sorted data
+  };
 
 
   const handleCreatePost = async () => {
     if (!newPostContent.trim()) return; // Avoid creating empty posts
 
     const newPost = {
+      id: uuidv4(),
       body: newPostContent,
       commentIds: [],
-      groupId: group.id,
+      groupId: group,
       timeOfSubmission: { seconds: Math.floor(Date.now() / 1000) },
       likedUserIds: [],
     };
 
     try {
-      await createPostOrComment(newPost, 'posts'); // Replace with your actual API call
+      await createPostOrComment(newPost, 'posts', newPost.id);
       setPosts((prevPosts) => [newPost, ...prevPosts]); // Prepend to list to display at the top
-      setNewPostContent(""); // Clear the input after submission
+      setNewPostContent("");
     } catch (error) {
       console.error("Failed to create post:", error);
     }
@@ -94,6 +103,24 @@ const GroupForumPage = () => {
           - Map out posts here, and comments too (CRUD)
        */
       }
+
+      {/* Form for creating a new post */}
+      <div className="create-post-container mt-4 mb-6">
+        <input
+          type="text"
+          value={newPostContent}
+          onChange={(e) => setNewPostContent(e.target.value)}
+          placeholder="What's on your mind?"
+          className="border border-gray-300 p-2 w-full rounded-md"
+        />
+        <button
+          onClick={handleCreatePost}
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2"
+        >
+          Post
+        </button>
+      </div>
+
 
       <div className="forum-page-container">
         {posts.map((post) => (

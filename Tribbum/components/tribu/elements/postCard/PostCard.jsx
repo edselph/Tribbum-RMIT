@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Heart from "react-animated-heart";
+import CommentCard from "./commentCard";
+import { v4 as uuidv4 } from 'uuid';
 import {
     createPostOrComment,
     addCommentToPost,
     getPostOrCommentById
 } from "@/firebase/entities/post";
-import CommentCard from "./commentCard";
 
 const PostCard = ({ post }) => {
     const [isClick, setClick] = useState(post.likedUserIds.includes("currentUserId"));
@@ -16,12 +17,11 @@ const PostCard = ({ post }) => {
     useEffect(() => {
 
         // Any time post/comment changes, load in the latest version of post
+        console.log(isClick)
 
     }, [])
 
     const handleCommentChange = (e) => {
-
-        console.log(e.target.value)
         setComment(e.target.value);
     };
 
@@ -45,13 +45,15 @@ const PostCard = ({ post }) => {
 
             const commentData = {
                 body: comment,
-                parentPostId: postState.id,
+                parentPostId: post.id,
                 timeOfSubmission,
                 userId: 'sample-user-id' // ACTUAL USER ID
             };
             const newCommentId = await createPostOrComment(commentData, 'comments');
 
             // Add the new comment ID to the post's commentIds list
+
+            console.log("Post id??", post.id)
             await addCommentToPost(post.id, newCommentId);
             setComment('');
 
