@@ -1,36 +1,48 @@
 "use client"
-import React, { useState } from "react";
+import React, { useState, useRef, useCallback, useEffect } from "react";
 import Heart from "react-animated-heart";
+import PostCard from "../elements/postCard/postCard";
+import { fetchPostsByGroupId, createPostOrComment } from "@/firebase/entities/post";
+import timeAgo from "@/utils/dateConversion";
 
 const GroupForumPage = () => {
-  const [isClick, setClick] = useState(false);
-  const [group, setGroup] = useState("");
-  const [likeCount, setLikeCount] = useState(0);
-  const [comment, setComment] = useState("");
+  const [posts, setPosts] = useState([]);
+  const [group, setGroup] = useState('1e9404c5-ee0b-4a5e-8908-2fcc3ff78e95');  // Must change to route params
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.dir(group);
-  };
+  useEffect(() => {
 
-  const handleHeartClick = () => {
-    setClick(!isClick);
-    if (!isClick) {
-      setLikeCount(likeCount + 1);
-    } else {
-      setLikeCount(likeCount - 1);
+    // Correct handling of async function within useEffect
+    const loadData = async () => {
+      const fetchedPosts = await fetchPostsByGroupId(group);
+      setPosts(fetchedPosts); // Setting the state with the resolved data
+    };
+    loadData();
+
+  }, []);
+
+
+
+  const handleCreatePost = async () => {
+    if (!newPostContent.trim()) return; // Avoid creating empty posts
+
+    const newPost = {
+      body: newPostContent,
+      commentIds: [],
+      groupId: group.id,
+      timeOfSubmission: { seconds: Math.floor(Date.now() / 1000) },
+      likedUserIds: [],
+    };
+
+    try {
+      await createPostOrComment(newPost, 'posts'); // Replace with your actual API call
+      setPosts((prevPosts) => [newPost, ...prevPosts]); // Prepend to list to display at the top
+      setNewPostContent(""); // Clear the input after submission
+    } catch (error) {
+      console.error("Failed to create post:", error);
     }
   };
 
-  const handleCommentChange = (e) => {
-    setComment(e.target.value);
-  };
 
-  const handleSendComment = () => {
-    // Implement your logic to send the comment
-    console.log("Comment:", comment);
-    setComment(""); // Clear the input after sending the comment
-  };
 
   return (
     <div className="flex flex-col w-full h-auto pt-12 md:pt-20 px-4 items-center relative z-10">
@@ -70,32 +82,31 @@ const GroupForumPage = () => {
           </h1>
         </div>
       </div>
-      <div className="flex flex-col w-full h-auto mx-auto mt-8 mb-12 py-8 px-4 bg-tertiary-100 shadow-xl rounded-3xl border border-gray-200" style={{ maxWidth: "80%" }}>
-        <form onSubmit={handleSubmit} className="flex justify-between items-center">
-          <label className="flex text-lg text-primary-500 font-medium">
-            This is a group post test
-          </label>
-          <div className="flex items-center">
-            <span className="mr-2">{likeCount}</span>
-            <Heart isClick={isClick} onClick={handleHeartClick} />
-          </div>
-        </form>
-        <div className="flex mt-4">
-          <input
-            type="text"
-            value={comment}
-            onChange={handleCommentChange}
-            placeholder="Type your comment here"
-            className="flex-1 px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring focus:border-primary-500"
+
+
+      {/** Tasks for this page
+       * 
+       * Posts (post component/card)
+       * Comments (comment component/card)
+       * Functionality
+       * Like/Dislike
+       * Profile routing
+          - Map out posts here, and comments too (CRUD)
+       */
+      }
+
+      <div className="forum-page-container">
+        {posts.map((post) => (
+          <PostCard
+            key={post.id}
+            post={{
+              ...post,
+              timeAgoText: timeAgo(post.timeOfSubmission?.seconds || 0)
+            }}
           />
-          <button
-            onClick={handleSendComment}
-            className="px-4 py-2 bg-primary-500 text-white rounded-r-md hover:bg-primary-600 focus:outline-none focus:bg-primary-600"
-          >
-            Send
-          </button>
-        </div>
+        ))}
       </div>
+
     </div>
   );
 };

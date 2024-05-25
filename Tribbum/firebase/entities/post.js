@@ -1,4 +1,4 @@
-import { app } from "@/firebase/init";
+import app from '@/firebase/init';
 import {
     getFirestore,
     collection,
@@ -9,7 +9,13 @@ import {
     getDoc,
     getDocs,
     arrayUnion,
-    arrayRemove
+    arrayRemove,
+    query,
+    orderBy,
+    limit,
+    startAfter,
+    documentId,
+    where
 } from "firebase/firestore";
 
 const db = getFirestore(app);
@@ -24,6 +30,25 @@ export async function createPostOrComment(data, collectionName = "posts") {
         console.error("Error creating " + collectionName.slice(0, -1) + ":", error);
     }
 }
+
+
+// ------------------------------------------------------------------------
+
+// Function to add a comment ID to a post
+export const addCommentToPost = async (postId, newCommentId) => {
+    const postRef = doc(db, 'posts', postId);
+    try {
+        await updateDoc(postRef, {
+            commentIds: arrayUnion(newCommentId)  // Correctly using arrayUnion from the imported Firestore functions
+        });
+        console.log("Comment ID added to post successfully");
+    } catch (error) {
+        console.error("Failed to add comment ID to post:", error);
+        throw error;  // Re-throw to handle it in the component if necessary
+    }
+}
+// ------------------------------------------------------------------------
+
 
 // Function to update an existing post or comment
 export async function updatePostOrComment(id, data, collectionName = "posts") {
@@ -53,7 +78,7 @@ export async function getPostOrCommentById(id, collectionName = "posts") {
         const ref = doc(db, collectionName, id);
         const docSnap = await getDoc(ref);
         if (docSnap.exists()) {
-            console.log(collectionName.slice(0, -1) + " data:", docSnap.data());
+            // console.log(collectionName.slice(0, -1) + " data:", docSnap.data());
             return docSnap.data();
         } else {
             console.log("No such " + collectionName.slice(0, -1) + " found!");
@@ -74,13 +99,31 @@ export async function getAllPostsOrComments(collectionName = "posts") {
     }
 }
 
-// Specific function to add a comment to a post
-export async function addCommentToPost(postId, commentData) {
+// // Specific function to add a comment to a post
+// export async function addCommentToPost(postId, commentData) {
+//     try {
+//         const commentId = await createPostOrComment(commentData, "posts"); // Assuming comments are stored in the same collection
+//         await updatePostOrComment(postId, { commentIds: arrayUnion(commentId) }, "posts");
+//         console.log("Comment added to post with ID:", postId);
+//     } catch (error) {
+//         console.error("Error adding comment to post:", error);
+//     }
+// }
+
+
+
+
+// Function to fetch posts by groupId without any ordering or pagination
+export async function fetchPostsByGroupId(groupId) {
+    const postsRef = collection(db, "posts");
+    const q = query(postsRef, where("groupId", "==", groupId));
+
     try {
-        const commentId = await createPostOrComment(commentData, "posts"); // Assuming comments are stored in the same collection
-        await updatePostOrComment(postId, { commentIds: arrayUnion(commentId) }, "posts");
-        console.log("Comment added to post with ID:", postId);
+        const querySnapshot = await getDocs(q);
+        const posts = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+        return posts;
     } catch (error) {
-        console.error("Error adding comment to post:", error);
+        console.error("Error fetching posts by groupId:", error);
+        return [];
     }
 }
