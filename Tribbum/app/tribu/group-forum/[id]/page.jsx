@@ -1,15 +1,8 @@
 import GroupForumPage from "@/components/tribu/views/groupforumPage";
 
-export async function getServerSideProps({ params }) {
-    return {
-        props: {
-            groupId: params.id,
-        },
-    };
-}
 
-const GroupPage = ({ groupId }) => {
-    return <GroupForumPage groupId={groupId} />;
+const GroupPage = ({ params }) => {
+    return <GroupForumPage groupIdParams={params} />;
 };
 
 export default GroupPage;

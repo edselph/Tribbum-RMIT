@@ -5,19 +5,25 @@ import { fetchPostsByGroupId, createPostOrComment } from "@/firebase/entities/po
 import timeAgo from "@/utils/dateConversion";
 import { v4 as uuidv4 } from 'uuid';
 
-const GroupForumPage = ({ groupId }) => {
+const GroupForumPage = ({ groupIdParams }) => {
   const [posts, setPosts] = useState([]);
   const [newPostContent, setNewPostContent] = useState("");
+  const [groupId, setGroupId] = useState(groupIdParams.id)
 
   useEffect(() => {
+
     loadData();
+
+    console.log(groupIdParams)
   }, [groupId]);
 
+  // Retrieve Post data
   const loadData = async () => {
     const fetchedPosts = await fetchPostsByGroupId(groupId);
     const sortedPosts = fetchedPosts.sort((a, b) => b.timeOfSubmission.seconds - a.timeOfSubmission.seconds);
     setPosts(sortedPosts);
   };
+
 
   const handleCreatePost = async () => {
     if (!newPostContent.trim()) return; // Avoid creating empty posts
