@@ -1,34 +1,23 @@
 "use client"
-import React, { useState, useRef, useCallback, useEffect } from "react";
-import Heart from "react-animated-heart";
+import React, { useState, useEffect } from "react";
 import PostCard from "../elements/postCard/postCard";
 import { fetchPostsByGroupId, createPostOrComment } from "@/firebase/entities/post";
 import timeAgo from "@/utils/dateConversion";
 import { v4 as uuidv4 } from 'uuid';
 
-
-const GroupForumPage = () => {
-
-  // Incorporate routing params
-
+const GroupForumPage = ({ groupId }) => {
   const [posts, setPosts] = useState([]);
-  const [group, setGroup] = useState('1e9404c5-ee0b-4a5e-8908-2fcc3ff78e95');  // Must change to route params
   const [newPostContent, setNewPostContent] = useState("");
 
   useEffect(() => {
-
     loadData();
+  }, [groupId]);
 
-  }, []);
-
-
-  // Correct handling of async function within useEffect
   const loadData = async () => {
-    const fetchedPosts = await fetchPostsByGroupId(group);
+    const fetchedPosts = await fetchPostsByGroupId(groupId);
     const sortedPosts = fetchedPosts.sort((a, b) => b.timeOfSubmission.seconds - a.timeOfSubmission.seconds);
-    setPosts(sortedPosts); // Setting the state with the sorted data
+    setPosts(sortedPosts);
   };
-
 
   const handleCreatePost = async () => {
     if (!newPostContent.trim()) return; // Avoid creating empty posts
@@ -37,7 +26,7 @@ const GroupForumPage = () => {
       id: uuidv4(),
       body: newPostContent,
       commentIds: [],
-      groupId: group,
+      groupId: groupId,
       timeOfSubmission: { seconds: Math.floor(Date.now() / 1000) },
       likedUserIds: [],
     };
@@ -51,13 +40,10 @@ const GroupForumPage = () => {
     }
   };
 
-
-
   return (
     <div className="flex flex-col w-full h-auto pt-12 md:pt-20 px-4 items-center relative z-10">
       <div style={{ position: "relative", width: "100%" }}>
         <div style={{ overflow: "hidden", width: "100%", height: "400px" }}>
-          {/* Set height to half of the original image height */}
           <img
             src="https://firebasestorage.googleapis.com/v0/b/tribbum-ffe98.appspot.com/o/forums%2FAyud%C3%A9monos%20en%20comunidad.png?alt=media&token=beed46cc-f379-4a74-85c1-883b177ecacc"
             style={{ width: "100%", height: "auto", display: "block", objectFit: "cover" }}
@@ -92,19 +78,6 @@ const GroupForumPage = () => {
         </div>
       </div>
 
-
-      {/** Tasks for this page
-       * 
-       * Posts (post component/card)
-       * Comments (comment component/card)
-       * Functionality
-       * Like/Dislike
-       * Profile routing
-          - Map out posts here, and comments too (CRUD)
-       */
-      }
-
-      {/* Form for creating a new post */}
       <div className="create-post-container mt-4 mb-6">
         <input
           type="text"
@@ -121,7 +94,6 @@ const GroupForumPage = () => {
         </button>
       </div>
 
-
       <div className="forum-page-container">
         {posts.map((post) => (
           <PostCard
@@ -133,7 +105,6 @@ const GroupForumPage = () => {
           />
         ))}
       </div>
-
     </div>
   );
 };

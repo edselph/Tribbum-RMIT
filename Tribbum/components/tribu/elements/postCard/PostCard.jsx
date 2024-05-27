@@ -17,7 +17,7 @@ const PostCard = ({ post }) => {
     useEffect(() => {
 
         // Any time post/comment changes, load in the latest version of post
-        console.log(isClick)
+        // console.log(isClick)
 
     }, [])
 
@@ -27,7 +27,7 @@ const PostCard = ({ post }) => {
 
     const updatePostState = async () => {
         const data = await getPostOrCommentById(postState.id, 'posts');
-        console.log(data)
+        // console.log(data)
         setPost(data)
         return data;
     };
