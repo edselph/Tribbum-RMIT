@@ -67,7 +67,6 @@
 
 // export default GroupsPage; ////V 3 colum i think it's okay
 
-
 // "use client";
 
 // import React, { useState, useEffect } from "react";
@@ -137,8 +136,6 @@
 
 // export default GroupsPage; ////V good but still messed abit with the alignment
 
-
-
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -162,13 +159,12 @@ const GroupsPage = () => {
   }, []);
 
   useEffect(() => {
-    let results = groupsData.filter(group =>
+    let results = groupsData.filter((group) =>
       group.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
-    if (sortAsc) {
-      results.sort((a, b) => a.name.localeCompare(b.name)); // Sort alphabetically
-    }
+    results.sort((a, b) => a.name.localeCompare(b.name)); // Sort alphabetically
+    if (!sortAsc) results.reverse();
 
     setFilteredGroups(results);
   }, [searchTerm, groupsData, sortAsc]);
@@ -185,7 +181,7 @@ const GroupsPage = () => {
           type="text"
           placeholder="Search groups..."
           value={searchTerm}
-          onChange={e => setSearchTerm(e.target.value)}
+          onChange={(e) => setSearchTerm(e.target.value)}
           className="p-2 border rounded border-gray-300 w-full mb-2"
         />
         <button
