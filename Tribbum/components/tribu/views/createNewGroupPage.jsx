@@ -1,10 +1,8 @@
 // Marking this component as a Client Component
 // use client
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import { getAllUsers } from "@/firebase/entities/users";
-import { addData } from "@/firebase/entities/database.js";
 import { createForums } from "@/firebase/entities/forum.js";
 import UserList from "../molecules/userlist/userlist";
 
@@ -18,19 +16,6 @@ const createNewGroupPage = () => {
   const [showUsers, setShowUsers] = useState(false);
   const [selectedUsers, setSelectedUsers] = useState([]);
   const [error, setError] = useState("");
-  const [users, setUsers] = useState([]);
-
-  useEffect(() => {
-    async function fetchUsers() {
-      try {
-        const userData = await getAllUsers();
-        setUsers(userData);
-      } catch (error) {
-        console.error("Error fetching users:", error);
-      }
-    }
-    fetchUsers();
-  }, []);
 
   //handle upload image
   const handleImageChange = (e) => {
@@ -154,7 +139,6 @@ const createNewGroupPage = () => {
           </div>
 
           <UserList
-            users={users}
             selectedUsers={selectedUsers}
             onSelectUser={handleSelectUser}
             handleRemoveUser={handleRemoveUser}
