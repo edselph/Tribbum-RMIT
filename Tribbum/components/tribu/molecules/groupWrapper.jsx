@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getAllData } from "@/firebase/entities/database";
 import GroupCard from "../elements/groupCard/groupCard";
-import { useRouter } from "next/router";
 
 const GroupWrapper = ({ toggleHouseSlideOver }) => {
   const [groups, setGroups] = useState([]);

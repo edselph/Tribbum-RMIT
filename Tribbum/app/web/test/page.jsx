@@ -3,9 +3,12 @@
 
 import React, { useEffect, useState } from "react";
 import { getAllData, getDataById } from "@/firebase/entities/database";
+import { getPostOrCommentById } from "@/firebase/entities/post";
+
 import {
   createPostOrComment,
-  getAllPostsOrComments
+  getAllPostsOrComments,
+  fetchPostsByGroupId
 } from "@/firebase/entities/post";
 import {
   addUser,
@@ -22,7 +25,7 @@ const Test = () => {
 
   useEffect(() => {
 
-    // postCommentData()
+    // const data = fetchPostsByGroupId('1e9404c5-ee0b-4a5e-8908-2fcc3ff78e95', 2)
     getData()
 
   }, [])
@@ -58,12 +61,14 @@ const Test = () => {
 
   async function getData() {
 
-    const data = await getAllPostsOrComments();
+    // const data = await getAllPostsOrComments();
+    // console.log(data)
+
+    // const data1 = await getAllPostsOrComments("comments");
+    // console.log(data1)
+
+    const data = await getPostOrCommentById('3622de06-f5b7-4f96-bdbd-2d971ca8603a', 'posts')
     console.log(data)
-
-    const data1 = await getAllPostsOrComments("comments");
-    console.log(data1)
-
 
   }
 
