@@ -1,3 +1,3 @@
-import GroupForumPage from "@/components/tribu/views/groupforumPage";
+import HomeAppPage from "@/components/tribu/views/homeAppPage";
 
-export default GroupForumPage;
+export default HomeAppPage;

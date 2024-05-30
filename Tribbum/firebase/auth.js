@@ -14,7 +14,7 @@ export const getCurrentUser = async () => {
     return new Promise((resolve, reject) => {
       auth.onAuthStateChanged((user) => {
         if (user) {
-          resolve(user.uid);
+          resolve(user);
         } else {
           resolve(null);
         }
