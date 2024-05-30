@@ -41,6 +41,21 @@ export async function createPostOrComment(data, collectionName = "posts", id = n
     }
 }
 
+// Function to add post ID to the group's postIds array
+export async function addPostToGroup(groupId, postId) {
+    const groupRef = doc(db, "groups", groupId);
+    try {
+        await updateDoc(groupRef, {
+            postIds: arrayUnion(postId)
+        });
+        console.log(`Group updated with new post ID:`, postId);
+    } catch (error) {
+        console.error(`Error updating group with new post ID:`, error);
+        throw new Error(error);
+    }
+}
+
+
 
 // ------------------------------------------------------------------------
 
@@ -59,18 +74,35 @@ export const addCommentToPost = async (postId, newCommentId) => {
 }
 // ------------------------------------------------------------------------
 
-//  * Adds a user to the likedUserIds array of a post.
-export async function addUserToLikedUserIds(postId, userId) {
-    const postRef = doc(db, "posts", postId); // Get a reference to the specific post document
+// Toggles the like status of a user in the likedUserIds array of a post.
+export async function toggleUserLike(id, userId) {
+    const ref = doc(db, "posts", id); // Get a reference to the specific post document
 
     try {
-        // Use updateDoc to add the userId to the likedUserIds array
-        await updateDoc(postRef, {
-            likedUserIds: arrayUnion(userId)
-        });
-        console.log("User added to likedUserIds successfully");
+        // Retrieve the current document to check the likedUserIds array
+        const docSnapshot = await getDoc(ref);
+        if (!docSnapshot.exists()) {
+            throw new Error("Post not found");
+        }
+
+        const postData = docSnapshot.data();
+        const likedUserIds = postData.likedUserIds || [];
+
+        if (likedUserIds.includes(userId)) {
+            // If userId is already in the array, remove it
+            await updateDoc(ref, {
+                likedUserIds: arrayRemove(userId)
+            });
+            console.log("User removed from likedUserIds successfully");
+        } else {
+            // If userId is not in the array, add it
+            await updateDoc(ref, {
+                likedUserIds: arrayUnion(userId)
+            });
+            console.log("User added to likedUserIds successfully");
+        }
     } catch (error) {
-        console.error("Failed to add user to likedUserIds:", error);
+        console.error("Failed to toggle user like status:", error);
         throw error;  // Rethrow to allow error handling in the calling context
     }
 }

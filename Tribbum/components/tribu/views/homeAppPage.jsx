@@ -185,6 +185,7 @@ const HomeAppPage = () => {
           </div>
 
           <Suspense fallback={<div>Loading...</div>}>
+            {/* Prop drill userData down to groupForumPage */}
             <GroupWrapper toggleHouseSlideOver={toggleHouseSlideOver} />
           </Suspense>
         </div>

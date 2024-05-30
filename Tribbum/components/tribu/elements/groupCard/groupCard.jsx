@@ -1,16 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
+"use client";
 
-"use client"
+import { useRouter } from 'next/navigation';
 
 const GroupCard = ({ groupData }) => {
-  const data = [{ id: "2", title: "Con niños periodicamente" }];
+  const router = useRouter();
+  // const data = [{ id: "2", title: "Con niños periodicamente" }];
 
-  // Function to handle navigation using window.location.href
   const navigateToGroup = () => {
-    // Ensure the code runs only on the client-side where `window` is defined
-    if (typeof window !== "undefined") {
-      window.location.href = `/group-forum/${groupData.id}`;
-    }
+    router.push(`tribu/group-forum/${groupData.id}`);
   };
 
   return (
@@ -47,7 +45,7 @@ const GroupCard = ({ groupData }) => {
         </span>
       </div>
 
-      <div className="flex absolute bottom-4 left-0 w-full h-auto px-4 justify-start items-center gap-4">
+      {/* <div className="flex absolute bottom-4 left-0 w-full h-auto px-4 justify-start items-center gap-4">
         <div className="flex flex-row flex-wrap w-auto h-auto justify-start gap-2">
           {data.map((item) => (
             <div
@@ -60,7 +58,7 @@ const GroupCard = ({ groupData }) => {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
 
       <button onClick={navigateToGroup} className="p-2 text-white bg-blue-500 rounded hover:bg-blue-600">
         View Group
