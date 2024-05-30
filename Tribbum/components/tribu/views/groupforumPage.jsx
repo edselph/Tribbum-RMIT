@@ -1,21 +1,35 @@
 "use client"
 import React, { useState, useEffect } from "react";
 import PostCard from "../elements/postCard/postCard";
-import { fetchPostsByGroupId, createPostOrComment } from "@/firebase/entities/post";
+import {
+  fetchPostsByGroupId,
+  createPostOrComment,
+  addPostToGroup
+} from "@/firebase/entities/post";
+import { getUserById } from "@/firebase/entities/users";
 import timeAgo from "@/utils/dateConversion";
 import { v4 as uuidv4 } from 'uuid';
+import { getUserData, setUser } from "@/firebase/entities/users";
 
 const GroupForumPage = ({ groupIdParams }) => {
   const [posts, setPosts] = useState([]);
   const [newPostContent, setNewPostContent] = useState("");
   const [groupId, setGroupId] = useState(groupIdParams.id)
+  const [userData, setUserData] = useState();
 
   useEffect(() => {
 
     loadData();
+    currentUserData();
 
-    console.log(groupIdParams)
   }, [groupId]);
+
+  const currentUserData = async () => {
+
+    const usr = await getUserById("00123456-789a-bcde-f012-3456789abcde")
+    console.log(usr)
+    setUserData(usr)
+  }
 
   // Retrieve Post data
   const loadData = async () => {
@@ -32,6 +46,7 @@ const GroupForumPage = ({ groupIdParams }) => {
       id: uuidv4(),
       body: newPostContent,
       commentIds: [],
+      userId: userData.id,
       groupId: groupId,
       timeOfSubmission: { seconds: Math.floor(Date.now() / 1000) },
       likedUserIds: [],
@@ -39,6 +54,7 @@ const GroupForumPage = ({ groupIdParams }) => {
 
     try {
       await createPostOrComment(newPost, 'posts', newPost.id);
+      await addPostToGroup(groupId, newPost.id)
       setPosts((prevPosts) => [newPost, ...prevPosts]); // Prepend to list to display at the top
       setNewPostContent("");
     } catch (error) {
@@ -108,6 +124,7 @@ const GroupForumPage = ({ groupIdParams }) => {
               ...post,
               timeAgoText: timeAgo(post.timeOfSubmission?.seconds || 0)
             }}
+            usr={userData}
           />
         ))}
       </div>

@@ -5,10 +5,11 @@ import { v4 as uuidv4 } from 'uuid';
 import {
     createPostOrComment,
     addCommentToPost,
-    getPostOrCommentById
+    getPostOrCommentById,
+    toggleUserLike
 } from "@/firebase/entities/post";
 
-const PostCard = ({ post }) => {
+const PostCard = ({ post, usr }) => {
     const [isClick, setClick] = useState(post.likedUserIds.includes("currentUserId"));
     const [comment, setComment] = useState("");
     const [postState, setPost] = useState(post);
@@ -19,7 +20,11 @@ const PostCard = ({ post }) => {
         // Any time post/comment changes, load in the latest version of post
         // console.log(isClick)
 
-    }, [])
+        updatePostState()
+
+    }, [isClick])
+
+
 
     const handleCommentChange = (e) => {
         setComment(e.target.value);
@@ -43,11 +48,12 @@ const PostCard = ({ post }) => {
                 nanoseconds: (timestamp.getTime() % 1000) * 1000000
             };
 
-            const commentData = {
+            const commentData = {   // Also add likedUserList
+                likedUserIds: [],
                 body: comment,
                 parentPostId: post.id,
                 timeOfSubmission,
-                userId: 'sample-user-id' // ACTUAL USER ID
+                userId: usr.id
             };
             const newCommentId = await createPostOrComment(commentData, 'comments');
 
@@ -64,19 +70,34 @@ const PostCard = ({ post }) => {
         }
     };
 
-    const onHeartClick = () => {
+    const onHeartClick = async () => {
         // By default, shows if clicked.
         // Handle like/unlike logic here
 
+        console.log("Heart liked")
+
+        await toggleUserLike(postState.id, "currentUserId")
         setClick(!isClick);
     };
 
 
     return (
         <div className="post-container bg-white shadow-lg rounded-lg p-4 my-4">
+            <div className="post-header flex items-center mb-4">
+                {usr.photoUrl && (
+                    <img
+                        src={usr.photoUrl}
+                        alt={`${usr.name} ${usr.surname}`}
+                        className="w-10 h-10 rounded-full mr-4"
+                    />
+                )}
+                <div>
+                    <p className="text-lg font-semibold text-gray-900">{usr.name} {usr.surname}</p>
+                    <p className="text-sm font-medium text-gray-500">{timeAgo}</p>
+                </div>
+            </div>
             <div className="post-body mb-4">
                 <p className="text-lg font-semibold text-gray-900">{postState.body}</p>
-                <p className="text-sm font-medium text-gray-500">{timeAgo}</p>
             </div>
             <div className="post-likes flex items-center mb-4">
                 <span className="text-sm font-medium text-gray-700 mr-2">{postState.likedUserIds.length} Likes</span>
@@ -99,18 +120,11 @@ const PostCard = ({ post }) => {
                 >
                     Send
                 </button>
-
-                {/* Map CommentCards */}
-
-
                 <div className="comment-container">
                     {postState.commentIds.slice().reverse().map((commentId) => (
-                        <CommentCard key={commentId} idComment={commentId} />
+                        <CommentCard usr={usr} key={commentId} idComment={commentId} />
                     ))}
                 </div>
-
-
-
             </div>
         </div>
     );
