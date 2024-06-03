@@ -26,7 +26,7 @@ const GroupForumPage = ({ groupIdParams }) => {
 
   const currentUserData = async () => {
 
-    const usr = await getUserById("00123456-789a-bcde-f012-3456789abcde")
+    const usr = await getUserById("00123456-789a-bcde-f012-3456789abcde")  // Sample user, manually loaded
     console.log(usr)
     setUserData(usr)
   }
