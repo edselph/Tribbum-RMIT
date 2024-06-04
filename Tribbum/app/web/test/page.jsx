@@ -4,6 +4,9 @@
 import React, { useEffect, useState } from "react";
 import { getAllData, getDataById } from "@/firebase/entities/database";
 import { getPostOrCommentById } from "@/firebase/entities/post";
+import {
+  getCurrentUser
+} from "@/firebase/auth.js";
 
 import {
   createPostOrComment,
@@ -22,13 +25,40 @@ import {
 const Test = () => {
 
   const [eg, setEg] = useState('hi');
+  const [userData, setUserData] = useState();
+
+  // useEffect(() => {
+
+  //   // const data = fetchPostsByGroupId('1e9404c5-ee0b-4a5e-8908-2fcc3ff78e95', 2)
+  //   getData()
+
+  // }, [])
+
+
 
   useEffect(() => {
+    getCurrentUser().then((user) => {
+      if (user) {
+        console.log(user)
+      }
+    });
+  }, []);
 
-    // const data = fetchPostsByGroupId('1e9404c5-ee0b-4a5e-8908-2fcc3ff78e95', 2)
-    getData()
 
-  }, [])
+
+  // useEffect(() => {
+
+  //   console.log("useEffect")
+
+  //   getUserData.then((response) => {
+  //     if (response.result) {
+  //       setUserData(response.resultData.data);
+  //     } else {
+  //       console.log("error", "fetch error.");
+  //     }
+  //   });
+  // }, []);
+
 
   async function postCommentData() {
 
