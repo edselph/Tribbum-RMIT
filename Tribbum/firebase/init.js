@@ -29,8 +29,8 @@ const auth = getAuth(app);
 // Connect to Firestore Emulator in development
 if (process.env.NODE_ENV === "development") {
   connectAuthEmulator(auth, "http://127.0.0.1:9099");
-  connectFirestoreEmulator(db, "http://127.0.0.1:8080");
-  connectStorageEmulator(storage, "http://127.0.0.1:9199");
+  connectFirestoreEmulator(db, "127.0.0.1", 8080);
+  connectStorageEmulator(storage, "127.0.0.1", 9199);
 }
 
 export default app;
