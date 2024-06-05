@@ -18,8 +18,6 @@ const PostCard = ({ post, usr }) => {
     useEffect(() => {
 
         // Any time post/comment changes, load in the latest version of post
-        // console.log(isClick)
-
         updatePostState()
 
     }, [isClick])
@@ -108,7 +106,7 @@ const PostCard = ({ post, usr }) => {
                     type="text"
                     value={comment}
                     onChange={handleCommentChange}
-                    placeholder="Type your comment here"
+                    placeholder="Escribe un comentario..."
                     className="border border-gray-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 rounded-l-lg p-2 flex-grow"
                 />
                 <button
