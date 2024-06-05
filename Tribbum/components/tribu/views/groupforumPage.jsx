@@ -100,34 +100,36 @@ const GroupForumPage = ({ groupIdParams }) => {
         </div>
       </div>
 
-      <div className="create-post-container mt-4 mb-6">
-        <input
-          type="text"
-          value={newPostContent}
-          onChange={(e) => setNewPostContent(e.target.value)}
-          placeholder="What's on your mind?"
-          className="border border-gray-300 p-2 w-full rounded-md"
-        />
-        <button
-          onClick={handleCreatePost}
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2"
-        >
-          Post
-        </button>
-      </div>
+  <div className="create-post-container mt-4 mb-6 w-2/3 mx-auto">
+  <div className="flex items-center">
+    <input
+      type="text"
+      value={newPostContent}
+      onChange={(e) => setNewPostContent(e.target.value)}
+      placeholder="What's on your mind?"
+      className="border border-gray-300 p-2 flex-grow rounded-md mr-2"
+    />
+    <button
+      onClick={handleCreatePost}
+      className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+    >
+      Post
+    </button>
+  </div>
+</div>
 
-      <div className="forum-page-container">
-        {posts.map((post) => (
-          <PostCard
-            key={post.id}
-            post={{
-              ...post,
-              timeAgoText: timeAgo(post.timeOfSubmission?.seconds || 0)
-            }}
-            usr={userData}
-          />
-        ))}
-      </div>
+<div className="forum-page-container w-2/3 mx-auto">
+  {posts.map((post) => (
+    <PostCard
+      key={post.id}
+      post={{
+        ...post,
+        timeAgoText: timeAgo(post.timeOfSubmission?.seconds || 0)
+      }}
+      usr={userData}
+    />
+  ))}
+</div>
     </div>
   );
 };

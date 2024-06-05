@@ -16,15 +16,9 @@ const PostCard = ({ post, usr }) => {
     const [timeAgo, setTimeAgo] = useState(post.timeAgoText);
 
     useEffect(() => {
-
         // Any time post/comment changes, load in the latest version of post
-        // console.log(isClick)
-
-        updatePostState()
-
-    }, [isClick])
-
-
+        updatePostState();
+    }, [isClick]);
 
     const handleCommentChange = (e) => {
         setComment(e.target.value);
@@ -32,8 +26,7 @@ const PostCard = ({ post, usr }) => {
 
     const updatePostState = async () => {
         const data = await getPostOrCommentById(postState.id, 'posts');
-        // console.log(data)
-        setPost(data)
+        setPost(data);
         return data;
     };
 
@@ -58,13 +51,10 @@ const PostCard = ({ post, usr }) => {
             const newCommentId = await createPostOrComment(commentData, 'comments');
 
             // Add the new comment ID to the post's commentIds list
-
-            console.log("Post id??", post.id)
             await addCommentToPost(post.id, newCommentId);
             setComment('');
 
-            updatePostState()
-
+            updatePostState();
         } catch (error) {
             console.error("Error handling the comment submission:", error);
         }
@@ -73,37 +63,34 @@ const PostCard = ({ post, usr }) => {
     const onHeartClick = async () => {
         // By default, shows if clicked.
         // Handle like/unlike logic here
-
-        console.log("Heart liked")
-
-        await toggleUserLike(postState.id, "currentUserId")
+        await toggleUserLike(postState.id, "currentUserId");
         setClick(!isClick);
     };
 
-
     return (
-        <div className="post-container bg-white shadow-lg rounded-lg p-4 my-4">
-            <div className="post-header flex items-center mb-4">
-                {usr.photoUrl && (
-                    <img
-                        src={usr.photoUrl}
-                        alt={`${usr.name} ${usr.surname}`}
-                        className="w-10 h-10 rounded-full mr-4"
-                    />
-                )}
-                <div>
-                    <p className="text-lg font-semibold text-gray-900">{usr.name} {usr.surname}</p>
-                    <p className="text-sm font-medium text-gray-500">{timeAgo}</p>
-                </div>
+        <div className="post-container bg-white shadow-lg rounded-lg p-4 my-4 w-full mx-auto">
+        <div className="post-header flex items-center mb-4">
+            {usr.photoUrl && (
+                <img
+                    src={usr.photoUrl}
+                    alt={`${usr.name} ${usr.surname}`}
+                    className="w-10 h-10 rounded-full mr-4"
+                />
+            )}
+            <div>
+                <p className="text-lg font-semibold text-gray-900">{usr.name} {usr.surname}</p>
+                <p className="text-sm font-medium text-gray-500">{timeAgo}</p>
             </div>
-            <div className="post-body mb-4">
-                <p className="text-lg font-semibold text-gray-900">{postState.body}</p>
-            </div>
-            <div className="post-likes flex items-center mb-4">
-                <span className="text-sm font-medium text-gray-700 mr-2">{postState.likedUserIds.length} Likes</span>
-                <Heart isClick={isClick} onClick={onHeartClick} />
-            </div>
-            <div className="post-comments">
+        </div>
+        <div className="post-body mb-4">
+            <p className="text-lg font-semibold text-gray-900">{postState.body}</p>
+        </div>
+        <div className="post-likes flex items-center mb-4 ml-auto">
+            <span className="text-sm font-medium text-gray-700 mr-2">{postState.likedUserIds.length} Likes</span>
+            <Heart isClick={isClick} onClick={onHeartClick} />
+        </div>
+        <div className="post-comments mt-4 mb-6 w-full mx-auto">
+            <div className="flex items-center">
                 <input
                     type="text"
                     value={comment}
@@ -120,13 +107,14 @@ const PostCard = ({ post, usr }) => {
                 >
                     Send
                 </button>
-                <div className="comment-container">
-                    {postState.commentIds.slice().reverse().map((commentId) => (
-                        <CommentCard usr={usr} key={commentId} idComment={commentId} />
-                    ))}
-                </div>
+            </div>
+            <div className="comment-container mt-4">
+                {postState.commentIds.slice().reverse().map((commentId) => (
+                    <CommentCard usr={usr} key={commentId} idComment={commentId} />
+                ))}
             </div>
         </div>
+    </div>    
     );
 };
 
