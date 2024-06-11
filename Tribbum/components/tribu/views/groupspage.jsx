@@ -65,7 +65,7 @@ const GroupsPage = () => {
       <div className="w-full flex flex-wrap justify-center">
         {filteredGroups.map((group, index) => (
           <div key={index} className="m-4 max-w-sm">
-            <GroupCard groupData={group} />
+            <GroupCard groupData={group} fromGrupos={true} />
           </div>
         ))}
       </div>

@@ -5,8 +5,7 @@ import { addMember } from "@/firebase/entities/forum";
 import { getUserData } from "@/firebase/entities/users";
 import { useEffect, useState } from "react";
 
-const GroupCard = ({ groupData: group }) => {
-  const data = [{ id: "2", title: "Con niños periodicamente" }];
+const GroupCard = ({ groupData: group, fromGrupos }) => {
   const router = useRouter();
   const [currentUser, setCurrentUser] = useState();
   const [groupData, setGroupData] = useState([]);
@@ -36,7 +35,11 @@ const GroupCard = ({ groupData: group }) => {
   };
   // Function to handle navigation using window.location.href
   const navigateToGroup = () => {
-    router.push(`tribu/group-forum/${groupData.id}`);
+    if (fromGrupos) {
+      router.replace(`/tribu/group-forum/${groupData.id}`);
+    } else {
+      router.push(`/tribu/group-forum/${groupData.id}`);
+    }
   };
 
   return (
