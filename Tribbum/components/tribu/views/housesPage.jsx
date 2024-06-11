@@ -18,7 +18,7 @@ import {
   getAllData,
   getDataById,
   updateData,
-  deleteData
+  deleteData,
 } from "@/firebase/entities/database";
 
 const HousesPage = () => {
@@ -28,12 +28,12 @@ const HousesPage = () => {
   const [filteredHouse, setFilteredHouse] = useState([]);
   const [houseDatas, setHouseDatas] = useState([]);
 
-  /*   useEffect(() => {
+  useEffect(() => {
     getCurrentUser().then((user) => {
-      setUser(user);
+      setUser(user?.resultData?.data);
       //console.log(user);
     });
-  }, []); */
+  }, []);
   const houses = [1, 2, 3, 4, 5, 6];
 
   const handleGetTenements = async () => {
@@ -75,7 +75,8 @@ const HousesPage = () => {
         <div
           id="filter-slideover"
           className={`flex 
-          md:hidden fixed top-48 w-full h-screen px-4 z-50 duration-300 ease-out transition-all translate-y-full justify-center bg-white/80`}>
+          md:hidden fixed top-48 w-full h-screen px-4 z-50 duration-300 ease-out transition-all translate-y-full justify-center bg-white/80`}
+        >
           <div className="flex w-full max-w-[400px] h-auto mb-32">
             <HouseFilter
               filteredHouse={filteredHouse}
@@ -86,7 +87,8 @@ const HousesPage = () => {
 
         <div
           id="house-slideover"
-          className={`flex fixed inset-0 top-0 right-0 w-full h-screen duration-300 ease-out transition-all translate-x-full z-50`}>
+          className={`flex fixed inset-0 top-0 right-0 w-full h-screen duration-300 ease-out transition-all translate-x-full z-50`}
+        >
           <div className="flex flex-col w-full h-auto items-center">
             <HouseProfile toggleHouseSlideOver={toggleHouseSlideOver} />
           </div>

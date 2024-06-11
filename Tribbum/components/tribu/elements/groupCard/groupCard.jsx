@@ -1,12 +1,40 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
+import { useRouter } from "next/navigation";
+import { addMember } from "@/firebase/entities/forum";
+import { getUserData } from "@/firebase/entities/users";
+import { useEffect, useState } from "react";
 
-import { useRouter } from 'next/navigation';
-
-const GroupCard = ({ groupData }) => {
+const GroupCard = ({ groupData: group }) => {
+  const data = [{ id: "2", title: "Con niños periodicamente" }];
   const router = useRouter();
-  // const data = [{ id: "2", title: "Con niños periodicamente" }];
+  const [currentUser, setCurrentUser] = useState();
+  const [groupData, setGroupData] = useState([]);
 
+  useEffect(() => {
+    if (group) setGroupData(group);
+
+    getUserData.then((user) => {
+      setCurrentUser(user?.resultData?.data);
+    });
+  }, []);
+
+  const joinGroup = async () => {
+    const addMemberStatus = await addMember({
+      forumId: groupData.id,
+      memberId: currentUser.id,
+    });
+    if (addMemberStatus) {
+      setGroupData((prev) => ({
+        ...prev,
+        userIds: [...prev.userIds, currentUser.id],
+      }));
+      console.log("User added successfully");
+    } else {
+      console.log("User not added");
+    }
+  };
+  // Function to handle navigation using window.location.href
   const navigateToGroup = () => {
     router.push(`tribu/group-forum/${groupData.id}`);
   };
@@ -24,19 +52,30 @@ const GroupCard = ({ groupData }) => {
     >
       <div className="flex w-full h-1/2 bg-gray-100 relative">
         <img
-          src={groupData.bannerUrl ? groupData.bannerUrl : "/assets/images/houseTestImg.svg"}
+          src={
+            groupData.bannerUrl
+              ? groupData.bannerUrl
+              : "/assets/images/houseTestImg.svg"
+          }
           alt="Group Image"
           className="w-full h-auto object-cover"
         />
-        <div className="flex absolute bottom-0 right-0 w-[100px] h-[33px] bg-tertiary-400 justify-center items-center">
-          <span className="text-[13px] font-light text-white">
-            <p>Join</p>
-          </span>
-        </div>
+        {groupData && !groupData?.userIds?.includes(currentUser?.id) && (
+          <button
+            type="button"
+            onClick={async () => await joinGroup()}
+            className="flex absolute bottom-0 right-0 w-[100px] h-[33px] bg-tertiary-400 justify-center items-center"
+          >
+            <span className="text-[13px] font-light text-white">
+              <p>Unirte</p>
+            </span>
+          </button>
+        )}
       </div>
       <div className="flex flex-col w-full h-[60px] p-4 justify-between relative">
         <span className="text-[15px] font-medium text-primary-500">
-          {groupData.name.substring(0, 40)}{groupData.name.length > 40 ? "..." : ""}
+          {groupData?.name?.substring(0, 40)}
+          {groupData?.name?.length > 40 ? "..." : ""}
         </span>
       </div>
       <div className="flex flex-row w-full h-auto px-4 mt-2">
@@ -60,7 +99,10 @@ const GroupCard = ({ groupData }) => {
         </div>
       </div> */}
 
-      <button onClick={navigateToGroup} className="p-2 text-white bg-blue-500 rounded hover:bg-blue-600">
+      <button
+        onClick={navigateToGroup}
+        className="p-2 text-white bg-blue-500 rounded hover:bg-blue-600"
+      >
         View Group
       </button>
     </div>

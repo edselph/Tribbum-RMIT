@@ -10,12 +10,12 @@ const Footer = () => {
   const [user, setUser] = useState(false); // to null
   const params = usePathname();
 
-  /*   useEffect(() => {
+  useEffect(() => {
     getCurrentUser().then((user) => {
-      setUser(user);
+      setUser(user?.resultData?.data);
       //console.log(user);
     });
-  }, []); */
+  }, []);
   if (params.includes("web")) {
     return (
       <div className="flex w-full h-auto pb-10 font-system bg-[#04091e] justify-center">

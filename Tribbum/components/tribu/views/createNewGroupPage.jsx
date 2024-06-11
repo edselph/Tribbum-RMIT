@@ -1,14 +1,16 @@
 // Marking this component as a Client Component
 // use client
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { createForums } from "@/firebase/entities/forum.js";
 import UserList from "../molecules/userlist/userlist";
+import { getUserData } from "@/firebase/entities/users";
 
 const createNewGroupPage = () => {
   const router = useRouter();
   const [group, setGroup] = useState("");
+  const [user, setUser] = useState(null);
   const [selectedImage, setSelectImage] = useState(null);
   const [backgroundImage, setBackgroundImage] = useState(
     `url('/assets/images/section4-forwhom.png')`
@@ -17,6 +19,12 @@ const createNewGroupPage = () => {
   const [selectedUsers, setSelectedUsers] = useState([]);
   const [error, setError] = useState("");
 
+  useEffect(() => {
+    getUserData.then((user) => {
+      setUser(user?.resultData?.data);
+      //console.log(user);
+    });
+  }, []);
   //handle upload image
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -66,7 +74,9 @@ const createNewGroupPage = () => {
       await createForums({
         forumImage: selectedImage,
         forumName: group,
-        forumMembers: selectedUsers.map((user) => user.id),
+        forumMembers: [...selectedUsers, { id: user?.id }].map(
+          (user) => user?.id
+        ),
       });
       setError("");
       alert("Group created successfully");

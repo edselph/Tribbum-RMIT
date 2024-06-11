@@ -29,21 +29,19 @@ const HomeAppPage = () => {
   const [provinces, setProvinces] = useState([]);
   const [groups, setGroups] = useState([]);
 
-
-
   // const goToGroupsPage = () => {
   //   Router.push("/groups");
   // };
 
-  useEffect(() => {
-    getUserData.then((response) => {
-      if (response.result) {
-        setUserData(response.resultData.data);
-      } else {
-        console.log("error", "fetch error.");
-      }
-    });
-  }, []);
+  // useEffect(() => {
+  //   getUserData.then((response) => {
+  //     if (response.result) {
+  //       setUserData(response.resultData.data);
+  //     } else {
+  //       console.log("error", "fetch error.");
+  //     }
+  //   });
+  // }, []);
 
   useEffect(() => {
     const handleGetProvinces = async () => {
@@ -156,9 +154,9 @@ const HomeAppPage = () => {
           </Suspense>
         </div>
 
-        <h1 style={{ fontSize: "50px" }}>Groups</h1>
+        <h1 className="text-5xl my-4">Groups</h1>
 
-        <div className="flex flex-col w-full h-[348px] items-center justify-center">
+        <div className="flex flex-col w-full items-center justify-center">
           {/* New component to be introduced here 
             
             * Based on how it's been done, "group" data must be mapped 
@@ -172,12 +170,13 @@ const HomeAppPage = () => {
               the "elements" directory as done with "homehouseCard.jsx"
           
           */}
-          <h1>Groups to be displayed here</h1>
           <div className=" justify-end">
             <span>
               <Link href="tribu/create-new-group">
-                <button className="py-2 px-4 text-gray-50 font-medium
-                  bg-tertiary-500 hover:bg-secondary-500 rounded-full cursor-pointer active:scale-95">
+                <button
+                  className="py-2 px-4 text-gray-50 font-medium
+                  bg-tertiary-500 hover:bg-secondary-500 rounded-full cursor-pointer active:scale-95"
+                >
                   +
                 </button>
               </Link>

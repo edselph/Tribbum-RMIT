@@ -15,12 +15,12 @@ const Header = () => {
   const [user, setUser] = useState(null); // to null
   const [activePathname, setActivePathname] = useState("/web/valores");
 
-  /*   useEffect(() => {
+  useEffect(() => {
     getCurrentUser().then((user) => {
-      setUser(user);
+      setUser(user?.resultData?.data);
       //console.log(user);
     });
-  }, []); */
+  }, []);
 
   useEffect(() => {
     setActivePathname(pathname);
@@ -53,7 +53,8 @@ const Header = () => {
         <div className="flex w-auto h-auto items-center ">
           <Link
             href="/web"
-            className="flex w-[20px[ md:w-[197px] h-auto md:h-14 active:scale-95">
+            className="flex w-[20px[ md:w-[197px] h-auto md:h-14 active:scale-95"
+          >
             <img
               src="/assets/images/tribbum-log.png"
               alt="tribbum-logo"
@@ -67,7 +68,8 @@ const Header = () => {
           </div>
           <div
             className="flex w-auto h-auto justify-center items-center relative"
-            ref={ref}>
+            ref={ref}
+          >
             <MenuBurger
               className="w-8 h-8 text-primary-500 fill-current active:scale-95 cursor-pointer"
               onClick={() => setOpenDropdown(!openDropdown)}
@@ -82,7 +84,8 @@ const Header = () => {
                           activePathname === "/web"
                             ? "underline text-primary-500"
                             : "text-primary-500"
-                        }}`}>
+                        }}`}
+                      >
                         ¿Qué hacemos?
                       </span>
                     </Link>
@@ -92,7 +95,8 @@ const Header = () => {
                           activePathname === "/web/valores"
                             ? "underline text-primary-500"
                             : "text-primary-500"
-                        }}`}>
+                        }}`}
+                      >
                         Valores
                       </span>
                     </Link>
@@ -102,7 +106,8 @@ const Header = () => {
                           activePathname === "/web/para-quien"
                             ? "underline text-primary-500"
                             : "text-primary-500"
-                        }`}>
+                        }`}
+                      >
                         ¿A quién va dirigido?
                       </span>
                     </Link>
@@ -112,7 +117,8 @@ const Header = () => {
                           activePathname === "/web/contacto"
                             ? "underline text-primary-500"
                             : "text-primary-500"
-                        }}`}>
+                        }}`}
+                      >
                         Contacto
                       </span>
                     </Link>
@@ -134,7 +140,8 @@ const Header = () => {
               : "justify-end"
           } 
           items-center gap-2
-          `}>
+          `}
+      >
         <div
           className={`
             ${
@@ -144,10 +151,12 @@ const Header = () => {
             }
             w-auto h-auto 
             items-center 
-        `}>
+        `}
+        >
           <Link
             href="/web"
-            className="flex w-[20px[ md:w-[197px] h-auto md:h-14 active:scale-95">
+            className="flex w-[20px[ md:w-[197px] h-auto md:h-14 active:scale-95"
+          >
             <img
               src="/assets/images/tribbum-log.png"
               alt="tribbum-logo"
@@ -163,7 +172,8 @@ const Header = () => {
                   activePathname === "/web"
                     ? "underline text-primary-500"
                     : "text-primary-500"
-                }}`}>
+                }}`}
+              >
                 ¿Qué hacemos?
               </span>
             </Link>
@@ -173,7 +183,8 @@ const Header = () => {
                   activePathname === "/web/valores"
                     ? "underline text-primary-500"
                     : "text-primary-500"
-                }}`}>
+                }}`}
+              >
                 Valores
               </span>
             </Link>
@@ -183,7 +194,8 @@ const Header = () => {
                   activePathname === "/web/para-quien"
                     ? "underline text-primary-500"
                     : "text-primary-500"
-                }`}>
+                }`}
+              >
                 ¿A quién va dirigido?
               </span>
             </Link>
@@ -193,7 +205,8 @@ const Header = () => {
                   activePathname === "/web/contacto"
                     ? "underline text-primary-500"
                     : "text-primary-500"
-                }}`}>
+                }}`}
+              >
                 Contacto
               </span>
             </Link>
@@ -204,12 +217,14 @@ const Header = () => {
                 <>
                   <Link
                     className="flex w-auto h-auto py-1 px-4 border border-black cursor-pointer rounded-md hover:bg-secondary-500 hover:border-secondary-500 hover:text-white active:scale-95"
-                    href="/web/sign-up">
+                    href="/web/sign-up"
+                  >
                     Registrarse
                   </Link>
                   <Link
                     className="flex w-auto h-auto py-1 px-4 border border-black cursor-pointer rounded-md hover:bg-secondary-500 hover:border-secondary-500 hover:text-white active:scale-95"
-                    href="/web/sign-in">
+                    href="/web/sign-in"
+                  >
                     Entrar
                   </Link>
                 </>
@@ -217,7 +232,8 @@ const Header = () => {
               {user && (
                 <Link
                   className="flex w-auto h-auto py-1 px-4 border border-black cursor-pointer rounded-md hover:bg-secondary-500 hover:border-secondary-500 hover:text-white active:scale-95"
-                  href="/tribu">
+                  href="/tribu"
+                >
                   Entrar
                 </Link>
               )}

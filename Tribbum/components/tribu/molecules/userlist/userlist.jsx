@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import UserIcon from "@/public/assets/icons/user.svg";
 import CloseIcon from "@/public/assets/icons/close_icon.svg";
-import { searchUserByName } from "@/firebase/entities/users";
+import { getUserData, searchUserByName } from "@/firebase/entities/users";
 const UserList = ({
   selectedUsers,
   onSelectUser,
@@ -12,12 +12,18 @@ const UserList = ({
   const [imageError, setImageError] = useState(false);
   const [userSearch, setUserSearch] = useState("");
   const [users, setUsers] = useState([]);
-
+  const [user, setUser] = useState(null);
+  useEffect(() => {
+    getUserData.then((user) => {
+      setUser(user?.resultData?.data);
+      //console.log(user);
+    });
+  }, []);
   const handleImageError = () => {
     setImageError(true);
   };
   const searchUser = async () => {
-    const userResult = await searchUserByName(userSearch);
+    const userResult = await searchUserByName(userSearch, user.email);
     setUsers(userResult);
   };
   return (
