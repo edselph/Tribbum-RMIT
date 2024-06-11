@@ -3,12 +3,18 @@
 
 import { useRouter } from 'next/navigation';
 
-const GroupCard = ({ groupData }) => {
+const GroupCard = ({ groupData, fromGrupos }) => {
   const router = useRouter();
   // const data = [{ id: "2", title: "Con niños periodicamente" }];
 
   const navigateToGroup = () => {
-    router.push(`tribu/group-forum/${groupData.id}`);
+
+    if (fromGrupos) {
+      router.replace(`/tribu/group-forum/${groupData.id}`);
+    }
+    else {
+      router.push(`/tribu/group-forum/${groupData.id}`);
+    }
   };
 
   return (

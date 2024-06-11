@@ -44,7 +44,7 @@ const GroupsPage = () => {
           type="text"
           placeholder="Search groups..."
           value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
+          onChange={e => setSearchTerm(e.target.value)}
           className="p-2 border rounded border-gray-300 w-full"
         />
         <Link href="create-new-group">
@@ -65,7 +65,7 @@ const GroupsPage = () => {
       <div className="w-full flex flex-wrap justify-center">
         {filteredGroups.map((group, index) => (
           <div key={index} className="m-4" style={{ maxWidth: "340px" }}>
-            <GroupCard groupData={group} />
+            <GroupCard groupData={group} fromGrupos={true} />
           </div>
         ))}
       </div>
