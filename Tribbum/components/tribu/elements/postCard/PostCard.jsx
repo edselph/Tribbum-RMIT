@@ -18,9 +18,7 @@ const PostCard = ({ post, usr }) => {
     useEffect(() => {
         // Any time post/comment changes, load in the latest version of post
         updatePostState()
-
-    }, [isClick])
-
+    }, [isClick]);
 
     const handleCommentChange = (e) => {
         setComment(e.target.value);
@@ -71,6 +69,14 @@ const PostCard = ({ post, usr }) => {
 
     return (
         <div className="post-container bg-white shadow-lg rounded-lg p-4 my-4 w-full mx-auto">
+           <style jsx>{`
+                .post-body p,
+                .comment-container p {
+                    overflow-wrap: break-word;
+                    word-break: break-word;
+                    white-space: pre-wrap;
+                }
+            `}</style>
             <div className="post-header flex items-center mb-4">
                 {usr.photoUrl && (
                     <img
@@ -91,7 +97,7 @@ const PostCard = ({ post, usr }) => {
                 <span className="text-sm font-medium text-gray-700 mr-2">{postState.likedUserIds.length} Likes</span>
                 <Heart isClick={isClick} onClick={onHeartClick} />
             </div>
-            <div className="post-comments">
+            <div className="post-comments flex items-center">
                 <input
                     type="text"
                     value={comment}
@@ -115,7 +121,6 @@ const PostCard = ({ post, usr }) => {
                 ))}
             </div>
         </div>
-
     );
 };
 

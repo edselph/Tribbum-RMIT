@@ -123,7 +123,7 @@ const GroupForumPage = ({ groupIdParams }) => {
         </div>
       </div>
 
-      <div className="create-post-container mt-4 mb-6 w-2/3 mx-auto">
+      <div className="create-post-container mt-4 mb-6 w-full mx-auto">
         <div className="flex items-center">
           <input
             type="text"
@@ -140,6 +140,14 @@ const GroupForumPage = ({ groupIdParams }) => {
           </button>
         </div>
       </div>
+
+      <style jsx>{`
+        .create-post-container input, .forum-page-container {
+          overflow-wrap: break-word;
+          word-wrap: break-word;
+          white-space: normal;
+        }
+      `}</style>
 
       <div className="forum-page-container w-2/3 mx-auto">
         {posts.map((post) => (

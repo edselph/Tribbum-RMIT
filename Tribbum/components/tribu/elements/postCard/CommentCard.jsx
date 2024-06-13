@@ -21,7 +21,14 @@ const CommentCard = ({ idComment, usr }) => {
     }, [idComment]);
 
     return (
-        <div className="comment bg-gray-100 p-3 rounded-lg shadow flex items-start">
+        <div className="comment bg-gray-100 p-3 rounded-lg shadow flex items-start mb-2">
+            <style jsx>{`
+                .comment-body {
+                    overflow-wrap: break-word;
+                    word-break: break-word;
+                    white-space: pre-wrap;
+                }
+            `}</style>
             {usr.photoUrl && (
                 <img
                     src={usr.photoUrl}
@@ -29,6 +36,7 @@ const CommentCard = ({ idComment, usr }) => {
                     className="w-8 h-8 rounded-full mr-3"
                 />
             )}
+        
             <div>
                 <p className="text-sm font-semibold text-gray-900">{usr.name} {usr.surname}</p>
                 <p className="comment-body text-gray-800">{comment.body}</p>
