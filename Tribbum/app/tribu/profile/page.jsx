@@ -1,6 +1,3 @@
-// import ProfilePage from "@/components/tribu/views/ProfilePage";
+import HomeAppPage from "@/components/tribu/views/homeAppPage";
 
-// export default ProfilePage;
-import ProfilePage from "@/components/tribu/molecules/peopleProfile/peopleProfile.jsx";
-
-export default ProfilePage;
+export default HomeAppPage;

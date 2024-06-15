@@ -194,18 +194,31 @@
 "use client";
 import FeatureChip from "../../elements/featureChip/FeatureChip";
 import AlertIcon from "@/public/assets/icons/alert-hexagon.svg";
-import { profileDatas } from "@/utils/dummyDatas";
-import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ChatSlideOver from "../chatBoard/ChatSlideOver";
+import { getUserById } from "@/firebase/entities/users";
+import Link from "next/link";
+
 /* eslint-disable @next/next/no-img-element */
 
 const PeopleProfile = ({
+  groupIdParams,
   togglePeopleSlideOver,
   isToastReportUserOpen,
   setIsToastReportUserOpen,
 }) => {
   const [isChatSlideOpen, setIsChatSlideOpen] = useState(false);
+  const [userData, setUserData] = useState(null);
+
+  useEffect(() => {
+    loadData();
+  }, []);
+
+  const loadData = async () => {
+    const usr = await getUserById(groupIdParams.id);
+    console.log(usr)
+    setUserData(usr);
+  };
 
   function toggleChatSlideOver() {
     setIsChatSlideOpen(!isChatSlideOpen);
@@ -245,126 +258,118 @@ const PeopleProfile = ({
               }}
             >
               <span className="flex text-white text-[13px] font-medium uppercase">
-                Cerrar
+                Close
               </span>
             </button>
           </div>
-          <div className="flex flex-col w-auto h-auto mt-8 overflow-scroll">
-            <div
-              id="profile portrait"
-              className="flex flex-col md:flex-row w-full h-auto md:items-center"
-            >
-              <div className="flex w-full md:w-1/2 h-[300px] px-4">
-                <div className="flex w-full h-full overflow-hidden bg-white rounded-xl">
-                  <img
-                    src={profileDatas.portraitUrl}
-                    alt="Foto casa por compartir"
-                    className="flex w-full min-w-[300px] h-auto object-cover"
-                  />
-                </div>
-              </div>
-              <div className="flex flex-col w-full md:w-1/2 h-auto px-4 mt-8 md:mt-0">
-                <div className="flex flex-col w-full h-auto ">
-                  <div className="flex flex-col w-auto h-auto px-2 items-start">
-                    <span className="text-xl font-medium text-primary-500">
-                      Inma Carbonell Fresnada
-                    </span>
-                    <span className="text-xl font-medium text-primary-500">
-                      46 años
-                    </span>
-                  </div>
-                  <div className="flex flex-row w-auto h-auto px-2 mt-2 justify-between items-center">
-                    <span className="text-lg font-normal text-primary-500">
-                      Barcelona
-                    </span>
-                  </div>
-                </div>
-                <div className="flex flex-col w-full h-auto mt-8 ">
-                  <div className="flex flex-col w-full h-auto px-2 ">
-                    <span className="text-sm font-normal text-primary-500">
-                      Artista madrileña y vegetariana, Me apasiona viajar y mi
-                      profesión. Busco compartir piso en zona bien comunicada.
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="flex flex-row w-auto h-auto px-4 mt-2 justify-center items-center">
-              <div className="flex flex-row flex-wrap w-full h-auto mt-4 justify-start items-center gap-4">
-                {profileDatas.profileTraits?.map((trait) => {
-                  return (
-                    <FeatureChip
-                      text={trait.text}
-                      icon={trait.icon}
-                      chipWidth={trait.chipWidth}
-                      key={trait.id}
-                      id={trait.id}
-                      chipType={trait.chipType}
+          {userData && (
+            <div className="flex flex-col w-auto h-auto mt-8 overflow-scroll">
+              <div
+                id="profile portrait"
+                className="flex flex-col md:flex-row w-full h-auto md:items-center"
+              >
+                <div className="flex w-full md:w-1/2 h-[300px] px-4">
+                  <div className="flex w-full h-full overflow-hidden bg-white rounded-xl">
+                    <img
+                      src={userData.photoUrl}
+                      alt={`${userData.name} ${userData.surname}`}
+                      className="flex w-full min-w-[300px] h-auto object-cover"
                     />
-                  );
-                })}
-              </div>
-            </div>
-            <div className="flex w-full h-auto my-10 px-4">
-              <div className="flex w-full h-0.5 bg-gray-500/20 "></div>
-            </div>
-            <div className="flex flex-col w-full h-auto px-4 ">
-              <div className="flex w-full h-auto ">
-                <span className="text-sm font-light text-primary-500">
-                  Caracteristicas personales
-                </span>
-              </div>
-              <div className="flex flex-row flex-wrap w-full h-auto mt-4 gap-4">
-                {profileDatas.personality?.map((data) => {
-                  return (
-                    <div
-                      key={data.id}
-                      id={data.id}
-                      className="flex w-auto h-auto px-4 py-1 justify-center items-center rounded-full bg-white"
-                    >
-                      <span className="flex text-primary-500 text-sm font-light">
-                        {data.title}
+                  </div>
+                </div>
+                <div className="flex flex-col w-full md:w-1/2 h-auto px-4 mt-8 md:mt-0">
+                  <div className="flex flex-col w-full h-auto ">
+                    <div className="flex flex-col w-auto h-auto px-2 items-start">
+                      <span className="text-xl font-medium text-primary-500">
+                        {userData.name} {userData.surname}
+                      </span>
+                      <span className="text-xl font-medium text-primary-500">
+                        {userData.age} years
                       </span>
                     </div>
-                  );
-                })}
-              </div>
-            </div>
-            <div className="flex flex-col w-full h-auto px-4 mt-8 pb-12">
-              <div className="flex w-full h-auto ">
-                <span className="text-sm font-light text-primary-500">
-                  Aficiones
-                </span>
-              </div>
-              <div className="flex flex-row flex-wrap w-full h-auto mt-4 gap-4">
-                {profileDatas.hobbies?.map((data) => {
-                  return (
-                    <div
-                      key={data.id}
-                      id={data.id}
-                      className="flex w-auto h-auto px-4 py-1 justify-center items-center rounded-full bg-white"
-                    >
-                      <span className="flex text-primary-500 text-sm font-light">
-                        {data.title}
+                    <div className="flex flex-row w-auto h-auto px-2 mt-2 justify-between items-center">
+                      <span className="text-lg font-normal text-primary-500">
+                        {userData.location}, {userData.province}
                       </span>
                     </div>
-                  );
-                })}
+                  </div>
+                  <div className="flex flex-col w-full h-auto mt-8 ">
+                    <div className="flex flex-col w-full h-auto px-2 ">
+                      <span className="text-sm font-normal text-primary-500">
+                        {userData.description}
+                      </span>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="flex w-full h-auto mt-8 mb-40 px-4">
-              <div className="flex w-full h-14 px-8 bg-tertiary-500 rounded-full items-center justify-center text-white active:scale-95 cursor-pointer relative">
-                <div
-                  className="flex w-auto h-auto justify-center"
-                  onClick={() => toggleChatSlideOver()}
-                >
-                  <span className="flex text-2xl text-white font-light uppercase">
-                    Chatear con Inma
+              <div className="flex flex-row w-auto h-auto px-4 mt-2 justify-center items-center">
+                <div className="flex flex-row flex-wrap w-full h-auto mt-4 justify-start items-center gap-4">
+                  {Object.values(userData.personalityTraits).map((trait, index) => {
+                    return (
+                      <FeatureChip
+                        text={trait.name}
+                        icon={trait.icon}
+                        chipWidth="normal"
+                        key={index}
+                        id={trait.id}
+                        chipType="personality"
+                      />
+                    );
+                  })}
+                </div>
+              </div>
+              <div className="flex w-full h-auto my-10 px-4">
+                <div className="flex w-full h-0.5 bg-gray-500/20 "></div>
+              </div>
+              <div className="flex flex-col w-full h-auto px-4 ">
+                <div className="flex w-full h-auto ">
+                  <span className="text-sm font-light text-primary-500">
+                    Personal Characteristics
                   </span>
                 </div>
+
+                <div className="flex flex-row flex-wrap w-full h-auto mt-4 justify-start items-center gap-4">
+                  {userData && Object.entries(userData.personalityTraits).map(([key, trait]) => (
+                    <FeatureChip
+                      text={trait.name}
+                      icon={trait.icon} // Assuming there's an icon property, otherwise remove this
+                      chipWidth="normal"
+                      key={key}
+                      id={trait.id}
+                      chipType="personality"
+                    />
+                  ))}
+                </div>
+
+                <div className="flex flex-row flex-wrap w-full h-auto mt-4 gap-4">
+                  {userData && Object.entries(userData.hobbies).map(([key, hobby]) => (
+                    <div
+                      key={key}
+                      id={hobby.id}
+                      className="flex w-auto h-auto px-4 py-1 justify-center items-center rounded-full bg-white"
+                    >
+                      <span className="flex text-primary-500 text-sm font-light">
+                        {hobby.name}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+              </div>
+              <div className="flex w-full h-auto mt-8 mb-40 px-4">
+                <div className="flex w-full h-14 px-8 bg-tertiary-500 rounded-full items-center justify-center text-white active:scale-95 cursor-pointer relative">
+                  <div
+                    className="flex w-auto h-auto justify-center"
+                    onClick={() => toggleChatSlideOver()}
+                  >
+                    <span className="flex text-2xl text-white font-light uppercase">
+                      Chat with {userData.name}
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </div>

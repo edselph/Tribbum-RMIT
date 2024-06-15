@@ -33,7 +33,7 @@ const GroupCard = ({ groupData: group, fromGrupos }) => {
       console.log("User not added");
     }
   };
-  // Function to handle navigation using window.location.href
+
   const navigateToGroup = () => {
     if (fromGrupos) {
       router.replace(`/tribu/group-forum/${groupData.id}`);

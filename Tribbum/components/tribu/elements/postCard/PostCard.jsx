@@ -67,9 +67,14 @@ const PostCard = ({ post, usr }) => {
         setClick(!isClick);
     };
 
+    const navigateToUserProfile = () => {
+        window.location.href = `/tribu/profile/${usr.id}`;
+    };
+
+
     return (
         <div className="post-container bg-white shadow-lg rounded-lg p-4 my-4 w-full mx-auto">
-           <style jsx>{`
+            <style jsx>{`
                 .post-body p,
                 .comment-container p {
                     overflow-wrap: break-word;
@@ -83,6 +88,7 @@ const PostCard = ({ post, usr }) => {
                         src={usr.photoUrl}
                         alt={`${usr.name} ${usr.surname}`}
                         className="w-10 h-10 rounded-full mr-4"
+                        onClick={navigateToUserProfile}
                     />
                 )}
                 <div>
