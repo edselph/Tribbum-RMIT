@@ -8,12 +8,14 @@ import {
     getPostOrCommentById,
     toggleUserLike
 } from "@/firebase/entities/post";
+import { containsProfanity } from "@/utils/profanityFilter";
 
 const PostCard = ({ post, usr }) => {
     const [isClick, setClick] = useState(post.likedUserIds.includes("currentUserId"));
     const [comment, setComment] = useState("");
     const [postState, setPost] = useState(post);
     const [timeAgo, setTimeAgo] = useState(post.timeAgoText);
+    const [showPopup, setShowPopup] = useState(false);
 
     useEffect(() => {
         // Any time post/comment changes, load in the latest version of post
@@ -31,6 +33,12 @@ const PostCard = ({ post, usr }) => {
     };
 
     const handleSendComment = async () => {
+
+        if (containsProfanity(comment)) {
+            setShowPopup(true);
+            return;
+        }
+
         if (!comment.trim()) return; // Avoid sending empty comments
 
         try {
@@ -74,6 +82,24 @@ const PostCard = ({ post, usr }) => {
 
     return (
         <div className="post-container bg-white shadow-lg rounded-lg p-4 my-4 w-full mx-auto">
+
+            {showPopup && (
+                <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50" onClick={() => setShowPopup(false)}>
+                    <div className="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full z-50" onClick={e => e.stopPropagation()}>
+                        <h2 className="text-lg font-semibold mb-4">Atención</h2>
+                        <p>En Tribbum, queremos asegurarnos de que todos los usuarios se sientan cómodos y
+                            respetados. Por lo tanto, no toleramos el uso de palabras ofensivas o cualquier
+                            comportamiento que pueda ser perjudicial para la experiencia y seguridad del usuario.
+                            Si no entiendes o no estás de acuerdo con los valores de esta aplicación, te recomendamos
+                            que elimines tu cuenta y dejes de participar en ella. Esto te ayudará a encontrar otras
+                            alternativas que puedan satisfacer tus necesidades.</p>
+                        <button className="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={() => setShowPopup(false)}>
+                            Cerrar
+                        </button>
+                    </div>
+                </div>
+            )}
+
             <style jsx>{`
                 .post-body p,
                 .comment-container p {
