@@ -10,6 +10,7 @@ import { getUserById } from "@/firebase/entities/users";
 import timeAgo from "@/utils/dateConversion";
 import { v4 as uuidv4 } from 'uuid';
 import { containsProfanity } from "@/utils/profanityFilter";
+import { getDataById } from "@/firebase/entities/database";
 
 const GroupForumPage = ({ groupIdParams }) => {
   const [posts, setPosts] = useState([]);
@@ -17,23 +18,33 @@ const GroupForumPage = ({ groupIdParams }) => {
   const [groupId, setGroupId] = useState(groupIdParams.id)
   const [userData, setUserData] = useState();
   const [showPopup, setShowPopup] = useState(false);
+  const [group, setGroup] = useState(null);
 
   useEffect(() => {
 
-    loadData();
+    loadGroupData();
+    loadPostData();
     currentUserData();
+
+    console.log(group)
 
   }, [groupId]);
 
+  // Sample user, manually loaded
   const currentUserData = async () => {
-
-    const usr = await getUserById("00123456-789a-bcde-f012-3456789abcde")  // Sample user, manually loaded
+    const usr = await getUserById("00123456-789a-bcde-f012-3456789abcde")
     console.log(usr)
     setUserData(usr)
   }
 
+  // Retrieve Group data
+  const loadGroupData = async () => {
+    const groupData = await getDataById("groups", groupId);
+    setGroup(groupData)
+  };
+
   // Retrieve Post data
-  const loadData = async () => {
+  const loadPostData = async () => {
     const fetchedPosts = await fetchPostsByGroupId(groupId);
     const sortedPosts = fetchedPosts.sort((a, b) => b.timeOfSubmission.seconds - a.timeOfSubmission.seconds);
     setPosts(sortedPosts);
@@ -118,12 +129,13 @@ const GroupForumPage = ({ groupIdParams }) => {
           }}
         >
           <h1 className="hidden md:flex text-2xl font-light text-primary-500 text-center">
+            {/* {group.name ? group.name : "Group Name"} */}
             Group Name
           </h1>
         </div>
       </div>
 
-      <div className="create-post-container mt-4 mb-6 w-2/3 mx-auto">
+      <div className="create-post-container mt-4 mb-6 w-full mx-auto">
         <div className="flex items-center">
           <input
             type="text"
@@ -140,6 +152,14 @@ const GroupForumPage = ({ groupIdParams }) => {
           </button>
         </div>
       </div>
+
+      <style jsx>{`
+        .create-post-container input, .forum-page-container {
+          overflow-wrap: break-word;
+          word-wrap: break-word;
+          white-space: normal;
+        }
+      `}</style>
 
       <div className="forum-page-container w-2/3 mx-auto">
         {posts.map((post) => (
