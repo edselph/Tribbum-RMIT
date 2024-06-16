@@ -40,6 +40,7 @@ export async function getDataById(entityName, id) {
   const dataSnap = await getDoc(dataToGet);
   if (dataSnap.exists()) {
     console.log("Document data:", dataSnap.data());
+    return dataSnap.data();
   } else {
     // dataSnap.data() will be undefined in this case
     console.log("No such document!");
