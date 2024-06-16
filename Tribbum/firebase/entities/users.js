@@ -5,20 +5,26 @@ import {
   doc,
   collection,
   getDoc,
-  query, where,
+  query,
+  where,
   getDocs,
   addDoc,
   setDoc,
   updateDoc,
-  deleteDoc
+  deleteDoc,
 } from "firebase/firestore";
+import { auth } from "../auth";
 //addDoc creates an auto ID
 //setDoc requires an ID
 
 const db = getFirestore(app);
 //CREATE
 export async function addUser(user) {
-  const dataToAdd = await addDoc(collection(db, "users"), { user });
+  // Check if the user already exists by email
+  const userByEmail = await getUserByEmail(user.email);
+  if (userByEmail.result) return new Error("User already exists");
+
+  const dataToAdd = await addDoc(collection(db, "users"), user);
   console.log("Document written with ID: ", dataToAdd.id);
 }
 export async function setUser(id, user) {
@@ -29,23 +35,22 @@ export async function setUser(id, user) {
 //READ
 
 export const getUserData = new Promise((resolve, reject) => {
-  const auth = getAuth();
   onAuthStateChanged(auth, async (user) => {
     if (user) {
-      const dataByEmail = await getUserByEmail(auth.currentUser.email);
-      if (dataByEmail) {
+      const dataByEmail = await getUserByEmail(user.email);
+      if (dataByEmail.result) {
         resolve({ result: true, resultData: dataByEmail });
       } else {
         reject({ result: false, resultData: null });
       }
     }
-  })
+  });
 });
 
 export async function getAllUsers() {
   const dataToGet = await getDocs(collection(db, "users"));
   return dataToGet.docs.map((doc) => doc.data());
-};
+}
 
 export async function getUserById(id) {
   const dataToGet = doc(db, "users", id);
@@ -53,35 +58,45 @@ export async function getUserById(id) {
   if (dataSnap.exists()) {
     return dataSnap.data();
   } else {
-    console.log(dataSnap)
+    console.log(dataSnap);
     // dataSnap.data() will be undefined in this case
     console.log("No such document!");
   }
-};
+}
 export async function getUserByEmail(email) {
-  let user;
-  const q = query(collection(db, "users"), where("email", "==", email));
-  const querySnapshot = await getDocs(q);
-  querySnapshot.forEach((doc) => {
-    // console.log(doc.id, " => ", doc.data());
-    // console.log(doc.data());
-    user = doc.data();
-  });
-  if (user) {
-    return { result: true, data: user };
-  } else { return { result: false, data: null } }
+  const user = await getDocs(
+    query(collection(db, "users"), where("email", "==", email))
+  );
+  if (user.docs.length > 0)
+    return {
+      result: true,
+      data: { ...user.docs[0].data(), id: user.docs[0].id },
+    };
 
-};
+  return { result: false, data: null };
+}
+
+export async function searchUserByName(name, currentUserEmail) {
+  const dataToGet = await getDocs(
+    query(
+      collection(db, "users"),
+      where("name", "==", name),
+      where("email", "!=", currentUserEmail)
+    )
+  );
+  return dataToGet.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+}
 //UPDATE
-export async function updateUser(id, data) {
+export async function updateUser(email, data) {
   //data is an object with the structure identical to the collection
-  const dataToUpdate = doc(db, "users", id);
-  await updateDoc(dataToUpdate, { data });
-};
+  const userByEmail = await getUserByEmail(email);
+  if (!userByEmail.result) return new Error("User not found");
+  const dataToUpdate = doc(db, "users", userByEmail.data.id);
+  await updateDoc(dataToUpdate, data);
+}
 //DELETE
 export async function deleteUser(id) {
   //delete a document based on its collection and its id
   const dataToDelete = doc(db, "users", id);
   await deleteDoc(dataToDelete);
-};
-
+}

@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import UserIcon from "@/public/assets/icons/user.svg";
 import CloseIcon from "@/public/assets/icons/close_icon.svg";
+import { getUserData, searchUserByName } from "@/firebase/entities/users";
 const UserList = ({
-  users,
   selectedUsers,
   onSelectUser,
   showUsers,
@@ -10,9 +10,21 @@ const UserList = ({
   setShowUsers,
 }) => {
   const [imageError, setImageError] = useState(false);
-
+  const [userSearch, setUserSearch] = useState("");
+  const [users, setUsers] = useState([]);
+  const [user, setUser] = useState(null);
+  useEffect(() => {
+    getUserData.then((user) => {
+      setUser(user?.resultData?.data);
+      //console.log(user);
+    });
+  }, []);
   const handleImageError = () => {
     setImageError(true);
+  };
+  const searchUser = async () => {
+    const userResult = await searchUserByName(userSearch, user.email);
+    setUsers(userResult);
   };
   return (
     <div className="space-y-3 my-6">
@@ -21,7 +33,7 @@ const UserList = ({
         {selectedUsers.map((user) => (
           <li
             key={user.id}
-            className="flex items-center bg-gray-800 border text-white border-white drop-shadow-md pr-3 pl-1 rounded-full justify-start gap-3"
+            className="flex items-center bg-gray-800 border text-white border-white drop-shadow-md pr-3 pl-1 rounded-full justify-start gap-1"
           >
             {imageError ? (
               <UserIcon className="w-10 h-10 text-white cursor-pointer" />
@@ -45,15 +57,33 @@ const UserList = ({
         ))}
       </ul>
       {showUsers && (
-        <div className="user-list-popup">
-          <div className="user-list">
+        <div className="user-list-popup space-y-4">
+          <div className="user-list space-y-4">
             <div className="user-list-header">
-              <h2>Select Users:</h2>
-              {/* <button onClick={onClose} /> */}
+              <h2>Search Users:</h2>
+              <form className="flex items-center justify-start gap-4">
+                <input
+                  type="text"
+                  placeholder="Search user"
+                  className="rounded-md px-4 py-2 ring-2"
+                  value={userSearch}
+                  onChange={(e) => setUserSearch(e.target.value)}
+                />
+                <button
+                  className="bg-gray-800 text-white font-bold py-2 px-4 rounded"
+                  type="button"
+                  onClick={async (e) => {
+                    e.preventDefault();
+                    await searchUser();
+                  }}
+                >
+                  Search
+                </button>
+              </form>
             </div>
             <ul>
               {users
-                .filter(
+                ?.filter(
                   (user) =>
                     !selectedUsers.some(
                       (selectedUser) => selectedUser.id === user.id
@@ -80,7 +110,11 @@ const UserList = ({
                 ))}
             </ul>
           </div>
-          <button className="close-btn" onClick={() => setShowUsers(false)}>
+          <button
+            type="button"
+            className="close-btn"
+            onClick={() => setShowUsers(false)}
+          >
             Close
           </button>
         </div>

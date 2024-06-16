@@ -6,31 +6,35 @@ import {
   getCurrentUser,
 } from "@/firebase/auth.js";
 import Link from "next/link";
+import { addUser } from "@/firebase/entities/users";
 
 function SignUpPage() {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [error, setError] = useState("");
 
   const handleForm = async () => {
-
-    if (password !== confirmPassword) {   // was previously commented
-    } else {
+    if (password !== confirmPassword) return;
+    try {
+      await addUser({
+        email,
+      });
       await signUpUserWithEmailAndPassword(email, password);
-      router.push("/");
+      router.push("/tribu/on-boarding");
+    } catch (e) {
+      setError(e.message);
     }
-    // remove comments on input prop required
-    router.push("/tribu/on-boarding"); // remove when uncommented above
   };
 
-  useEffect(() => {
-    getCurrentUser().then((user) => {
-      if (user) {
-        router.replace("/tribu");
-      }
-    });
-  }, [router]);
+  // useEffect(() => {
+  //   getCurrentUser().then((user) => {
+  //     if (user) {
+  //       router.replace("/tribu");
+  //     }
+  //   });
+  // }, [router]);
 
   return (
     <div className="flex flex-col w-full max-w-[500px] h-screen container mx-auto px-4 items-center justify-center">
@@ -114,6 +118,13 @@ function SignUpPage() {
             </span>
           </Link>
         </div>
+        {error && (
+          <div className="flex flex-row w-full h-auto mt-4 justify-center items-center">
+            <span className="flex text-red-500 text-center text-sm">
+              {error}
+            </span>
+          </div>
+        )}
       </div>
     </div>
   );

@@ -11,7 +11,7 @@ function Navigation() {
 
   useEffect(() => {
     getCurrentUser().then((user) => {
-      setUser(user);
+      setUser(user?.resultData?.data);
       //console.log(user);
     });
   }, []);

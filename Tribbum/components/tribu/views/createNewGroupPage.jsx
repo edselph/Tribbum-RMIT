@@ -3,14 +3,14 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { getAllUsers } from "@/firebase/entities/users";
-import { addData } from "@/firebase/entities/database.js";
 import { createForums } from "@/firebase/entities/forum.js";
 import UserList from "../molecules/userlist/userlist";
+import { getUserData } from "@/firebase/entities/users";
 
 const createNewGroupPage = () => {
   const router = useRouter();
   const [group, setGroup] = useState("");
+  const [user, setUser] = useState(null);
   const [selectedImage, setSelectImage] = useState(null);
   const [backgroundImage, setBackgroundImage] = useState(
     `url('/assets/images/section4-forwhom.png')`
@@ -18,20 +18,13 @@ const createNewGroupPage = () => {
   const [showUsers, setShowUsers] = useState(false);
   const [selectedUsers, setSelectedUsers] = useState([]);
   const [error, setError] = useState("");
-  const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    async function fetchUsers() {
-      try {
-        const userData = await getAllUsers();
-        setUsers(userData);
-      } catch (error) {
-        console.error("Error fetching users:", error);
-      }
-    }
-    fetchUsers();
+    getUserData.then((user) => {
+      setUser(user?.resultData?.data);
+      //console.log(user);
+    });
   }, []);
-
   //handle upload image
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -81,7 +74,9 @@ const createNewGroupPage = () => {
       await createForums({
         forumImage: selectedImage,
         forumName: group,
-        forumMembers: selectedUsers.map((user) => user.id),
+        forumMembers: [...selectedUsers, { id: user?.id }].map(
+          (user) => user?.id
+        ),
       });
       setError("");
       alert("Group created successfully");
@@ -154,7 +149,6 @@ const createNewGroupPage = () => {
           </div>
 
           <UserList
-            users={users}
             selectedUsers={selectedUsers}
             onSelectUser={handleSelectUser}
             handleRemoveUser={handleRemoveUser}

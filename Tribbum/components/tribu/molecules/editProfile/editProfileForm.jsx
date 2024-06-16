@@ -8,7 +8,7 @@ import {
   peopleDetailsEditProfil,
   civilState,
   profileSkills,
-  pastimeDatas
+  pastimeDatas,
 } from "@/utils/filterDatas.jsx";
 import { provinces } from "@/utils/provinceList";
 import FileUploadIcon from "@/public/assets/icons/file_upload.svg";
@@ -19,7 +19,8 @@ import SkillChip from "../../elements/skillChip/skillChip";
 import Checkbox from "../../elements/checkbox/checkbox";
 import Link from "next/link";
 import { getAuth, updateProfile } from "firebase/auth";
-import { getUserData } from "@/firebase/entities/users";
+import { getUserData, updateUser } from "@/firebase/entities/users";
+import app from "@/firebase/init";
 
 /* eslint-disable @next/next/no-img-element */
 const EditProfileForm = ({ tabSlide, setTabSlide }) => {
@@ -46,16 +47,15 @@ const EditProfileForm = ({ tabSlide, setTabSlide }) => {
   function scrollToTop() {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }
-  const auth = getAuth();
+  const auth = getAuth(app);
   useEffect(() => {
     getUserData.then((response) => {
       if (response.result) {
-        let user = response.resultData.data;
-        console.log("user", user);
-        setFirstname(user.name);
-        setLastname(user.surname);
-        setAge(user.age);
-        setPortrait(user.photoURL);
+        const user = response.resultData.data;
+        setFirstname(user?.name);
+        setLastname(user?.surname);
+        setAge(user?.age);
+        setPortrait(user?.photoURL);
       } else {
         console.log("error", "fetch error.");
       }
@@ -64,9 +64,18 @@ const EditProfileForm = ({ tabSlide, setTabSlide }) => {
   const updateUserInfo = () => {
     updateProfile(auth.currentUser, {
       displayName: firstname + lastname,
-      photoURL: photoURL
+      photoURL: photoURL,
     })
-      .then(() => {
+      .then(async () => {
+        try {
+          await updateUser(auth.currentUser.email, {
+            photoUrl: photoURL,
+            name: (firstname ?? "") + (lastname ?? ""),
+          });
+        } catch (error) {
+          console.log("error", error);
+        }
+
         alert("profile updated!");
       })
       .catch((error) => {
@@ -87,14 +96,16 @@ const EditProfileForm = ({ tabSlide, setTabSlide }) => {
             <div className="flex flex-col md:flex-row w-full max-w-[500px] h-auto mt-12 justify-between">
               <button
                 className="flex w-auto h-auto py-2 px-10 justify-center items-center bg-gray-300 hover:bg-secondary-500 rounded-full cursor-pointer active:scale-95 group"
-                onClick={() => setEndEditing(false)}>
+                onClick={() => setEndEditing(false)}
+              >
                 <span className="flex text-primary-500 font-normal text-lg group-hover:text-white text-center">
                   Seguir editando
                 </span>
               </button>
               <Link
                 href="/tribu"
-                className="flex w-auto h-auto mt-8 md:mt-0 py-2 px-4 justify-center items-center bg-tertiary-500 hover:bg-secondary-500 rounded-full cursor-pointer active:scale-95">
+                className="flex w-auto h-auto mt-8 md:mt-0 py-2 px-4 justify-center items-center bg-tertiary-500 hover:bg-secondary-500 rounded-full cursor-pointer active:scale-95"
+              >
                 <span className="flex text-white font-normal text-lg">
                   Ir a la home
                 </span>
@@ -131,7 +142,8 @@ const EditProfileForm = ({ tabSlide, setTabSlide }) => {
               <div className="flex flex-col w-full max-w-[500px] h-auto mt-4 items-center gap-2">
                 <label
                   htmlFor="firstname"
-                  className="flex flex-row w-full h-auto justify-start items-center">
+                  className="flex flex-row w-full h-auto justify-start items-center"
+                >
                   <span className="text-xs font-medium text-primary-500">
                     Nombre*
                   </span>
@@ -150,7 +162,8 @@ const EditProfileForm = ({ tabSlide, setTabSlide }) => {
               <div className="flex flex-col w-full max-w-[500px] h-auto mt-6 items-center gap-2">
                 <label
                   htmlFor="lastname"
-                  className="flex flex-row w-full h-auto justify-start items-center">
+                  className="flex flex-row w-full h-auto justify-start items-center"
+                >
                   <span className="text-xs font-medium text-primary-500">
                     Apellidos*
                   </span>
@@ -170,7 +183,8 @@ const EditProfileForm = ({ tabSlide, setTabSlide }) => {
                 <div className="flex flex-col w-auto h-auto justify-start ">
                   <label
                     htmlFor="lastname"
-                    className="flex flex-row w-full h-auto justify-start ">
+                    className="flex flex-row w-full h-auto justify-start "
+                  >
                     <span className="text-xs font-medium text-primary-500">
                       Sexo*
                     </span>
@@ -194,7 +208,8 @@ const EditProfileForm = ({ tabSlide, setTabSlide }) => {
                 <div className="flex flex-col w-auto max-w-[500px] h-auto mt-6 md:mt-0 justify-start gap-2">
                   <label
                     htmlFor="age"
-                    className="flex flex-row w-full h-auto justify-start ">
+                    className="flex flex-row w-full h-auto justify-start "
+                  >
                     <span className="text-xs font-medium text-primary-500">
                       Edad*
                     </span>
@@ -214,7 +229,8 @@ const EditProfileForm = ({ tabSlide, setTabSlide }) => {
               <div className="flex flex-col w-full max-w-[500px] h-auto mt-6 items-start gap-2">
                 <label
                   htmlFor="Province"
-                  className="flex flex-row w-full h-auto justify-start items-center">
+                  className="flex flex-row w-full h-auto justify-start items-center"
+                >
                   <span className="text-xs font-medium text-primary-500">
                     Provincia
                   </span>
@@ -229,7 +245,8 @@ const EditProfileForm = ({ tabSlide, setTabSlide }) => {
                   type="text"
                   name="province"
                   id="province"
-                  autoComplete="province">
+                  autoComplete="province"
+                >
                   {provinces?.map((province) => {
                     return (
                       <option key={province.id} value={province.province}>
@@ -243,7 +260,8 @@ const EditProfileForm = ({ tabSlide, setTabSlide }) => {
               <div className="flex flex-col w-full max-w-[500px] h-auto mt-6 items-start gap-2">
                 <label
                   htmlFor="city"
-                  className="flex flex-row w-full h-auto justify-start items-center">
+                  className="flex flex-row w-full h-auto justify-start items-center"
+                >
                   <span className="text-xs font-medium text-primary-500">
                     Localidad
                   </span>
@@ -264,7 +282,8 @@ const EditProfileForm = ({ tabSlide, setTabSlide }) => {
                   className="flex w-auto h-auto py-2 px-4 bg-tertiary-500 hover:bg-secondary-500 rounded-full cursor-pointer active:scale-95"
                   onClick={() => {
                     setTabSlide(2), scrollToTop();
-                  }}>
+                  }}
+                >
                   <span className="flex text-white font-normal text-lg">
                     Siguiente
                   </span>
@@ -378,7 +397,8 @@ const EditProfileForm = ({ tabSlide, setTabSlide }) => {
                 className="flex w-auto h-auto py-2 px-10 bg-gray-300 hover:bg-secondary-500 rounded-full cursor-pointer active:scale-95 group"
                 onClick={() => {
                   setTabSlide(1), scrollToTop();
-                }}>
+                }}
+              >
                 <span className="flex text-primary-500 font-normal text-lg group-hover:text-white">
                   Atrás
                 </span>
@@ -387,7 +407,8 @@ const EditProfileForm = ({ tabSlide, setTabSlide }) => {
                 className="flex w-auto h-auto py-2 px-4 bg-tertiary-500 hover:bg-secondary-500 rounded-full cursor-pointer active:scale-95"
                 onClick={() => {
                   setTabSlide(3), scrollToTop();
-                }}>
+                }}
+              >
                 <span className="flex text-white font-normal text-lg">
                   Siguiente
                 </span>
@@ -458,7 +479,8 @@ const EditProfileForm = ({ tabSlide, setTabSlide }) => {
               <Link
                 href="/web/aviso-legal"
                 target="_blank"
-                className="flex flex-row w-full h-auto justify-start items-center ">
+                className="flex flex-row w-full h-auto justify-start items-center "
+              >
                 <p className="flex mt-1 text-md text-primary-500 underline hover:text-tertiary-500">
                   Términos y condiciones
                 </p>
@@ -471,7 +493,8 @@ const EditProfileForm = ({ tabSlide, setTabSlide }) => {
               <Link
                 href="/web/privacidad"
                 target="_blank"
-                className="flex flex-row w-full h-auto justify-start items-center ">
+                className="flex flex-row w-full h-auto justify-start items-center "
+              >
                 <p className="flex mt-1 text-md text-primary-500 underline hover:text-tertiary-500">
                   Política de privacidad
                 </p>
@@ -482,7 +505,8 @@ const EditProfileForm = ({ tabSlide, setTabSlide }) => {
                 className="flex w-auto h-auto py-2 px-10 bg-gray-300 hover:bg-secondary-500 rounded-full cursor-pointer active:scale-95 group"
                 onClick={() => {
                   setTabSlide(2), scrollToTop();
-                }}>
+                }}
+              >
                 <span className="flex text-primary-500 font-normal text-lg group-hover:text-white">
                   Atrás
                 </span>
@@ -497,7 +521,8 @@ const EditProfileForm = ({ tabSlide, setTabSlide }) => {
                     setEndEditing(true);
                     scrollToTop();
                   }
-                }}>
+                }}
+              >
                 <span className="flex text-white font-normal text-lg">
                   Guardar
                 </span>

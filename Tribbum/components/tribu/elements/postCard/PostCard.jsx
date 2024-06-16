@@ -8,23 +8,19 @@ import {
     getPostOrCommentById,
     toggleUserLike
 } from "@/firebase/entities/post";
+import { containsProfanity } from "@/utils/profanityFilter";
 
 const PostCard = ({ post, usr }) => {
     const [isClick, setClick] = useState(post.likedUserIds.includes("currentUserId"));
     const [comment, setComment] = useState("");
     const [postState, setPost] = useState(post);
     const [timeAgo, setTimeAgo] = useState(post.timeAgoText);
+    const [showPopup, setShowPopup] = useState(false);
 
     useEffect(() => {
-
         // Any time post/comment changes, load in the latest version of post
-        // console.log(isClick)
-
         updatePostState()
-
-    }, [isClick])
-
-
+    }, [isClick]);
 
     const handleCommentChange = (e) => {
         setComment(e.target.value);
@@ -32,12 +28,17 @@ const PostCard = ({ post, usr }) => {
 
     const updatePostState = async () => {
         const data = await getPostOrCommentById(postState.id, 'posts');
-        // console.log(data)
-        setPost(data)
+        setPost(data);
         return data;
     };
 
     const handleSendComment = async () => {
+
+        if (containsProfanity(comment)) {
+            setShowPopup(true);
+            return;
+        }
+
         if (!comment.trim()) return; // Avoid sending empty comments
 
         try {
@@ -58,13 +59,10 @@ const PostCard = ({ post, usr }) => {
             const newCommentId = await createPostOrComment(commentData, 'comments');
 
             // Add the new comment ID to the post's commentIds list
-
-            console.log("Post id??", post.id)
             await addCommentToPost(post.id, newCommentId);
             setComment('');
 
-            updatePostState()
-
+            updatePostState();
         } catch (error) {
             console.error("Error handling the comment submission:", error);
         }
@@ -73,22 +71,50 @@ const PostCard = ({ post, usr }) => {
     const onHeartClick = async () => {
         // By default, shows if clicked.
         // Handle like/unlike logic here
-
-        console.log("Heart liked")
-
-        await toggleUserLike(postState.id, "currentUserId")
+        await toggleUserLike(postState.id, "currentUserId");
         setClick(!isClick);
+    };
+
+    const navigateToUserProfile = () => {
+        window.location.href = `/tribu/profile/${usr.id}`;
     };
 
 
     return (
-        <div className="post-container bg-white shadow-lg rounded-lg p-4 my-4">
+        <div className="post-container bg-white shadow-lg rounded-lg p-4 my-4 w-full mx-auto">
+
+            {showPopup && (
+                <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50" onClick={() => setShowPopup(false)}>
+                    <div className="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full z-50" onClick={e => e.stopPropagation()}>
+                        <h2 className="text-lg font-semibold mb-4">Atención</h2>
+                        <p>En Tribbum, queremos asegurarnos de que todos los usuarios se sientan cómodos y
+                            respetados. Por lo tanto, no toleramos el uso de palabras ofensivas o cualquier
+                            comportamiento que pueda ser perjudicial para la experiencia y seguridad del usuario.
+                            Si no entiendes o no estás de acuerdo con los valores de esta aplicación, te recomendamos
+                            que elimines tu cuenta y dejes de participar en ella. Esto te ayudará a encontrar otras
+                            alternativas que puedan satisfacer tus necesidades.</p>
+                        <button className="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={() => setShowPopup(false)}>
+                            Cerrar
+                        </button>
+                    </div>
+                </div>
+            )}
+
+            <style jsx>{`
+                .post-body p,
+                .comment-container p {
+                    overflow-wrap: break-word;
+                    word-break: break-word;
+                    white-space: pre-wrap;
+                }
+            `}</style>
             <div className="post-header flex items-center mb-4">
                 {usr.photoUrl && (
                     <img
                         src={usr.photoUrl}
                         alt={`${usr.name} ${usr.surname}`}
                         className="w-10 h-10 rounded-full mr-4"
+                        onClick={navigateToUserProfile}
                     />
                 )}
                 <div>
@@ -99,11 +125,11 @@ const PostCard = ({ post, usr }) => {
             <div className="post-body mb-4">
                 <p className="text-lg font-semibold text-gray-900">{postState.body}</p>
             </div>
-            <div className="post-likes flex items-center mb-4">
+            <div className="post-likes flex items-center mb-4 ml-auto">
                 <span className="text-sm font-medium text-gray-700 mr-2">{postState.likedUserIds.length} Likes</span>
                 <Heart isClick={isClick} onClick={onHeartClick} />
             </div>
-            <div className="post-comments">
+            <div className="post-comments flex items-center">
                 <input
                     type="text"
                     value={comment}
@@ -120,11 +146,11 @@ const PostCard = ({ post, usr }) => {
                 >
                     Send
                 </button>
-                <div className="comment-container">
-                    {postState.commentIds.slice().reverse().map((commentId) => (
-                        <CommentCard usr={usr} key={commentId} idComment={commentId} />
-                    ))}
-                </div>
+            </div>
+            <div className="comment-container mt-4">
+                {postState.commentIds.slice().reverse().map((commentId) => (
+                    <CommentCard usr={usr} key={commentId} idComment={commentId} />
+                ))}
             </div>
         </div>
     );

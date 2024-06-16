@@ -4,17 +4,21 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
-  onAuthStateChanged
+  onAuthStateChanged,
 } from "firebase/auth";
 
 export const auth = getAuth(app);
 
-export const getCurrentUser = async () => {
+export const getCurrentUser = async (withDetail = false) => {
   const promisifiedOnAuthStateChanged = (auth) => {
     return new Promise((resolve, reject) => {
       auth.onAuthStateChanged((user) => {
         if (user) {
-          resolve(user);
+          if (withDetail) {
+            resolve(user);
+          } else {
+            resolve(user.uid);
+          }
         } else {
           resolve(null);
         }
