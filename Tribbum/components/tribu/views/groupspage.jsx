@@ -35,7 +35,7 @@ const GroupsPage = () => {
   const toggleSort = () => {
     setSortAsc(!sortAsc);
   };
-
+  console.log("filteredGroups", filteredGroups);
   return (
     <div className="container mx-auto pt-16 md:pt-20 px-4 flex flex-col items-center justify-center min-h-screen">
       <h1 className="text-2xl font-bold mb-4 text-center">All Groups</h1>
@@ -64,7 +64,7 @@ const GroupsPage = () => {
 
       <div className="w-full flex flex-wrap justify-center">
         {filteredGroups.map((group, index) => (
-          <div key={index} className="m-4 max-w-sm">
+          <div key={group?.id || index} className="m-4 max-w-sm">
             <GroupCard groupData={group} fromGrupos={true} />
           </div>
         ))}
